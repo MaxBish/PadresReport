@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Max Bish's Dads Report</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+```
+body {
+background: #0D1F3C;
+font-family: Georgia, 'Times New Roman', serif;
+min-height: 100vh;
+padding-bottom: 48px;
+}
+
+#root { max-width: 700px; margin: 0 auto; }
+
+/* ── HEADER ── */
+.header {
+background: #0D1F3C;
+border-bottom: 3px solid #FFC425;
+padding: 26px 32px 22px;
+}
+.header-stripe {
+display: flex;
+height: 3px;
+margin-bottom: 18px;
+border-radius: 1px;
+overflow: hidden;
+}
+.stripe-brown { flex: 3; background: #7B3F00; }
+.stripe-orange { flex: 1; background: #FF6B2B; }
+.stripe-yellow { flex: 1; background: #FFC425; }
+.header-inner {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+}
+.header-eyebrow {
+font-style: italic;
+font-size: 10px;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: #C9961D;
+margin-bottom: 5px;
+}
+.header-title {
+font-weight: 700;
+font-size: 42px;
+color: #FFC425;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+line-height: 1;
+}
+.header-sub {
+margin-top: 8px;
+font-style: italic;
+font-size: 10px;
+color: rgba(255,255,255,0.42);
+letter-spacing: 0.1em;
+}
+
+/* ── SAVE BUTTON ── */
+#save-btn {
+display: flex;
+align-items: center;
+gap: 6px;
+border-radius: 4px;
+padding: 8px 16px;
+font-family: Georgia, serif;
+font-weight: 700;
+font-size: 10px;
+letter-spacing: 0.13em;
+text-transform: uppercase;
+cursor: pointer;
+border: 1px solid rgba(255,196,37,0.30);
+background: rgba(255,196,37,0.10);
+color: #FFC425;
+transition: all 0.2s;
+white-space: nowrap;
+}
+#save-btn:disabled { opacity: 0.6; cursor: default; }
+#save-btn.done { background: rgba(61,186,111,0.15); border-color: rgba(61,186,111,0.4); color: #3DBA6F; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }
+
+/* ── UP NEXT ── */
+.up-next-wrap {
+background: #152845;
+border-bottom: 1px solid rgba(255,196,37,0.18);
+}
+.up-next-label {
+padding: 10px 32px 7px;
+font-size: 9px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: #FF6B2B;
+}
+.up-next-scroll {
+overflow-x: auto;
+display: flex;
+border-top: 1px solid rgba(255,196,37,0.18);
+-webkit-overflow-scrolling: touch;
+}
+.up-next-game {
+flex-shrink: 0;
+min-width: 165px;
+padding: 11px 18px 13px;
+border-right: 1px solid rgba(255,196,37,0.18);
+}
+.game-date-badge {
+display: inline-block;
+background: rgba(255,107,43,0.12);
+border: 1px solid rgba(255,107,43,0.30);
+border-radius: 2px;
+padding: 2px 7px;
+font-size: 8px;
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: #FF6B2B;
+margin-bottom: 7px;
+}
+.game-matchup {
+font-weight: 700;
+font-size: 12px;
+color: #fff;
+line-height: 1.3;
+margin-bottom: 4px;
+}
+.game-meta {
+font-size: 10px;
+color: rgba(255,255,255,0.42);
+line-height: 1.5;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+padding: 16px 32px 10px;
+font-size: 9px;
+font-weight: 700;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: #FFC425;
+border-bottom: 1px solid rgba(255,196,37,0.18);
+}
+
+/* ── CARD ── */
+.card {
+margin: 12px 24px 0;
+border-radius: 3px;
+overflow: hidden;
+background: #1A3258;
+border: 1px solid rgba(255,196,37,0.18);
+border-left: 3px solid rgba(255,196,37,0.18);
+}
+.card.win { border-left-color: #3DBA6F; }
+.card.loss { border-left-color: #E05252; }
+.card.off { border-left-color: #A0522D; }
+
+.card-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 16px;
+background: rgba(0,0,0,0.28);
+border-bottom: 1px solid rgba(255,196,37,0.18);
+}
+.card-label {
+font-size: 9px;
+font-weight: 700;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: #FFC425;
+}
+.card-date {
+font-size: 9px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: #C8956C;
+margin-top: 2px;
+}
+.card-result {
+font-weight: 700;
+font-size: 13px;
+letter-spacing: 0.12em;
+}
+.card-result.win { color: #3DBA6F; }
+.card-result.loss { color: #E05252; }
+.card-result.off { color: rgba(255,255,255,0.42); }
+
+/* score */
+.score-row {
+display: flex;
+align-items: center;
+padding: 16px 20px 14px;
+border-bottom: 1px solid rgba(255,196,37,0.18);
+}
+.team-block { flex: 1; }
+.team-block.right { text-align: right; }
+.team-abbr {
+font-weight: 700;
+font-size: 28px;
+color: #FFC425;
+line-height: 1;
+}
+.team-name {
+font-size: 8px;
+font-weight: 700;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.42);
+margin-top: 4px;
+line-height: 1.4;
+}
+.score-center {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 0 22px;
+}
+.score-num {
+font-weight: 700;
+font-size: 46px;
+line-height: 1;
+color: rgba(255,255,255,0.25);
+}
+.score-num.winner { color: #fff; }
+.score-dash {
+font-size: 22px;
+color: rgba(255,196,37,0.18);
+font-weight: 300;
+}
+
+/* linescore */
+.linescore-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.linescore {
+width: 100%;
+border-collapse: collapse;
+min-width: 400px;
+}
+.linescore th {
+text-align: center;
+padding: 5px 3px;
+font-size: 9px;
+color: rgba(255,255,255,0.42);
+background: rgba(0,0,0,0.22);
+letter-spacing: 0.06em;
+border-bottom: 1px solid rgba(255,196,37,0.18);
+border-right: 1px solid rgba(255,196,37,0.18);
+}
+.linescore th.team-col { text-align: left; padding-left: 12px; width: 42px; }
+.linescore th.total-col { color: #C8956C; }
+.linescore th:last-child, .linescore td:last-child { border-right: none; }
+.linescore td {
+text-align: center;
+padding: 5px 3px;
+font-size: 11px;
+color: rgba(255,255,255,0.92);
+border-bottom: 1px solid rgba(255,196,37,0.18);
+border-right: 1px solid rgba(255,196,37,0.18);
+}
+.linescore td.team-col {
+text-align: left;
+padding-left: 12px;
+font-size: 10px;
+font-weight: 700;
+color: #FFC425;
+letter-spacing: 0.10em;
+}
+.linescore td.total-col { font-weight: 700; color: #fff; }
+.linescore tr:last-child td { border-bottom: none; }
+
+/* stats */
+.stats-row {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+padding: 10px 16px;
+border-bottom: 1px solid rgba(255,196,37,0.18);
+}
+.pill {
+font-size: 10px;
+font-weight: 700;
+padding: 3px 9px;
+border-radius: 2px;
+white-space: nowrap;
+border: 1px solid rgba(255,196,37,0.18);
+background: rgba(255,255,255,0.06);
+color: rgba(255,255,255,0.92);
+}
+.pill.win { background: rgba(61,186,111,0.15); border-color: rgba(61,186,111,0.3); color: #3DBA6F; }
+.pill.loss { background: rgba(224,82,82,0.15); border-color: rgba(224,82,82,0.3); color: #E05252; }
+.pill-label { color: rgba(255,255,255,0.42); font-weight: 400; margin-right: 3px; }
+
+/* body text */
+.card-body {
+padding: 14px 16px 18px;
+font-size: 13px;
+line-height: 1.80;
+color: rgba(255,255,255,0.92);
+}
+.card-body p + p { margin-top: 13px; }
+
+/* footer */
+.footer {
+margin-top: 24px;
+padding: 14px 32px;
+border-top: 1px solid rgba(255,196,37,0.18);
+text-align: center;
+font-size: 8px;
+font-weight: 700;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.42);
+}
+```
+
+</style>
+</head>
+<body>
+<div id="root">
+
+<!-- HEADER -->
+
+<div class="header">
+<div class="header-stripe">
+<div class="stripe-brown"></div>
+<div class="stripe-orange"></div>
+<div class="stripe-yellow"></div>
+</div>
+<div class="header-inner">
+<div>
+<div class="header-eyebrow">Max Bish's</div>
+<div class="header-title">Dads Report</div>
+<div class="header-sub">Your #1 Source for Padres Truth · Est. April 2026</div>
+</div>
+<button id="save-btn" onclick="savePDF()">
+<svg id="btn-icon" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+<polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+</svg>
+<span id="btn-label">Save as PDF</span>
+</button>
+</div>
+</div>
+
+<!-- UP NEXT -->
+
+<div class="up-next-wrap">
+<div class="up-next-label">Up Next</div>
+<div class="up-next-scroll" id="up-next"></div>
+</div>
+
+<!-- RECENT RESULTS -->
+
+<div style="height:8px"></div>
+<div class="section-label">Recent Results</div>
+<div id="entries"></div>
+
+<div class="footer">Max Bish's Dads Report · Updated After Every Game · San Diego Padres 2026</div>
+</div>
+
+<script>
+// ── DATA ──
+const REPORT = {
+nextGames: [
+{ date:"THU APR 24", time:"12:10 PM PT", matchup:"SD Padres @ Colorado Rockies", venue:"Coors Field" },
+{ date:"SAT APR 26", time:"3:05 PM PT", matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
+{ date:"SUN APR 27", time:"1:05 PM PT", matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
+{ date:"MON APR 28", time:"6:40 PM PT", matchup:"Chicago Cubs @ Petco Park", venue:"Petco Park" },
+{ date:"TUE APR 29", time:"6:40 PM PT", matchup:"Chicago Cubs @ Petco Park", venue:"Petco Park" },
+{ date:"WED APR 30", time:"6:40 PM PT", matchup:"Chicago Cubs @ Petco Park", venue:"Petco Park" },
+],
+entries: [
+{
+type:"recap", gameLabel:"Game #24", gameDate:"WED, APRIL 22", venue:"COORS FIELD, DENVER",
+result:"L",
+away:{ abbr:"SD", city:"SAN DIEGO", name:"PADRES" },
+home:{ abbr:"COL", city:"COLORADO", name:"ROCKIES" },
+awayScore:3, homeScore:8, winnerIsHome:true,
+linescore:{
+innings:["1","2","3","4","5","6","7","8","9"],
+away: ["1","0","0","0","0","0","1","0","1"],
+home: ["0","4","0","1","0","1","1","1","—"],
+awayTotals:{ R:"3", H:"7", E:"0" },
+homeTotals:{ R:"8", H:"15", E:"1" },
+},
+stats:[
+{ label:"WP", value:"Sugano", type:"win" },
+{ label:"LP", value:"W. Buehler (2.2 IP, 8 H, 4 ER)", type:"loss" },
+{ label:"Campusano", value:"3-4, HR, 2 2B, RBI", type:"neutral" },
+{ label:"Bogaerts", value:"2-4", type:"neutral" },
+{ label:"Merrill", value:"RBI", type:"neutral" },
+{ label:"Buehler ERA", value:"13.50", type:"neutral" },
+],
+paragraphs:[
+"We witnessed a miracle today. This must've been what it felt like when we landed on the moon, when we discovered the cure to polio, etc etc. The Padres scored a run in the 1st inning! Of course it was due to The Magnificent Merrill and his beautiful textbook single to drive in Laureano.",
+"However, this euphoric feeling did not last because washed ass Walker Buehler summoned his Dodgers DNA and got lit the fuck up for 4 runs in the 2nd inning. A little fishy if you ask me. He got pulled after 3 innings. It was a rough game, bullpen got used a lot.",
+"Unfortunately, overcoming a 4-1 deficit is just not in this team's DNA currently. We scored 2 more but not before they added 4 more runs to their total. Dads lose, but that's okay. Cant win em all.",
+],
+},
+{
+type:"recap", gameLabel:"Game #23", gameDate:"TUE, APRIL 21", venue:"COORS FIELD, DENVER",
+result:"W",
+away:{ abbr:"SD", city:"SAN DIEGO", name:"PADRES" },
+home:{ abbr:"COL", city:"COLORADO", name:"ROCKIES" },
+awayScore:1, homeScore:0, winnerIsHome:false,
+linescore:{
+innings:["1","2","3","4","5","6","7","8","9"],
+away: ["0","0","0","0","0","1","0","0","0"],
+home: ["0","0","0","0","0","0","0","0","0"],
+awayTotals:{ R:"1", H:"6", E:"0" },
+homeTotals:{ R:"0", H:"3", E:"1" },
+},
+stats:[
+{ label:"WP", value:"Vásquez (7 IP, 3 H, 0 ER, 5 K)", type:"win" },
+{ label:"SV", value:"Morején (2 K)", type:"win" },
+{ label:"Machado", value:"walk-off RBI walk, bases loaded", type:"neutral" },
+{ label:"Tatis Jr.", value:"2-4", type:"neutral" },
+{ label:"COL Ks", value:"15", type:"neutral" },
+{ label:"Dollander LP", value:"9 K, 6 IP, 1 ER", type:"loss" },
+],
+paragraphs:[
+"An unstoppable force meets an extremely movable object. The Padres offense continues to roll, as they mustered ONE whole run in this game. The Rockies stadium is well known to lend itself to some insanely high scoring games due to its smaller size and the high elevation in Colorado (the ball goes farther, it just does). You'll be shocked to hear then that the Rockies pitchers threw 15 strikeouts. Maybe they were cheating and drilled holes in the Dads' bats, more to come on this theory as the series continues.",
+"Good news tho, the Rockies cant cheat their way around the rules. They fell for the ultimate Dads trap. Bases loaded, full 3-2 count, 2 outs, Manny Machado up to bat, and the Rockies feel his immense fat ass aura and walk him, hence also walking in the only run of the day. DOMINATING OFFENSE.",
+"Randy Vasquez continues to start the season extremely strong, and is probably our #1 right now. He goes 7 IP, only giving up 3 hits. Our starting pitching is elite, which is actually the most insane thing about the start of this season so far.",
+"We decided we didnt need Mason Miller to close this game, so Adrian Morejon came in, struck out two immediately, and then almost gave up a home run but it was caught by our lord and savior Jackson Merrill well short of the fence. Padres dominate the Rockies 1-0. All we do is win, win, win.",
+],
+},
+{
+type:"offday", gameLabel:"Off Day", offDaySub:"BEFORE THE COLORADO SERIES", result:"OFF",
+paragraphs:[
+"We did not play a game today, therefore we are just a 0.5 game back of the Dodgers as I type this.",
+"However, the Dodgers do play today and are beating the Rockies currently so standings subject to change. The Dodgers also baselessly accused the Rockies of cheating this past weekend, because it is absolutely ridiculous to think that a team can win their own home stadium against a 1 billion dollar roster. With that being said, the Padres are kicking off their series against the Rockies in Colorado tomorrow so stand up and stand by in case we jump onto the bandwagon and also accuse them of cheating.",
+],
+},
+{
+type:"recap", gameLabel:"Game #22", gameDate:"SUN, APRIL 19", venue:"PETCO PARK, SAN DIEGO",
+result:"W", seriesResult:"SERIES W 2-1",
+away:{ abbr:"LAA", city:"LOS ANGELES", name:"ANGELS" },
+home:{ abbr:"SD", city:"SAN DIEGO", name:"PADRES" },
+awayScore:1, homeScore:2, winnerIsHome:true,
+linescore:null, stats:[],
+paragraphs:[
+"The Dads' offense continues to an unstoppable force of nature, putting up 2 whole runs in this game. When you get contributions from Bryce Johnson at the plate, feels like a victory is all but guaranteed.",
+"Michael King continues to be very good. That signed ball by Mr King that Laines won during opening weekend is just gaining more and more value, so we will continue to trust our ace every time he takes the mound. I wonder if we'll be able to exchange that ball for some raw, beautiful, malleable gold.",
+"Something that is not being talked about is that anybody not named Adrian Morejon or Mason Miller scares the ever living shit out of me when they go to the bullpen. Jason Adam will figure it out because he's a god fearing conservative white man, but everybody else makes me nervous right now.",
+"Mason Miller is the GOAT. The Dads win 2-1 and win the series 2-1. Happy church day and to all a good nap.",
+],
+},
+{
+type:"recap", gameLabel:"Game #21", gameDate:"SAT, APRIL 18", venue:"PETCO PARK, SAN DIEGO",
+result:"W", seriesResult:"W 4-1",
+away:{ abbr:"LAA", city:"LOS ANGELES", name:"ANGELS" },
+home:{ abbr:"SD", city:"SAN DIEGO", name:"PADRES" },
+awayScore:1, homeScore:4, winnerIsHome:true,
+linescore:null, stats:[],
+paragraphs:[
+"Our starting pitcher was German Marquez, who I call the German Meatball. He is not German, but he does throw meatballs. Thankfully, no balls left the park vs him today as he went 5 and 2/3 IPs allowing only 2 hits.",
+"While the german meatball was out there proving that the Angels are in fact ass, we are also ass because this game was 0-0 going into the 8th inning. Thankfully, we scored 2 runs on two of the softest hits that I have ever seen and its better to be lucky than good. We added on to our lead in the 9th the same exact way, but at least Tatis drove some runs home (he still hasn't hit a homer, wtf)",
+"Mason Miller allowed two base runners for the first time all season but who fucking cares, he's the best pitcher in the league and it was never in doubt once he came in. LETS GO DADS, 4-1 final score.",
+],
+},
+],
+};
+
+// ── RENDER UP NEXT ──
+const upNext = document.getElementById("up-next");
+REPORT.nextGames.forEach(g => {
+upNext.innerHTML += `
+<div class="up-next-game">
+<div class="game-date-badge">${g.date}</div>
+<div class="game-matchup">${g.matchup}</div>
+<div class="game-meta">${g.venue}<br>${g.time}</div>
+</div>`;
+});
+
+// ── RENDER ENTRIES ──
+function renderLinescore(ls, away, home) {
+const innings = ls.innings.map(i => `<th>${i}</th>`).join("");
+const totals = `<th class="total-col">R</th><th class="total-col">H</th><th class="total-col">E</th>`;
+const awayRow = ls.away.map(r => `<td>${r}</td>`).join("");
+const homeRow = ls.home.map(r => `<td>${r}</td>`).join("");
+return `
+<div class="linescore-wrap">
+<table class="linescore">
+<thead><tr><th class="team-col"></th>${innings}${totals}</tr></thead>
+<tbody>
+<tr>
+<td class="team-col">${away.abbr}</td>${awayRow}
+<td class="total-col">${ls.awayTotals.R}</td>
+<td class="total-col">${ls.awayTotals.H}</td>
+<td class="total-col">${ls.awayTotals.E}</td>
+</tr>
+<tr>
+<td class="team-col">${home.abbr}</td>${homeRow}
+<td class="total-col">${ls.homeTotals.R}</td>
+<td class="total-col">${ls.homeTotals.H}</td>
+<td class="total-col">${ls.homeTotals.E}</td>
+</tr>
+</tbody>
+</table>
+</div>`;
+}
+
+function renderStats(stats) {
+if (!stats || !stats.length) return "";
+const pills = stats.map(s =>
+`<span class="pill ${s.type}"><span class="pill-label">${s.label}:</span>${s.value}</span>`
+).join("");
+return `<div class="stats-row">${pills}</div>`;
+}
+
+function renderCard(e) {
+const isOff = e.type === "offday";
+const resultClass = e.result === "W" ? "win" : e.result === "L" ? "loss" : "off";
+const badge = isOff ? "OFF" : (e.seriesResult || e.result);
+const dateStr = isOff ? (e.offDaySub || "") : `${e.gameDate || ""}${e.venue ? " · " + e.venue : ""}`;
+
+const scoreBlock = isOff ? "" : `
+<div class="score-row">
+<div class="team-block">
+<div class="team-abbr">${e.away.abbr}</div>
+<div class="team-name">${e.away.city}<br>${e.away.name}</div>
+</div>
+<div class="score-center">
+<div class="score-num ${!e.winnerIsHome ? "winner" : ""}">${e.awayScore}</div>
+<div class="score-dash">–</div>
+<div class="score-num ${e.winnerIsHome ? "winner" : ""}">${e.homeScore}</div>
+</div>
+<div class="team-block right">
+<div class="team-abbr">${e.home.abbr}</div>
+<div class="team-name">${e.home.city}<br>${e.home.name}</div>
+</div>
+</div>`;
+
+const paras = e.paragraphs.map(p => `<p>${p}</p>`).join("");
+
+return `
+<div class="card ${resultClass}">
+<div class="card-header">
+<div>
+<div class="card-label">${e.gameLabel}</div>
+${dateStr ? `<div class="card-date">${dateStr}</div>` : ""}
+</div>
+<div class="card-result ${resultClass}">${badge}</div>
+</div>
+${scoreBlock}
+${e.linescore ? renderLinescore(e.linescore, e.away, e.home) : ""}
+${renderStats(e.stats)}
+<div class="card-body">${paras}</div>
+</div>`;
+}
+
+const entries = document.getElementById("entries");
+REPORT.entries.forEach(e => { entries.innerHTML += renderCard(e); });
+
+// ── SAVE AS PDF ──
+async function savePDF() {
+const btn = document.getElementById("save-btn");
+const label = document.getElementById("btn-label");
+const icon = document.getElementById("btn-icon");
+
+btn.disabled = true;
+icon.innerHTML = `<circle cx="12" cy="12" r="10" stroke-dasharray="31.4" stroke-dashoffset="10"/>`;
+icon.classList.add("spin");
+label.textContent = "Generating…";
+
+try {
+// Load html2pdf if not already loaded
+if (!window.html2pdf) {
+await new Promise((res, rej) => {
+const s = document.createElement("script");
+s.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+s.onload = res; s.onerror = rej;
+document.head.appendChild(s);
+});
+}
+
+const el = document.getElementById("root");
+const opt = {
+margin: 0,
+filename: "dads-report.pdf",
+image: { type:"jpeg", quality:0.98 },
+html2canvas: { scale:2, useCORS:true, backgroundColor:"#0D1F3C", logging:false },
+jsPDF: { unit:"px", format:[700, 1800], orientation:"portrait" },
+pagebreak: { mode:"avoid-all" },
+};
+
+// On iOS Safari, use share sheet with the PDF blob
+if (navigator.share && navigator.canShare) {
+const blob = await window.html2pdf().set(opt).from(el).outputPdf("blob");
+const file = new File([blob], "dads-report.pdf", { type:"application/pdf" });
+if (navigator.canShare({ files:[file] })) {
+await navigator.share({ files:[file], title:"Max Bish's Dads Report" });
+setDone();
+return;
+}
+}
+
+// Desktop / Android: direct download
+await window.html2pdf().set(opt).from(el).save();
+setDone();
+
+} catch(e) {
+if (e?.name === "AbortError") { resetBtn(); return; }
+label.textContent = "Try Again";
+btn.disabled = false;
+icon.classList.remove("spin");
+}
+
+function setDone() {
+btn.classList.add("done");
+icon.classList.remove("spin");
+icon.innerHTML = `<polyline points="20 6 9 17 4 12"/>`;
+label.textContent = "✓ Saved!";
+setTimeout(resetBtn, 2500);
+}
+
+function resetBtn() {
+btn.disabled = false;
+btn.classList.remove("done");
+label.textContent = "Save as PDF";
+icon.innerHTML = `
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+<polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>`;
+}
+}
+</script>
+
+</body>
+</html>
