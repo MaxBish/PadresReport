@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Max Bish's Dads Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,7 +22,7 @@ body {
 /* ── HERO ── */
 .hero {
   position: relative;
-  height: 220px;
+  height: 280px;
   overflow: hidden;
 }
 .hero img {
@@ -67,27 +68,31 @@ body {
 }
 .header-text { flex: 1; }
 .header-eyebrow {
-  font-style: italic;
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #C9961D;
   margin-bottom: 4px;
 }
 .header-title {
-  font-weight: 700;
-  font-size: 40px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
   color: #FFC425;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 0.95;
 }
 .header-sub {
-  margin-top: 7px;
-  font-style: italic;
+  margin-top: 8px;
+  font-family: 'Barlow', sans-serif;
   font-size: 10px;
   color: rgba(255,255,255,0.42);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* ── UP NEXT ── */
@@ -97,9 +102,10 @@ body {
 }
 .up-next-label {
   padding: 10px 32px 7px;
-  font-size: 9px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #FF6B2B;
 }
@@ -121,21 +127,25 @@ body {
   border: 1px solid rgba(255,107,43,0.30);
   border-radius: 2px;
   padding: 2px 7px;
-  font-size: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #FF6B2B;
   margin-bottom: 7px;
 }
 .game-matchup {
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
+  letter-spacing: 0.03em;
   color: #fff;
-  line-height: 1.3;
+  line-height: 1.2;
   margin-bottom: 4px;
 }
 .game-meta {
+  font-family: 'Barlow', sans-serif;
   font-size: 10px;
   color: rgba(255,255,255,0.42);
   line-height: 1.5;
@@ -144,9 +154,10 @@ body {
 /* ── SECTION LABEL ── */
 .section-label {
   padding: 16px 32px 10px;
-  font-size: 9px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #FFC425;
   border-bottom: 1px solid rgba(255,196,37,0.18);
@@ -174,23 +185,27 @@ body {
   border-bottom: 1px solid rgba(255,196,37,0.18);
 }
 .card-label {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   color: #FFC425;
 }
 .card-date {
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #C8956C;
   margin-top: 2px;
 }
 .card-result {
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.12em;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.14em;
 }
 .card-result.win  { color: #3DBA6F; }
 .card-result.loss { color: #E05252; }
@@ -206,15 +221,18 @@ body {
 .team-block { flex: 1; }
 .team-block.right { text-align: right; }
 .team-abbr {
-  font-weight: 700;
-  font-size: 28px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
   color: #FFC425;
   line-height: 1;
+  letter-spacing: 0.04em;
 }
 .team-name {
+  font-family: 'Barlow', sans-serif;
   font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.42);
   margin-top: 4px;
@@ -227,15 +245,18 @@ body {
   padding: 0 22px;
 }
 .score-num {
-  font-weight: 700;
-  font-size: 46px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 72px;
   line-height: 1;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.18);
+  letter-spacing: -0.01em;
 }
 .score-num.winner { color: #fff; }
 .score-dash {
-  font-size: 22px;
-  color: rgba(255,196,37,0.18);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 36px;
+  color: rgba(255,196,37,0.25);
   font-weight: 300;
 }
 
@@ -287,11 +308,13 @@ body {
   border-bottom: 1px solid rgba(255,196,37,0.18);
 }
 .pill {
-  font-size: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 2px;
   white-space: nowrap;
+  letter-spacing: 0.06em;
   border: 1px solid rgba(255,196,37,0.18);
   background: rgba(255,255,255,0.06);
   color: rgba(255,255,255,0.92);
