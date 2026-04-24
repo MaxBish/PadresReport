@@ -18,11 +18,30 @@ body {
 
 #root { max-width: 700px; margin: 0 auto; }
 
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(13,31,60,0.3) 0%, rgba(13,31,60,0.85) 100%);
+}
+
 /* ── HEADER ── */
 .header {
   background: #0D1F3C;
   border-bottom: 3px solid #FFC425;
-  padding: 26px 32px 22px;
+  padding: 20px 32px 22px;
 }
 .header-stripe {
   display: flex;
@@ -34,27 +53,37 @@ body {
 .stripe-brown  { flex: 3; background: #7B3F00; }
 .stripe-orange { flex: 1; background: #FF6B2B; }
 .stripe-yellow { flex: 1; background: #FFC425; }
+
 .header-inner {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
+.header-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.header-text { flex: 1; }
 .header-eyebrow {
   font-style: italic;
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #C9961D;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 .header-title {
   font-weight: 700;
-  font-size: 42px;
+  font-size: 40px;
   color: #FFC425;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1;
 }
 .header-sub {
-  margin-top: 8px;
+  margin-top: 7px;
   font-style: italic;
   font-size: 10px;
   color: rgba(255,255,255,0.42);
@@ -280,6 +309,23 @@ body {
 }
 .card-body p + p { margin-top: 13px; }
 
+/* ── RECAP PHOTO ── */
+.card-photo {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+  border-top: 1px solid rgba(255,196,37,0.18);
+}
+.card-photo-caption {
+  padding: 7px 16px 10px;
+  font-size: 10px;
+  font-style: italic;
+  color: rgba(255,255,255,0.40);
+  border-top: 1px solid rgba(255,196,37,0.10);
+  text-align: center;
+}
+
 /* footer */
 .footer {
   margin-top: 24px;
@@ -299,6 +345,13 @@ body {
 <body>
 <div id="root">
 
+  <!-- HERO -->
+
+  <div class="hero">
+    <img src="https://maxbish.github.io/PadresReport/petco_park.jpg" alt="Petco Park" />
+    <div class="hero-overlay"></div>
+  </div>
+
   <!-- HEADER -->
 
   <div class="header">
@@ -308,7 +361,8 @@ body {
       <div class="stripe-yellow"></div>
     </div>
     <div class="header-inner">
-      <div>
+      <img class="header-logo" src="https://maxbish.github.io/PadresReport/padres_logo.png" alt="Padres Logo" />
+      <div class="header-text">
         <div class="header-eyebrow">Max Bish's</div>
         <div class="header-title">Dads Report</div>
         <div class="header-sub">Your #1 Source for Padres Truth · Est. April 2026</div>
@@ -333,10 +387,8 @@ body {
 </div>
 
 <script>
-// ── DATA ──
 const REPORT = {
   nextGames: [
-    { date:"THU APR 24", time:"12:10 PM PT", matchup:"SD Padres @ Colorado Rockies",     venue:"Coors Field" },
     { date:"SAT APR 26", time:"3:05 PM PT",  matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
     { date:"SUN APR 27", time:"1:05 PM PT",  matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
     { date:"MON APR 28", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"  },
@@ -344,6 +396,41 @@ const REPORT = {
     { date:"WED APR 30", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"  },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #25", gameDate:"THU, APRIL 24", venue:"COORS FIELD, DENVER",
+      result:"W", seriesResult:"SERIES W 2-1",
+      away:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"  },
+      home:{ abbr:"COL", city:"COLORADO",  name:"ROCKIES" },
+      awayScore:10, homeScore:8, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","2","0","2","0","1","5"],
+        home:   ["0","3","0","0","3","0","2","0","0"],
+        awayTotals:{ R:"10", H:"12", E:"0" },
+        homeTotals:{ R:"8",  H:"11", E:"0" },
+      },
+      stats:[
+        { label:"WP",       value:"Marinaccio",                    type:"win"     },
+        { label:"SV",       value:"Miller",                        type:"win"     },
+        { label:"LP",       value:"Rockies bullpen",               type:"loss"    },
+        { label:"Sheets",   value:"3-run HR, go-ahead in 9th",     type:"neutral" },
+        { label:"Andújar",  value:"2 RBI, key singles",            type:"neutral" },
+        { label:"Bogaerts", value:"multi-hit",                     type:"neutral" },
+        { label:"Waldron",  value:"LP (5 IP, 6 ER)",               type:"loss"    },
+      ],
+      paragraphs:[
+        "HOLY SHEETS. What a game. If you are an absolute loser and a mindless, employed sheep of society, you probably didnt catch this game (I couldnt watch either). And boy oh boy, did we miss out.",
+        "Let's start with the bad. I made a comment about our starting pitching being elite to start the season at the beginning of this series. That turned out to be just a wittle bit of a lie. Turns out that Matt Waldron should probably go back to just trying to throw a knuckleball 90% of the time and hope it doesn't get smashed. Waldron went 5 innings and gave up more runs than innings pitched, but we're not here to talk about that.",
+        "This game was 8-4 going into the 8th in favor of the Rockies and things felt worse. The Rockies were racking, Morejon gave up a homer (Rockies are cheating, it's obvious), and while we had scored some runs, the bats were just not showing up. Merrill up to that point had 3 strikeouts on 3 plate appearances just to share the feeling of how this one was going.",
+        "However, this team has some mother freaking fight in them. We score a run in the 8th. Tatis even had a chance at hitting a 3 run HR in the 8th to tie this game up, but nah, strikeout for Tatis. That doesn't matter tho (it actually does and I'll expand on that later). Ron Marinaccio shuts down the Rockies in the bottom of the 8th.",
+        "Then all hell breaks loose. Jackson Merrill decides he's tired of striking out today and gets a lead off walk. Manny singles. The summer of Xan continues and he singles (driving in Jackson). Miguel Andujar and Xander legit carried this team offensively today, and Miggy singles to score Manny. And then, the birthday boy arrives. Gavin mfing Sheets walks up there, and on the first pitch screams \"I fucking HATE losing\" and he rips a ball down the right field line and it is GONE. 3 RUN HOMER to take a 10-8 lead. At that point, the game might as well end because we have Mason Miller.",
+        "Mason Miller comes in for the save attempt, gives up 1 hit strangely enough to the second batter, but ends up throwing 7 total pitches to get 3 outs in the bottom of the 9th to close this game and series out. Padres win 10-8, Mason Miller gets the save (didn't throw a strikeout so he's not winning the Cy Young award anymore sadly), and the Dads win the series on the road 2-1.",
+        "As insane of a victory as I can remember for this season so far. So I want to take this time to send a message to our friend Fernando. Whenever you feel like being a professional hitter again for this Padres team, that'd be really dope because we're basically unbeatable when you get your swagger back.",
+        "Up next: Short 2 game series vs the DBacks in Zona and we need wins against this team, both division wise and wild card race wise. Let's go Dads!",
+      ],
+      photo: "https://maxbish.github.io/PadresReport/xander1.webp",
+      photoCaption: "The Summer of Xan continues.",
+    },
     {
       type:"recap", gameLabel:"Game #24", gameDate:"WED, APRIL 22", venue:"COORS FIELD, DENVER",
       result:"L",
@@ -508,6 +595,11 @@ function renderCard(e) {
 
   const paras = e.paragraphs.map(p => `<p>${p}</p>`).join("");
 
+  const photoBlock = e.photo ? `
+    <img class="card-photo" src="${e.photo}" alt="Game photo" />
+    ${e.photoCaption ? `<div class="card-photo-caption">${e.photoCaption}</div>` : ""}
+  ` : "";
+
   return `
     <div class="card ${resultClass}">
       <div class="card-header">
@@ -521,12 +613,12 @@ function renderCard(e) {
       ${e.linescore ? renderLinescore(e.linescore, e.away, e.home) : ""}
       ${renderStats(e.stats)}
       <div class="card-body">${paras}</div>
+      ${photoBlock}
     </div>`;
 }
 
 const entries = document.getElementById("entries");
 REPORT.entries.forEach(e => { entries.innerHTML += renderCard(e); });
-
 </script>
 
 </body>
