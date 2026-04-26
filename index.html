@@ -326,9 +326,10 @@ body {
 /* body text */
 .card-body {
   padding: 14px 16px 18px;
-  font-size: 13px;
-  line-height: 1.80;
-  color: rgba(255,255,255,0.92);
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  line-height: 1.78;
+  color: rgba(255,255,255,0.88);
 }
 .card-body p + p { margin-top: 13px; }
 
@@ -412,13 +413,43 @@ body {
 <script>
 const REPORT = {
   nextGames: [
-    { date:"SAT APR 26", time:"3:05 PM PT",  matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
-    { date:"SUN APR 27", time:"1:05 PM PT",  matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
-    { date:"MON APR 28", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"  },
-    { date:"TUE APR 29", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"  },
-    { date:"WED APR 30", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"  },
+    { date:"SUN APR 27", time:"1:05 PM PT",  matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field"  },
+    { date:"MON APR 28", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"   },
+    { date:"TUE APR 29", time:"6:40 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"   },
+    { date:"WED APR 30", time:"1:10 PM PT",  matchup:"Chicago Cubs @ Petco Park",        venue:"Petco Park"   },
+    { date:"FRI MAY 1",  time:"6:40 PM PT",  matchup:"Chicago White Sox @ Petco Park",   venue:"Petco Park"   },
+    { date:"SAT MAY 2",  time:"5:40 PM PT",  matchup:"Chicago White Sox @ Petco Park",   venue:"Petco Park"   },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #26", gameDate:"SAT, APRIL 26", venue:"MEXICO CITY, MEXICO",
+      result:"W", seriesResult:"W",
+      away:{ abbr:"SD", city:"SAN DIEGO", name:"PADRES" },
+      home:{ abbr:"AZ", city:"ARIZONA",   name:"DIAMONDBACKS" },
+      awayScore:6, homeScore:4, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","0","1","0","4","0","1"],
+        home:   ["0","4","0","0","0","0","0","0","0"],
+        awayTotals:{ R:"6", H:"6", E:"1" },
+        homeTotals:{ R:"4", H:"7", E:"3" },
+      },
+      stats:[
+        { label:"WP",      value:"Márquez (6 IP, 4 ER)",     type:"win"     },
+        { label:"LP",      value:"Clarke",                    type:"loss"    },
+        { label:"SV",      value:"Miller (13 P, 1 IP, 0 ER)", type:"win"     },
+        { label:"Ty France", value:"2-4, 2 HR, 2 RBI",       type:"neutral" },
+        { label:"Sheets",  value:"1 RBI single, 2 RBI",      type:"neutral" },
+        { label:"Morejon", value:"1 IP, 0 ER, 2 K",          type:"neutral" },
+        { label:"Adam",    value:"1 IP, 0 ER",                type:"neutral" },
+      ],
+      paragraphs:[
+        "Life comes at you fast. It comes at you even faster if the German Meatball is pitching in Mexico City. He threw 5 outs, decided he was pitching TOO well, and it was time to get some meatballs involved. He then gave up 4 consecutive runs with 2 outs in the 2nd. Thankfully mr meatball locked in and didnt give up another run in his outing thru 6 innings. Mr Meatball in all honesty has been pitching like so much better than what we were all expecting out of him this season. Morejon got the nod in the 7th and did his thing (his thing includes two runners getting on base but also striking out two batters, i love him so much). Jason Adam got the nod in the 8th. He continues to have little control over his fastball but every other pitch is elite. Mason Miller came in for the 9th to close this game out and did just that. He sets the franchise record for most consecutive innings pitched without giving up a score. MVP. If our starting pitching can get through 6 innings consistently, the Morejon Adam Miller ending rotation is so incredibly dominant.",
+        "Fortunately, life comes at you the fastest if you're the Diamondbacks playing in Mexico City. Their starting pitcher got hit by a ball after Fermin hit the ball back at him and railed him in his throwing shoulder. He had to leave the game. Their starting shortstop also rolled his ankle and got actually hurt in the 7th (in honor of the NFL draft, I thought he had torn his Achilles at first.) He had to leave the game. And best of all, all the fans in Mexico City fucking hate the DBacks and love the Padres. Say what you want, but Mexico City people and I would all be best friends considering we love the Niners and the Padres.",
+        "This Padres offense is hilarious. They do absolutely nothing for 7-8 innings a game but then blow up out of nowhere to score enough runs to win the game all in 1-2 innings. We had the bases loaded TWICE with no outs in just the 7th inning alone, and Gavin Sheets continues to be a baller shot caller (2 RBI single in the 7th). 4 run 7th inning no big deal. Fun fact, Jackson Merrill got to bat twice in the 7th (he started the inning with a walk and then ended the inning as the last out.) Ty France also homered twice this game lmao. Elevation diff.",
+        "All in all, this was one of the games played in Mexico City of all time. Fun Fact x2: Mexico City is 7,300+ ft above sea level (clears Denver by 1,800+ ft). If Fernando cant hit a home run tomorrow, we might as well just accept he's never going to hit another homer ever again. The Dads do be out here getting their conditioning in at this high elevation, which I love but is also Manny's personal hell. Do you know what Manny and I both love though? A Padres victory, 6-4. A great victory against a team that we'll be competing with for a postseason spot, let's get another one tomorrow.",
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #25", gameDate:"THU, APRIL 24", venue:"COORS FIELD, DENVER",
       result:"W", seriesResult:"SERIES W 2-1",
