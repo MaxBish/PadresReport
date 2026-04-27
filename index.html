@@ -5,6 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Max Bish's Dads Report</title>
+  <meta name="description" content="Your #1 source for Padres truth. Game recaps, scores, and hot takes after every game." />
+  <!-- Open Graph for iMessage / social previews -->
+  <meta property="og:title" content="Max Bish's Dads Report" />
+  <meta property="og:description" content="Your #1 source for Padres truth. Game recaps, scores, and hot takes after every game." />
+  <meta property="og:image" content="https://maxbish.github.io/PadresReport/padres_logo.png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:url" content="https://maxbish.github.io/PadresReport/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Max Bish's Dads Report" />
+  <!-- Twitter / iMessage fallback -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Max Bish's Dads Report" />
+  <meta name="twitter:description" content="Your #1 source for Padres truth. Game recaps, scores, and hot takes after every game." />
+  <meta name="twitter:image" content="https://maxbish.github.io/PadresReport/padres_logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -390,6 +405,17 @@ body {
         <div class="header-eyebrow">Max Bish's</div>
         <div class="header-title">Dads Report</div>
         <div class="header-sub">Your #1 Source for Padres Truth · Est. April 2026</div>
+        <div id="record-badge" style="
+          display:inline-flex; align-items:center; gap:8px;
+          margin-top:10px;
+          background:rgba(255,196,37,0.10);
+          border:1px solid rgba(255,196,37,0.25);
+          border-radius:3px;
+          padding:4px 12px;
+        ">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.42);">2026 Record</span>
+          <span id="record-display" style="font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:900;letter-spacing:0.06em;color:#FFC425;"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -412,6 +438,7 @@ body {
 
 <script>
 const REPORT = {
+  record: { w:18, l:9 },
   nextGames: [
     { date:"MON APR 28", time:"6:40 PM PT",  matchup:"SD Padres vs Chicago Cubs",      venue:"Petco Park" },
     { date:"TUE APR 29", time:"6:40 PM PT",  matchup:"SD Padres vs Chicago Cubs",      venue:"Petco Park" },
@@ -610,6 +637,9 @@ const REPORT = {
     },
   ],
 };
+
+// ── RECORD ──
+document.getElementById("record-display").textContent = `${REPORT.record.w}-${REPORT.record.l}`;
 
 // ── RENDER UP NEXT ──
 const upNext = document.getElementById("up-next");
