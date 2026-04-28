@@ -1,1 +1,0 @@
-* Pictures folder for memes
