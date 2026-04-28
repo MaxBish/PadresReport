@@ -106,10 +106,11 @@
     }
     .record-value {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 16px;
-      font-weight: 900;
-      letter-spacing: 0.06em;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
       color: #FFC425;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
     }
 
     /* ── UP NEXT ── */
@@ -131,7 +132,9 @@
       display: flex;
       border-top: 1px solid rgba(255,196,37,0.18);
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .up-next-scroll::-webkit-scrollbar { display: none; }
     .up-next-game {
       flex-shrink: 0;
       min-width: 165px;
@@ -189,7 +192,7 @@
       border: 1px solid rgba(255,196,37,0.18);
       border-left: 3px solid rgba(255,196,37,0.18);
       content-visibility: auto;
-      contain-intrinsic-size: 640px;
+      contain-intrinsic-size: 900px;
     }
     .card.win  { border-left-color: #3DBA6F; }
     .card.loss { border-left-color: #E05252; }
