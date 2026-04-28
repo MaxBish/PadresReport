@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +8,7 @@
   <!-- Open Graph for iMessage / social previews -->
   <meta property="og:title" content="Max Bish's Dads Report" />
   <meta property="og:description" content="Your #1 source for Padres truth. Game recaps, scores, and hot takes after every game." />
-  <meta property="og:image" content="https://maxbish.github.io/PadresReport/padres_logo.png" />
+  <meta property="og:image" content="https://maxbish.github.io/PadresReport/pictures/padres_logo.png" />
   <meta property="og:image:width" content="400" />
   <meta property="og:image:height" content="400" />
   <meta property="og:url" content="https://maxbish.github.io/PadresReport/" />
@@ -19,380 +18,375 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Max Bish's Dads Report" />
   <meta name="twitter:description" content="Your #1 source for Padres truth. Game recaps, scores, and hot takes after every game." />
-  <meta name="twitter:image" content="https://maxbish.github.io/PadresReport/padres_logo.png" />
+  <meta name="twitter:image" content="https://maxbish.github.io/PadresReport/pictures/padres_logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-```
-body {
-  background: #0D1F3C;
-  font-family: Georgia, 'Times New Roman', serif;
-  min-height: 100vh;
-  padding-bottom: 48px;
-}
+    body {
+      background: #0D1F3C;
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+      padding-bottom: 48px;
+    }
 
-#root { max-width: 700px; margin: 0 auto; }
+    #root { max-width: 700px; margin: 0 auto; }
 
-/* ── HERO ── */
-.hero {
-  position: relative;
-  height: 280px;
-  overflow: hidden;
-}
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
-  display: block;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(13,31,60,0.3) 0%, rgba(13,31,60,0.85) 100%);
-}
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(13,31,60,0.3) 0%, rgba(13,31,60,0.85) 100%);
+    }
 
-/* ── HEADER ── */
-.header {
-  background: #0D1F3C;
-  border-bottom: 3px solid #FFC425;
-  padding: 20px 32px 22px;
-}
-.header-stripe {
-  display: flex;
-  height: 3px;
-  margin-bottom: 18px;
-  border-radius: 1px;
-  overflow: hidden;
-}
-.stripe-brown  { flex: 3; background: #7B3F00; }
-.stripe-orange { flex: 1; background: #FF6B2B; }
-.stripe-yellow { flex: 1; background: #FFC425; }
+    /* ── HEADER ── */
+    .header {
+      background: #0D1F3C;
+      border-bottom: 3px solid #FFC425;
+      padding: 20px 32px 22px;
+    }
+    .header-stripe {
+      display: flex;
+      height: 3px;
+      margin-bottom: 18px;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    .stripe-brown  { flex: 3; background: #7B3F00; }
+    .stripe-orange { flex: 1; background: #FF6B2B; }
+    .stripe-yellow { flex: 1; background: #FFC425; }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.header-logo {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-.header-text { flex: 1; }
-.header-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #C9961D;
-  margin-bottom: 4px;
-}
-.header-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 52px;
-  color: #FFC425;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 0.95;
-}
-.header-sub {
-  margin-top: 8px;
-  font-family: 'Barlow', sans-serif;
-  font-size: 10px;
-  color: rgba(255,255,255,0.42);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .header-text { flex: 1; }
+    .header-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #C9961D;
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      color: #FFC425;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+    .header-sub {
+      margin-top: 8px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.42);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-/* ── UP NEXT ── */
-.up-next-wrap {
-  background: #152845;
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-}
-.up-next-label {
-  padding: 10px 32px 7px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #FF6B2B;
-}
-.up-next-scroll {
-  overflow-x: auto;
-  display: flex;
-  border-top: 1px solid rgba(255,196,37,0.18);
-  -webkit-overflow-scrolling: touch;
-}
-.up-next-game {
-  flex-shrink: 0;
-  min-width: 165px;
-  padding: 11px 18px 13px;
-  border-right: 1px solid rgba(255,196,37,0.18);
-}
-.game-date-badge {
-  display: inline-block;
-  background: rgba(255,107,43,0.12);
-  border: 1px solid rgba(255,107,43,0.30);
-  border-radius: 2px;
-  padding: 2px 7px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #FF6B2B;
-  margin-bottom: 7px;
-}
-.game-matchup {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-.game-meta {
-  font-family: 'Barlow', sans-serif;
-  font-size: 10px;
-  color: rgba(255,255,255,0.42);
-  line-height: 1.5;
-}
+    /* ── UP NEXT ── */
+    .up-next-wrap {
+      background: #152845;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
+    .up-next-label {
+      padding: 10px 32px 7px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #FF6B2B;
+    }
+    .up-next-scroll {
+      overflow-x: auto;
+      display: flex;
+      border-top: 1px solid rgba(255,196,37,0.18);
+      -webkit-overflow-scrolling: touch;
+    }
+    .up-next-game {
+      flex-shrink: 0;
+      min-width: 165px;
+      padding: 11px 18px 13px;
+      border-right: 1px solid rgba(255,196,37,0.18);
+    }
+    .game-date-badge {
+      display: inline-block;
+      background: rgba(255,107,43,0.12);
+      border: 1px solid rgba(255,107,43,0.30);
+      border-radius: 2px;
+      padding: 2px 7px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FF6B2B;
+      margin-bottom: 7px;
+    }
+    .game-matchup {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .game-meta {
+      font-family: 'Barlow', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.5;
+    }
 
-/* ── SECTION LABEL ── */
-.section-label {
-  padding: 16px 32px 10px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #FFC425;
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-}
+    /* ── SECTION LABEL ── */
+    .section-label {
+      padding: 16px 32px 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #FFC425;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
 
-/* ── CARD ── */
-.card {
-  margin: 12px 24px 0;
-  border-radius: 3px;
-  overflow: hidden;
-  background: #1A3258;
-  border: 1px solid rgba(255,196,37,0.18);
-  border-left: 3px solid rgba(255,196,37,0.18);
-}
-.card.win  { border-left-color: #3DBA6F; }
-.card.loss { border-left-color: #E05252; }
-.card.off  { border-left-color: #A0522D; }
+    /* ── CARD ── */
+    .card {
+      margin: 12px 24px 0;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #1A3258;
+      border: 1px solid rgba(255,196,37,0.18);
+      border-left: 3px solid rgba(255,196,37,0.18);
+    }
+    .card.win  { border-left-color: #3DBA6F; }
+    .card.loss { border-left-color: #E05252; }
+    .card.off  { border-left-color: #A0522D; }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  background: rgba(0,0,0,0.28);
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-}
-.card-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  color: #FFC425;
-}
-.card-date {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #C8956C;
-  margin-top: 2px;
-}
-.card-result {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.14em;
-}
-.card-result.win  { color: #3DBA6F; }
-.card-result.loss { color: #E05252; }
-.card-result.off  { color: rgba(255,255,255,0.42); }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      background: rgba(0,0,0,0.28);
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
+    .card-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: #FFC425;
+    }
+    .card-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C8956C;
+      margin-top: 2px;
+    }
+    .card-result {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.14em;
+    }
+    .card-result.win  { color: #3DBA6F; }
+    .card-result.loss { color: #E05252; }
+    .card-result.off  { color: rgba(255,255,255,0.42); }
 
-/* score */
-.score-row {
-  display: flex;
-  align-items: center;
-  padding: 16px 20px 14px;
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-}
-.team-block { flex: 1; }
-.team-block.right { text-align: right; }
-.team-abbr {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 36px;
-  color: #FFC425;
-  line-height: 1;
-  letter-spacing: 0.04em;
-}
-.team-name {
-  font-family: 'Barlow', sans-serif;
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
-  margin-top: 4px;
-  line-height: 1.4;
-}
-.score-center {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 22px;
-}
-.score-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 72px;
-  line-height: 1;
-  color: rgba(255,255,255,0.18);
-  letter-spacing: -0.01em;
-}
-.score-num.winner { color: #fff; }
-.score-dash {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 36px;
-  color: rgba(255,196,37,0.25);
-  font-weight: 300;
-}
+    /* score */
+    .score-row {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px 14px;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
+    .team-block { flex: 1; }
+    .team-block.right { text-align: right; }
+    .team-abbr {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 36px;
+      color: #FFC425;
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    .team-name {
+      font-family: 'Barlow', sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .score-center {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 22px;
+    }
+    .score-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 72px;
+      line-height: 1;
+      color: rgba(255,255,255,0.18);
+      letter-spacing: -0.01em;
+    }
+    .score-num.winner { color: #fff; }
+    .score-dash {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      color: rgba(255,196,37,0.25);
+      font-weight: 300;
+    }
 
-/* linescore */
-.linescore-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.linescore {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 400px;
-}
-.linescore th {
-  text-align: center;
-  padding: 5px 3px;
-  font-size: 9px;
-  color: rgba(255,255,255,0.42);
-  background: rgba(0,0,0,0.22);
-  letter-spacing: 0.06em;
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-  border-right: 1px solid rgba(255,196,37,0.18);
-}
-.linescore th.team-col { text-align: left; padding-left: 12px; width: 42px; }
-.linescore th.total-col { color: #C8956C; }
-.linescore th:last-child, .linescore td:last-child { border-right: none; }
-.linescore td {
-  text-align: center;
-  padding: 5px 3px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.92);
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-  border-right: 1px solid rgba(255,196,37,0.18);
-}
-.linescore td.team-col {
-  text-align: left;
-  padding-left: 12px;
-  font-size: 10px;
-  font-weight: 700;
-  color: #FFC425;
-  letter-spacing: 0.10em;
-}
-.linescore td.total-col { font-weight: 700; color: #fff; }
-.linescore tr:last-child td { border-bottom: none; }
+    /* linescore */
+    .linescore-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .linescore {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 400px;
+    }
+    .linescore th {
+      text-align: center;
+      padding: 5px 3px;
+      font-size: 9px;
+      color: rgba(255,255,255,0.42);
+      background: rgba(0,0,0,0.22);
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+      border-right: 1px solid rgba(255,196,37,0.18);
+    }
+    .linescore th.team-col { text-align: left; padding-left: 12px; width: 42px; }
+    .linescore th.total-col { color: #C8956C; }
+    .linescore th:last-child, .linescore td:last-child { border-right: none; }
+    .linescore td {
+      text-align: center;
+      padding: 5px 3px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.92);
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+      border-right: 1px solid rgba(255,196,37,0.18);
+    }
+    .linescore td.team-col {
+      text-align: left;
+      padding-left: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #FFC425;
+      letter-spacing: 0.10em;
+    }
+    .linescore td.total-col { font-weight: 700; color: #fff; }
+    .linescore tr:last-child td { border-bottom: none; }
 
-/* stats */
-.stats-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 10px 16px;
-  border-bottom: 1px solid rgba(255,196,37,0.18);
-}
-.pill {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 2px;
-  white-space: nowrap;
-  letter-spacing: 0.06em;
-  border: 1px solid rgba(255,196,37,0.18);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.92);
-}
-.pill.win  { background: rgba(61,186,111,0.15);  border-color: rgba(61,186,111,0.3);  color: #3DBA6F; }
-.pill.loss { background: rgba(224,82,82,0.15);   border-color: rgba(224,82,82,0.3);   color: #E05252; }
-.pill-label { color: rgba(255,255,255,0.42); font-weight: 400; margin-right: 3px; }
+    /* stats */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
+    .pill {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
+      letter-spacing: 0.06em;
+      border: 1px solid rgba(255,196,37,0.18);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.92);
+    }
+    .pill.win  { background: rgba(61,186,111,0.15);  border-color: rgba(61,186,111,0.3);  color: #3DBA6F; }
+    .pill.loss { background: rgba(224,82,82,0.15);   border-color: rgba(224,82,82,0.3);   color: #E05252; }
+    .pill-label { color: rgba(255,255,255,0.42); font-weight: 400; margin-right: 3px; }
 
-/* body text */
-.card-body {
-  padding: 14px 16px 18px;
-  font-family: 'Barlow', sans-serif;
-  font-size: 14px;
-  line-height: 1.78;
-  color: rgba(255,255,255,0.88);
-}
-.card-body p + p { margin-top: 13px; }
+    /* body text */
+    .card-body {
+      padding: 14px 16px 18px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      line-height: 1.78;
+      color: rgba(255,255,255,0.88);
+    }
+    .card-body p + p { margin-top: 13px; }
 
-/* ── RECAP PHOTO ── */
-.card-photo {
-  width: 100%;
-  max-height: 340px;
-  object-fit: cover;
-  display: block;
-  border-top: 1px solid rgba(255,196,37,0.18);
-}
-.card-photo-caption {
-  padding: 7px 16px 10px;
-  font-size: 10px;
-  font-style: italic;
-  color: rgba(255,255,255,0.40);
-  border-top: 1px solid rgba(255,196,37,0.10);
-  text-align: center;
-}
+    /* ── RECAP PHOTO ── */
+    .card-photo {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      display: block;
+      border-top: 1px solid rgba(255,196,37,0.18);
+    }
+    .card-photo-caption {
+      padding: 7px 16px 10px;
+      font-size: 10px;
+      font-style: italic;
+      color: rgba(255,255,255,0.40);
+      border-top: 1px solid rgba(255,196,37,0.10);
+      text-align: center;
+    }
 
-/* footer */
-.footer {
-  margin-top: 24px;
-  padding: 14px 32px;
-  border-top: 1px solid rgba(255,196,37,0.18);
-  text-align: center;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
-}
-```
-
+    /* footer */
+    .footer {
+      margin-top: 24px;
+      padding: 14px 32px;
+      border-top: 1px solid rgba(255,196,37,0.18);
+      text-align: center;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+    }
   </style>
 </head>
 <body>
 <div id="root">
 
   <!-- HERO -->
-
   <div class="hero">
-    <img src="https://maxbish.github.io/PadresReport/petco_park.jpg" alt="Petco Park" />
+    <img src="https://maxbish.github.io/PadresReport/pictures/petco_park.jpg" alt="Petco Park" />
     <div class="hero-overlay"></div>
   </div>
 
   <!-- HEADER -->
-
   <div class="header">
     <div class="header-stripe">
       <div class="stripe-brown"></div>
@@ -400,7 +394,7 @@ body {
       <div class="stripe-yellow"></div>
     </div>
     <div class="header-inner">
-      <img class="header-logo" src="https://maxbish.github.io/PadresReport/padres_logo.png" alt="Padres Logo" />
+      <img class="header-logo" src="https://maxbish.github.io/PadresReport/pictures/padres_logo.png" alt="Padres Logo" />
       <div class="header-text">
         <div class="header-eyebrow">Max Bish's</div>
         <div class="header-title">Dads Report</div>
@@ -421,14 +415,12 @@ body {
   </div>
 
   <!-- UP NEXT -->
-
   <div class="up-next-wrap">
     <div class="up-next-label">Up Next</div>
     <div class="up-next-scroll" id="up-next"></div>
   </div>
 
   <!-- RECENT RESULTS -->
-
   <div style="height:8px"></div>
   <div class="section-label">Recent Results</div>
   <div id="entries"></div>
@@ -438,16 +430,50 @@ body {
 
 <script>
 const REPORT = {
-  record: { w:18, l:9 },
+  record: { w:19, l:9 },
   nextGames: [
-    { date:"MON APR 28", time:"6:40 PM PT",  matchup:"SD Padres vs Chicago Cubs",      venue:"Petco Park" },
-    { date:"TUE APR 29", time:"6:40 PM PT",  matchup:"SD Padres vs Chicago Cubs",      venue:"Petco Park" },
-    { date:"WED APR 30", time:"1:10 PM PT",  matchup:"SD Padres vs Chicago Cubs",      venue:"Petco Park" },
-    { date:"FRI MAY 1",  time:"6:40 PM PT",  matchup:"SD Padres vs Chicago White Sox", venue:"Petco Park" },
-    { date:"SAT MAY 2",  time:"5:40 PM PT",  matchup:"SD Padres vs Chicago White Sox", venue:"Petco Park" },
-    { date:"SUN MAY 3",  time:"1:10 PM PT",  matchup:"SD Padres vs Chicago White Sox", venue:"Petco Park" },
+    { date:"TUE APR 29", time:"6:40 PM PT",  matchup:"SD Padres vs Chicago Cubs",       venue:"Petco Park" },
+    { date:"WED APR 30", time:"1:10 PM PT",  matchup:"SD Padres vs Chicago Cubs",       venue:"Petco Park" },
+    { date:"FRI MAY 1",  time:"6:40 PM PT",  matchup:"SD Padres vs Chicago White Sox",  venue:"Petco Park" },
+    { date:"SAT MAY 2",  time:"5:40 PM PT",  matchup:"SD Padres vs Chicago White Sox",  venue:"Petco Park" },
+    { date:"SUN MAY 3",  time:"1:10 PM PT",  matchup:"SD Padres vs Chicago White Sox",  venue:"Petco Park" },
+    { date:"MON MAY 4",  time:"6:45 PM PT",  matchup:"SD Padres @ San Francisco Giants",venue:"Oracle Park" },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #28", gameDate:"MON, APRIL 28", venue:"PETCO PARK, SAN DIEGO",
+      result:"W",
+      away:{ abbr:"CHC", city:"CHICAGO", name:"CUBS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES" },
+      awayScore:7, homeScore:9, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","1","4","0","0","0","0","0","2"],
+        home:   ["3","0","1","0","2","0","2","1","X"],
+        awayTotals:{ R:"7", H:"8",  E:"0" },
+        homeTotals:{ R:"9", H:"14", E:"0" },
+      },
+      stats:[
+        { label:"WP",       value:"Vásquez (5 IP, 5 ER, 4 K)",   type:"win"     },
+        { label:"LP",       value:"Ben Brown",                    type:"loss"    },
+        { label:"Ty France",value:"2-5, 2B, 3B, 4 RBI",          type:"neutral" },
+        { label:"Machado",  value:"3-4, 2 2B, 3 R",              type:"neutral" },
+        { label:"Sheets",   value:"HR (2 out, 2 strike, 8th)",   type:"neutral" },
+        { label:"Morejon",  value:"1.2 IP, 0 ER, 2 K",           type:"neutral" },
+        { label:"Adam",     value:"1.1 IP, 0 ER, 1 K",           type:"neutral" },
+        { label:"Miller",   value:"1 IP, 2 ER (streak ends)",     type:"neutral" },
+      ],
+      paragraphs:[
+        "So let start off by saying that Laines and I went to this game and it was ELECTRIC. The vibes started off so high with a 3 run 1st inning. Ty France was 5 feet short of hitting a grand slam, but we'll settle for a 2 RBI double.",
+        "Randy V had a pretty rough outing, giving up 5 runs thru 5 IP, but he still gets the W in this one. The defense was also shaky in this game, but it didn't matter because we scored 9 runs in this game. Manny is starting to get hot too, he hit 2 doubles in this game before leaving for precautionary reasons. The precautionary reason is he is so fat that sliding into second twice hurt his hamstrings. Laines even made a comment watching the replay on the big screen that he had that pufferfish, teeth clenched look in the face while sprinting as fast as he could to 2nd (he wasnt moving that fast, he was trying his best tho, really hope he's all healthy and set for tomorrow.)",
+        "MVP of the game on offense was Ty France. He had a double, a triple, and 4 RBI in this game. Best cheap bat of the season so far and it's not even close. He's an above average defender with the glove too so we are cooking with gas with this fella.",
+        "Adrian Morejon came in in the 6th and shut em down for 1.2 IP, Jason Adam came in and shut em down for 1.1 IP, and then the story of this game came.",
+        "Mason Miller comes in because he was the only one warmed up considering the game was 8-5 with 2 outs in the 8th. Then Gavin Sheets who came in for Manny hit a homer with 2 strikes 2 outs in the bottom of the 8th. Hence making the game 9-5. Xander gets out immediately after, and nobody else is warmed up in the bullpen so we have to put Mason Miller in in a non-save situation. Not ideal. The vibes were off, and they didn't even do his sick ass entrance because we all didn't even realize he was coming in in a non-save situation. Then his very first batter, the umpire makes one of the worst calls you'll see this entire baseball season. See the below image.",
+        "That is the baseball on the foul side of the line before it gets picked up. The umpire called that ball fair, and it's not reviewable so the leadoff runner was on. The call was so horrific it threw off Miller, eventually leading to him giving up 2 runs and ending his record setting scoreless streak. Just absolutely disgusting. Don't worry though, we all did our job in Petco and boo'd the umpire for the entirety of the next 3 at bats (which probably didn't help Miller either.) Anyways, he got the final 3 outs and doesn't get a save but we win so whatever. Dads 9-7, we focus on that and aim at getting a series W by winning tomorrow. Dads have won a few in a row at home, let's keep that going!",
+      ],
+      photo: "https://maxbish.github.io/PadresReport/pictures/horriblecall.JPG",
+      photoCaption: "That ball is foul. Not reviewable. Criminal.",
+    },
     {
       type:"recap", gameLabel:"Game #27", gameDate:"SUN, APRIL 27", venue:"MEXICO CITY, MEXICO",
       result:"L",
@@ -543,7 +569,7 @@ const REPORT = {
         "As insane of a victory as I can remember for this season so far. So I want to take this time to send a message to our friend Fernando. Whenever you feel like being a professional hitter again for this Padres team, that'd be really dope because we're basically unbeatable when you get your swagger back.",
         "Up next: Short 2 game series vs the DBacks in Zona and we need wins against this team, both division wise and wild card race wise. Let's go Dads!",
       ],
-      photo: "https://maxbish.github.io/PadresReport/xander1.webp",
+      photo: "https://maxbish.github.io/PadresReport/pictures/xander1.webp",
       photoCaption: "The Summer of Xan continues.",
     },
     {
@@ -738,6 +764,5 @@ function renderCard(e) {
 const entries = document.getElementById("entries");
 REPORT.entries.forEach(e => { entries.innerHTML += renderCard(e); });
 </script>
-
 </body>
 </html>
