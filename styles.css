@@ -120,7 +120,7 @@
     .up-next-label {
       padding: 10px 32px 7px;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -145,7 +145,7 @@
       border-radius: 2px;
       padding: 2px 7px;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -155,7 +155,7 @@
     .game-matchup {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 15px;
       letter-spacing: 0.03em;
       color: #fff;
       line-height: 1.2;
@@ -163,7 +163,7 @@
     }
     .game-meta {
       font-family: 'Barlow', sans-serif;
-      font-size: 10px;
+      font-size: 11px;
       color: rgba(255,255,255,0.42);
       line-height: 1.5;
     }
@@ -172,7 +172,7 @@
     .section-label {
       padding: 16px 32px 10px;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -205,7 +205,7 @@
     }
     .card-label {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.20em;
       text-transform: uppercase;
@@ -213,7 +213,7 @@
     }
     .card-date {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -223,7 +223,7 @@
     .card-result {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 18px;
       letter-spacing: 0.14em;
     }
     .card-result.win  { color: #3DBA6F; }
@@ -242,14 +242,14 @@
     .team-abbr {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 36px;
+      font-size: 42px;
       color: #FFC425;
       line-height: 1;
       letter-spacing: 0.04em;
     }
     .team-name {
       font-family: 'Barlow', sans-serif;
-      font-size: 8px;
+      font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -266,7 +266,7 @@
     .score-num {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 72px;
+      font-size: 82px;
       line-height: 1;
       color: rgba(255,255,255,0.18);
       letter-spacing: -0.01em;
@@ -274,7 +274,7 @@
     .score-num.winner { color: #fff; }
     .score-dash {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 36px;
+      font-size: 40px;
       color: rgba(255,196,37,0.25);
       font-weight: 300;
     }
@@ -289,7 +289,7 @@
     .linescore th {
       text-align: center;
       padding: 5px 3px;
-      font-size: 9px;
+      font-size: 10px;
       color: rgba(255,255,255,0.42);
       background: rgba(0,0,0,0.22);
       letter-spacing: 0.06em;
@@ -302,7 +302,7 @@
     .linescore td {
       text-align: center;
       padding: 5px 3px;
-      font-size: 11px;
+      font-size: 13px;
       color: rgba(255,255,255,0.92);
       border-bottom: 1px solid rgba(255,196,37,0.18);
       border-right: 1px solid rgba(255,196,37,0.18);
@@ -310,7 +310,7 @@
     .linescore td.team-col {
       text-align: left;
       padding-left: 12px;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       color: #FFC425;
       letter-spacing: 0.10em;
@@ -328,9 +328,9 @@
     }
     .pill {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 4px 11px;
       border-radius: 2px;
       white-space: nowrap;
       letter-spacing: 0.06em;
@@ -346,8 +346,8 @@
     .card-body {
       padding: 14px 16px 18px;
       font-family: 'Barlow', sans-serif;
-      font-size: 14px;
-      line-height: 1.78;
+      font-size: 15px;
+      line-height: 1.85;
       color: rgba(255,255,255,0.88);
     }
     .card-body p + p { margin-top: 13px; }
@@ -398,9 +398,12 @@
       .card { margin: 10px 10px 0; }
       .score-row { padding: 12px; }
       .score-center { padding: 0 12px; gap: 6px; }
-      .score-num { font-size: 52px; }
-      .score-dash { font-size: 26px; }
-      .team-abbr { font-size: 28px; }
+      .score-num { font-size: 58px; }
+      .score-dash { font-size: 30px; }
+      .team-abbr { font-size: 32px; }
+      .team-name { font-size: 9px; }
+      .linescore td { font-size: 12px; }
+      .card-body { font-size: 14px; line-height: 1.8; }
 
       .up-next-game { min-width: 150px; padding: 10px 12px 12px; }
     }
