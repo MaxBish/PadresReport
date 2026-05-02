@@ -372,6 +372,31 @@
       text-align: center;
     }
 
+    .older-wrap {
+      padding: 14px 24px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .older-toggle {
+      border: 1px solid rgba(255,196,37,0.30);
+      background: rgba(255,196,37,0.08);
+      color: #FFC425;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      padding: 9px 14px;
+      cursor: pointer;
+    }
+    .older-toggle:hover {
+      background: rgba(255,196,37,0.14);
+    }
+    .older-entries {
+      margin-top: 6px;
+    }
+
     /* footer */
     .footer {
       margin-top: 24px;
@@ -409,4 +434,5 @@
       .card-body { font-size: 14px; line-height: 1.8; }
 
       .up-next-game { min-width: 150px; padding: 10px 12px 12px; }
+      .older-wrap { padding-left: 10px; padding-right: 10px; }
     }

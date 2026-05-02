@@ -109,9 +109,60 @@ function renderCard(e) {
     </article>`;
 }
 
+function getSeriesKey(entry) {
+  if (entry.type !== "recap" || !entry.away || !entry.home) return null;
+  const isHome = entry.home.abbr === "SD";
+  const opponent = isHome ? entry.away.abbr : entry.home.abbr;
+  return `${isHome ? "H" : "A"}-${opponent}`;
+}
+
+function splitEntriesByRecentSeries(entriesList, maxSeries) {
+  const visible = [];
+  const older = [];
+  let currentSeriesKey = null;
+  let seriesSeen = 0;
+  let useVisibleBucket = true;
+
+  for (const entry of entriesList) {
+    const seriesKey = getSeriesKey(entry);
+    if (seriesKey && seriesKey !== currentSeriesKey) {
+      currentSeriesKey = seriesKey;
+      seriesSeen += 1;
+      if (seriesSeen > maxSeries) {
+        useVisibleBucket = false;
+      }
+    }
+
+    if (useVisibleBucket) {
+      visible.push(entry);
+    } else {
+      older.push(entry);
+    }
+  }
+
+  return { visible, older };
+}
+
 const entries = document.getElementById("entries");
-if (entries) {
-  entries.innerHTML = report.entries.map(renderCard).join("");
+if (entries && Array.isArray(report.entries)) {
+  const split = splitEntriesByRecentSeries(report.entries, 2);
+  entries.innerHTML = split.visible.map(renderCard).join("");
+
+  const olderWrap = document.getElementById("older-wrap");
+  const olderToggle = document.getElementById("older-toggle");
+  const olderEntries = document.getElementById("older-entries");
+
+  if (olderWrap && olderToggle && olderEntries && split.older.length) {
+    olderEntries.innerHTML = split.older.map(renderCard).join("");
+    olderWrap.hidden = false;
+
+    olderToggle.addEventListener("click", () => {
+      const expanded = olderToggle.getAttribute("aria-expanded") === "true";
+      olderToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+      olderEntries.hidden = expanded;
+      olderToggle.textContent = expanded ? "View Older Series" : "Hide Older Series";
+    });
+  }
 }
 }
 
