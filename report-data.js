@@ -38,7 +38,7 @@ stats:[
 { label:“Peralta”,   value:“2 IP, 0 ER”,                      type:“neutral” },
 ],
 paragraphs:[
-“The German Meatball got the start tonight and immediately went to work, giving up 6 runs in the 2nd inning via 3 hits and 4 walks. The walks have been a REALLY big problem as of late for every starter. We cannot continue to allow free base runners to the opposing teams, it’s just awful awful ball.”,
+“The German Meatball got the start tonight and immediately went to work, giving up 6 runs in the 2nd inning via 3 hits and 4 walks. The walks have been a REALLY big problem as of late for every starter. We cannot continue to allow free base runners to the opposing teams, it’s just awful awful ball. Might be time to consider upgrading our starting pitching.”,
 “Noah Schultz got the start tonight for the Southside Sox. He is a fucking beast. 22 years old, rookie, and looking like he has got the stuff to be an ace in this league for a long time. We only managed 2 hits in 6 IP against this guy. I wish we had a pitcher like this guy. Also, the Sox have a guy named Munetaka Murakami whose nickname is the Southside Samurai, which is objectively a baddddd asssss nickname. He’s a Japanese 1st baseman and he’s tied for the league lead in homers (he hit a 3 run homer tonight off the meatball thrower). He’s on pace for 66 HRs this year. Southside Samurai indeed. Sox are building something nicely.”,
 “Jackson got a rest day, Tatis showed up and went 3-3, nobody else did jack. Just a classic Pads storyline for this season during this 3 game losing streak. Good thing we’ll turn it around tomorrow!”,
 ],
