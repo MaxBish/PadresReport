@@ -130,7 +130,7 @@ paragraphs:[
 "Mason Miller comes in because he was the only one warmed up considering the game was 8-5 with 2 outs in the 8th. Then Gavin Sheets who came in for Manny hit a homer with 2 strikes 2 outs in the bottom of the 8th. Hence making the game 9-5. Xander gets out immediately after, and nobody else is warmed up in the bullpen so we have to put Mason Miller in in a non-save situation. Not ideal. The vibes were off, and they didn't even do his sick ass entrance because we all didn't even realize he was coming in in a non-save situation. Then his very first batter, the umpire makes one of the worst calls you'll see this entire baseball season. See the below image.",
 "That is the baseball on the foul side of the line before it gets picked up. The umpire called that ball fair, and it's not reviewable so the leadoff runner was on. The call was so horrific it threw off Miller, eventually leading to him giving up 2 runs and ending his record setting scoreless streak. Just absolutely disgusting. Don't worry though, we all did our job in Petco and boo'd the umpire for the entirety of the next 3 at bats (which probably didn't help Miller either.) Anyways, he got the final 3 outs and doesn't get a save but we win so whatever. Dads 9-7, we focus on that and aim at getting a series W by winning tomorrow. Dads have won a few in a row at home, let's keep that going!",
 ],
-photo: "https://maxbish.github.io/PadresReport/pictures/horriblecall.JPG",
+photo: "https://maxbish.github.io/PadresReport/pictures/horriblecall.webp",
 photoCaption: "That ball is foul. Not reviewable. Criminal.",
 },
 {
@@ -227,7 +227,7 @@ paragraphs:[
 "As insane of a victory as I can remember for this season so far. So I want to take this time to send a message to our friend Fernando. Whenever you feel like being a professional hitter again for this Padres team, that'd be really dope because we're basically unbeatable when you get your swagger back.",
 "Up next: Short 2 game series vs the DBacks in Zona and we need wins against this team, both division wise and wild card race wise. Let's go Dads!",
 ],
-photo: "https://maxbish.github.io/PadresReport/pictures/xander1.webp",
+photo: "https://maxbish.github.io/PadresReport/pictures/xander1_optimized.webp",
 photoCaption: "The Summer of Xan continues.",
 },
 {

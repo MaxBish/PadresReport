@@ -153,11 +153,15 @@ if (entries && Array.isArray(report.entries)) {
   const olderEntries = document.getElementById("older-entries");
 
   if (olderWrap && olderToggle && olderEntries && split.older.length) {
-    olderEntries.innerHTML = split.older.map(renderCard).join("");
     olderWrap.hidden = false;
+    let olderRendered = false;
 
     olderToggle.addEventListener("click", () => {
       const expanded = olderToggle.getAttribute("aria-expanded") === "true";
+      if (!expanded && !olderRendered) {
+        olderEntries.innerHTML = split.older.map(renderCard).join("");
+        olderRendered = true;
+      }
       olderToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
       olderEntries.hidden = expanded;
       olderToggle.textContent = expanded ? "View Older Series" : "Hide Older Series";
