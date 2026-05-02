@@ -372,6 +372,105 @@
       text-align: center;
     }
 
+    .comments {
+      border-top: 1px solid rgba(255,196,37,0.14);
+      padding: 12px 16px 14px;
+      background: rgba(0,0,0,0.16);
+    }
+    .comments-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #FFC425;
+      margin-bottom: 8px;
+    }
+    .comment-form {
+      display: grid;
+      gap: 8px;
+    }
+    .comment-name,
+    .comment-text-input {
+      width: 100%;
+      border: 1px solid rgba(255,196,37,0.18);
+      border-radius: 3px;
+      background: rgba(13,31,60,0.56);
+      color: rgba(255,255,255,0.95);
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      padding: 8px 10px;
+    }
+    .comment-name::placeholder,
+    .comment-text-input::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+    .comment-text-input {
+      resize: vertical;
+      min-height: 72px;
+    }
+    .comment-submit {
+      justify-self: start;
+      border: 1px solid rgba(255,196,37,0.32);
+      background: rgba(255,196,37,0.10);
+      color: #FFC425;
+      border-radius: 3px;
+      padding: 8px 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .comment-submit:hover {
+      background: rgba(255,196,37,0.16);
+    }
+    .comment-list {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .comment-item {
+      background: rgba(13,31,60,0.45);
+      border: 1px solid rgba(255,196,37,0.14);
+      border-radius: 3px;
+      padding: 8px 10px;
+    }
+    .comment-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .comment-author {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #FFC425;
+      text-transform: uppercase;
+    }
+    .comment-time {
+      font-family: 'Barlow', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+    }
+    .comment-text {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .comment-empty {
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+    }
+
     .older-wrap {
       padding: 14px 24px 0;
       display: flex;
@@ -435,4 +534,5 @@
 
       .up-next-game { min-width: 150px; padding: 10px 12px 12px; }
       .older-wrap { padding-left: 10px; padding-right: 10px; }
+      .comments { padding: 10px 12px 12px; }
     }

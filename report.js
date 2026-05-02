@@ -1,4 +1,117 @@
 function initReport(report) {
+const COMMENTS_STORAGE_KEY = "padresReportComments.v1";
+
+function loadCommentsStore() {
+  try {
+    const raw = localStorage.getItem(COMMENTS_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveCommentsStore(store) {
+  try {
+    localStorage.setItem(COMMENTS_STORAGE_KEY, JSON.stringify(store));
+  } catch {
+    // Ignore storage failures (private mode/quota); page should still work.
+  }
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function getEntryId(entry) {
+  const away = entry.away && entry.away.abbr ? entry.away.abbr : "";
+  const home = entry.home && entry.home.abbr ? entry.home.abbr : "";
+  return [
+    entry.type || "",
+    entry.gameLabel || "",
+    entry.gameDate || entry.offDaySub || "",
+    entry.venue || "",
+    away,
+    home,
+  ].join("|");
+}
+
+function formatCommentTime(ts) {
+  try {
+    return new Date(ts).toLocaleString([], {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    });
+  } catch {
+    return "";
+  }
+}
+
+function renderCommentList(comments) {
+  if (!comments.length) {
+    return '<div class="comment-empty">No comments yet.</div>';
+  }
+
+  return comments.map((c) => `
+    <div class="comment-item">
+      <div class="comment-meta">
+        <span class="comment-author">${escapeHtml(c.name)}</span>
+        <span class="comment-time">${escapeHtml(formatCommentTime(c.ts))}</span>
+      </div>
+      <div class="comment-text">${escapeHtml(c.text)}</div>
+    </div>
+  `).join("");
+}
+
+const commentsStore = loadCommentsStore();
+
+function initializeCommentSections(rootEl) {
+  if (!rootEl) return;
+
+  const sections = rootEl.querySelectorAll(".comments");
+  sections.forEach((section) => {
+    const entryId = section.getAttribute("data-entry-id");
+    const listEl = section.querySelector(".comment-list");
+    const formEl = section.querySelector(".comment-form");
+    const nameInput = section.querySelector(".comment-name");
+    const textInput = section.querySelector(".comment-text-input");
+
+    if (!entryId || !listEl || !formEl || !textInput) return;
+
+    const existing = Array.isArray(commentsStore[entryId]) ? commentsStore[entryId] : [];
+    listEl.innerHTML = renderCommentList(existing);
+
+    if (formEl.dataset.bound === "true") return;
+    formEl.dataset.bound = "true";
+
+    formEl.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const text = textInput.value.trim();
+      if (!text) return;
+
+      const name = nameInput && nameInput.value.trim()
+        ? nameInput.value.trim().slice(0, 32)
+        : "Anonymous";
+
+      const nextComment = { name, text: text.slice(0, 400), ts: Date.now() };
+      const current = Array.isArray(commentsStore[entryId]) ? commentsStore[entryId] : [];
+      commentsStore[entryId] = [...current, nextComment].slice(-100);
+      saveCommentsStore(commentsStore);
+
+      listEl.innerHTML = renderCommentList(commentsStore[entryId]);
+      textInput.value = "";
+    });
+  });
+}
+
 // ── RECORD ──
 const computedRecord = report.entries.reduce((acc, e) => {
   if (e.result === "W") acc.w += 1;
@@ -92,6 +205,20 @@ function renderCard(e) {
     ${e.photoCaption ? `<div class="card-photo-caption">${e.photoCaption}</div>` : ""}
   ` : "";
 
+  const entryId = escapeHtml(getEntryId(e));
+
+  const commentsBlock = `
+    <div class="comments" data-entry-id="${entryId}">
+      <div class="comments-title">Comments</div>
+      <form class="comment-form">
+        <input class="comment-name" type="text" maxlength="32" placeholder="Name (optional)" />
+        <textarea class="comment-text-input" maxlength="400" rows="3" placeholder="Add a comment..."></textarea>
+        <button class="comment-submit" type="submit">Post</button>
+      </form>
+      <div class="comment-list"></div>
+    </div>
+  `;
+
   return `
     <article class="card ${resultClass}">
       <div class="card-header">
@@ -106,6 +233,7 @@ function renderCard(e) {
       ${renderStats(e.stats)}
       <div class="card-body">${paras}</div>
       ${photoBlock}
+      ${commentsBlock}
     </article>`;
 }
 
@@ -147,6 +275,7 @@ const entries = document.getElementById("entries");
 if (entries && Array.isArray(report.entries)) {
   const split = splitEntriesByRecentSeries(report.entries, 2);
   entries.innerHTML = split.visible.map(renderCard).join("");
+  initializeCommentSections(entries);
 
   const olderWrap = document.getElementById("older-wrap");
   const olderToggle = document.getElementById("older-toggle");
@@ -160,6 +289,7 @@ if (entries && Array.isArray(report.entries)) {
       const expanded = olderToggle.getAttribute("aria-expanded") === "true";
       if (!expanded && !olderRendered) {
         olderEntries.innerHTML = split.older.map(renderCard).join("");
+        initializeCommentSections(olderEntries);
         olderRendered = true;
       }
       olderToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
