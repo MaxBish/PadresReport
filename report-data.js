@@ -44,6 +44,8 @@ const REPORT = {
         "On a brighter note, Jeremiah Estrada is back and he provides much needed bullpen depth. We love to see that, and he strikes out the only 3 batters that he sees today. Very encouraging. Also, the good news about our losing streak is that the entire division has all decided to stand in solidarity with our complete buttcheeks-ness and lose all their games too. Dodgers have lost 4 in a row too, and we're still just a half game back from the division lead. Things could be worse. The only team in the MLB on a worse losing streak than the Dodgers and Padres right now is Trevor's very own San Francisco Giants, who have lost 5 in a row. Good news everyone, the Padres play the Giants next after this series in SF. Shoutout Trevor! We could use a few dubskis. Good night everyone, and I'll see you on church day tomorrow.",
       ],
     },
+    {
+      type:"recap", gameLabel:"Game #31", gameDate:"FRI, MAY 1", venue:"PETCO PARK, SAN DIEGO",
       result:"L",
       away:{ abbr:"CWS", city:"CHICAGO",   name:"WHITE SOX" },
       home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
