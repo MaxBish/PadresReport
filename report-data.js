@@ -17,7 +17,7 @@ const REPORT = {
     },
     {
       type:"recap", gameLabel:"Game #33", gameDate:"SUN, MAY 3", venue:"PETCO PARK, SAN DIEGO",
-      result:"W", seriesResult:"SERIES W 2-1",
+      result:"W", seriesResult:"SERIES L 1-2",
       away:{ abbr:"CWS", city:"CHICAGO",   name:"WHITE SOX" },
       home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
       awayScore:3, homeScore:4, winnerIsHome:true,
@@ -47,6 +47,8 @@ const REPORT = {
         "Mason Miller strikes out two on some nastiness, looked to get back into his groove this game after not being used for a few games. Here comes the winning streak! We lost several games to the Giants to start the season but we're a different ball club and they're definitely a different ball club. Let the games begin, bring it on Giants fans!",
         "Also, Fernando didn't play today LOL. If you haven't seen, I encourage you all to google Fernando Tatis swing because everybody and their mama on the internet has an opinion on his current broken ass swing mechanics and the fact that he's on one of 3 MLB players with 150+ AB and no homers (the other two suck ass, ask Trevor about one of them *cough cough* Luis Arraez *cough cough*).",
       ],
+      photo: "https://maxbish.github.io/PadresReport/pictures/xander1_optimized.webp",
+      photoCaption: "Another 280 million to Xander Bogaerts. Worth it.",
     },
     {
       type:"recap", gameLabel:"Game #32", gameDate:"SAT, MAY 2", venue:"PETCO PARK, SAN DIEGO",
@@ -289,8 +291,6 @@ const REPORT = {
         "As insane of a victory as I can remember for this season so far. So I want to take this time to send a message to our friend Fernando. Whenever you feel like being a professional hitter again for this Padres team, that'd be really dope because we're basically unbeatable when you get your swagger back.",
         "Up next: Short 2 game series vs the DBacks in Zona and we need wins against this team, both division wise and wild card race wise. Let's go Dads!",
       ],
-      photo: "https://maxbish.github.io/PadresReport/pictures/xander1_optimized.webp",
-      photoCaption: "The Summer of Xan continues.",
     },
     {
       type:"recap", gameLabel:"Game #24", gameDate:"WED, APRIL 22", venue:"COORS FIELD, DENVER",
