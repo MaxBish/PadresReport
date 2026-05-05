@@ -10,12 +10,6 @@ const REPORT = {
   ],
   entries: [
     {
-      type:"offday", gameLabel:"A Note To My Readers", offDaySub:"FROM THE DESK OF MAX BISH", result:"OFF",
-      paragraphs:[
-        "Hand up, I had an absolute horribly long and painful week of work and it impacted the Dads report. I will strive to make sure this never happens again. I have to be better than that for my audience, and I will be. You all expect the best, most unfiltered, sexiest takes on this current Dads team and you rely on me. This is a responsibility I do not take lightly. Thank you for your patience, time, and eyeballs. I will be better.",
-      ],
-    },
-    {
       type:"recap", gameLabel:"Game #34", gameDate:"MON, MAY 4", venue:"ORACLE PARK, SAN FRANCISCO",
       result:"L",
       away:{ abbr:"SD", city:"SAN DIEGO",     name:"PADRES" },
