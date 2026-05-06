@@ -205,6 +205,8 @@ function renderCard(e) {
     ${e.photoCaption ? `<div class="card-photo-caption">${e.photoCaption}</div>` : ""}
   ` : "";
 
+  const gifBlock = e.gif ? `<div class="card-gif">${e.gif}</div>` : "";
+
   const entryId = escapeHtml(getEntryId(e));
 
   const commentsBlock = `
@@ -233,6 +235,7 @@ function renderCard(e) {
       ${renderStats(e.stats)}
       <div class="card-body">${paras}</div>
       ${photoBlock}
+      ${gifBlock}
       ${commentsBlock}
     </article>`;
 }
@@ -276,6 +279,14 @@ if (entries && Array.isArray(report.entries)) {
   const split = splitEntriesByRecentSeries(report.entries, 2);
   entries.innerHTML = split.visible.map(renderCard).join("");
   initializeCommentSections(entries);
+
+  // Load Tenor embed.js if any entry has a gif
+  if (report.entries.some(e => e.gif)) {
+    const tenorScript = document.createElement("script");
+    tenorScript.src = "https://tenor.com/embed.js";
+    tenorScript.async = true;
+    document.body.appendChild(tenorScript);
+  }
 
   const olderWrap = document.getElementById("older-wrap");
   const olderToggle = document.getElementById("older-toggle");
