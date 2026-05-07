@@ -1,7 +1,6 @@
 const REPORT = {
-  record: { w:21, l:14 },
+  record: { w:22, l:14 },
   nextGames: [
-    { date:"WED MAY 6",  time:"12:45 PM PT", matchup:"SD Padres @ San Francisco Giants", venue:"Oracle Park" },
     { date:"THU MAY 7",  time:"7:10 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
     { date:"FRI MAY 8",  time:"6:45 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
     { date:"SAT MAY 9",  time:"4:15 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
@@ -9,6 +8,37 @@ const REPORT = {
     { date:"TUE MAY 12", time:"4:40 PM PT",  matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #36", gameDate:"WED, MAY 6", venue:"ORACLE PARK, SAN FRANCISCO",
+      result:"W", seriesResult:"SERIES W 2-1",
+      away:{ abbr:"SD", city:"SAN DIEGO",     name:"PADRES" },
+      home:{ abbr:"SF", city:"SAN FRANCISCO", name:"GIANTS" },
+      awayScore:5, homeScore:1, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","1","0","0","2","2","0"],
+        home:   ["0","0","0","0","1","0","0","0","0"],
+        awayTotals:{ R:"5", H:"6", E:"0" },
+        homeTotals:{ R:"1", H:"3", E:"1" },
+      },
+      stats:[
+        { label:"WP",        value:"Waldron (5 IP, 2 H, 1 ER, 7 K)", type:"win"     },
+        { label:"LP",        value:"Houser (6 IP, 3 H, 2 ER, 3 K)",  type:"loss"    },
+        { label:"Morejon",   value:"2 IP, 1 H, 0 ER, 4 K",            type:"neutral" },
+        { label:"Miller",    value:"1 IP, 0 H, 0 ER, 2 K",            type:"neutral" },
+        { label:"Ty France", value:"PH, 3B, 2 RBI",                   type:"neutral" },
+        { label:"Bogaerts",  value:"PH, HR, 2 RBI",                   type:"neutral" },
+        { label:"Sheets",    value:"HR",                              type:"neutral" },
+        { label:"RISP",      value:"2-10",                            type:"win"     },
+      ],
+      paragraphs:[
+        "well this was a bit of a WACKY one. But the Padres win because we are the best team to ever exist in the history of major league baseball.",
+        "this game started out with our reliever Bradgley Rodriguez opening up the game for the Giants before handing the ball over to Waldron in the 2nd inning for him to then pitch 5 IP. I don't really understand why this happens occasionally in modern baseball and what the theory is, as I'm an old head thanks to CB, but whatever, modern MLB. Anyways, Rodriguez gets 3 outs in 7 pitches, and then Waldron has a GREAT run giving up only 2 hits, 1 run (lucky ass home run), and 7 Ks in 5 IP. Morejon comes in and strikes out 4 across 2 IP, and Mason Miller closes it out (not a save situation).",
+        "The offense was a little strange in this game, as the lineup mostly performed today but we also scored most of our runs on pinch hitters (we're substituting guys out and subbing guys in to hit). Ty France subbed in and hit a 2 RBI triple, Xander subbed in and hit a 2 RBI HR. Just a wacky, but good day. We win the series vs the Giants 2-1 and I'm still peeved it wasn't a sweep. Vibes are high, just keep winning Dads. All we can ask for.",
+      ],
+      photo: "https://maxbish.github.io/PadresReport/pictures/xander1_optimized.webp",
+      photoFull: true,
+    },
     {
       type:"recap", gameLabel:"Game #35", gameDate:"TUE, MAY 5", venue:"ORACLE PARK, SAN FRANCISCO",
       result:"W",
