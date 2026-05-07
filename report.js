@@ -201,7 +201,7 @@ function renderCard(e) {
   const paras = e.paragraphs.map(p => `<p>${p}</p>`).join("");
 
   const photoBlock = e.photo ? `
-    <img class="card-photo" src="${e.photo}" alt="Game photo" loading="lazy" decoding="async" />
+    <img class="card-photo ${e.photoFull ? "card-photo--full" : ""}" src="${e.photo}" alt="Game photo" loading="lazy" decoding="async" />
     ${e.photoCaption ? `<div class="card-photo-caption">${e.photoCaption}</div>` : ""}
   ` : "";
 

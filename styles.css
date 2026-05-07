@@ -363,6 +363,11 @@
       display: block;
       border-top: 1px solid rgba(255,196,37,0.18);
     }
+    .card-photo--full {
+      max-height: none;
+      object-fit: contain;
+      background: rgba(0,0,0,0.2);
+    }
     .card-photo-caption {
       padding: 7px 16px 10px;
       font-size: 10px;
