@@ -18,6 +18,27 @@ git commit -m "Game recap: [opponent]"
 git push
 ```
 
+## Keeping Stats Accurate
+
+Roster and weekly summary stats can be refreshed from MLB Stats API (no backend required):
+
+```bash
+node scripts/update-report-data.mjs
+```
+
+Optional season override:
+
+```bash
+node scripts/update-report-data.mjs 2026
+```
+
+This updates the following in `report-data.js`:
+- `record`
+- `weekSummary`
+- `roster`
+
+For automatic daily refresh on GitHub, use the workflow in `.github/workflows/update-stats.yml`.
+
 ## Project structure
 
 | File | Purpose |
