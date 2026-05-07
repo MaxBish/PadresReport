@@ -13,24 +13,48 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Clone repository
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" repo
+          cd repo
+          git checkout main
 
       - name: Refresh report data from MLB Stats API
-        run: node scripts/update-report-data.mjs
+        run: |
+          cd repo
+          node scripts/update-report-data.mjs
 
-      - name: Create pull request for data updates
-        uses: peter-evans/create-pull-request@v6
-        with:
-          add-paths: report-data.js
-          commit-message: "chore: auto-update Padres stats"
-          title: "chore: auto-update Padres stats"
-          body: |
-            Automated daily refresh of Padres stats from MLB Stats API.
-          branch: "bot/update-padres-stats"
-          delete-branch: true
+      - name: Commit and push update branch
+        id: commit
+        run: |
+          cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C bot/update-padres-stats
+          git add report-data.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "chore: auto-update Padres stats"
+          git push --force-with-lease origin bot/update-padres-stats
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create pull request
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd repo
+          if gh pr view bot/update-padres-stats --json number >/dev/null 2>&1; then
+            echo "Pull request already exists for bot/update-padres-stats."
+          else
+            gh pr create \
+              --base main \
+              --head bot/update-padres-stats \
+              --title "chore: auto-update Padres stats" \
+              --body "Automated daily refresh of Padres stats from MLB Stats API."
+          fi
