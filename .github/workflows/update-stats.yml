@@ -49,12 +49,38 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd repo
-          if gh pr view bot/update-padres-stats --json number >/dev/null 2>&1; then
-            echo "Pull request already exists for bot/update-padres-stats."
-          else
-            gh pr create \
-              --base main \
-              --head bot/update-padres-stats \
-              --title "chore: auto-update Padres stats" \
-              --body "Automated daily refresh of Padres stats from MLB Stats API."
+          BRANCH="bot/update-padres-stats"
+          HEAD_REF="${{ github.repository_owner }}:${BRANCH}"
+
+          OPEN_PR_NUMBER=$(gh pr list \
+            --base main \
+            --head "$HEAD_REF" \
+            --state open \
+            --json number \
+            --jq '.[0].number')
+
+          if [ -n "$OPEN_PR_NUMBER" ]; then
+            echo "Open PR already exists: #$OPEN_PR_NUMBER"
+            gh pr view "$OPEN_PR_NUMBER" --json url --jq '.url'
+            exit 0
           fi
+
+          CLOSED_PR_NUMBER=$(gh pr list \
+            --base main \
+            --head "$HEAD_REF" \
+            --state closed \
+            --json number \
+            --jq '.[0].number')
+
+          if [ -n "$CLOSED_PR_NUMBER" ]; then
+            echo "Reopening closed PR: #$CLOSED_PR_NUMBER"
+            gh pr reopen "$CLOSED_PR_NUMBER"
+            gh pr view "$CLOSED_PR_NUMBER" --json url --jq '.url'
+            exit 0
+          fi
+
+          gh pr create \
+            --base main \
+            --head "$HEAD_REF" \
+            --title "chore: auto-update Padres stats" \
+            --body "Automated daily refresh of Padres stats from MLB Stats API."
