@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:22, l:14 },
+  record: { w:22, l:16 },
   weekSummary: {
     record: "3-3",
     runsScored: 23,
@@ -224,6 +224,62 @@ const REPORT = {
     { date:"TUE MAY 12", time:"4:40 PM PT",  matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #38", gameDate:"FRI, MAY 8", venue:"PETCO PARK, SAN DIEGO",
+      result:"L",
+      away:{ abbr:"STL", city:"ST. LOUIS", name:"CARDINALS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:6, homeScore:0, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","0","6","0","0","0","0"],
+        home:   ["0","0","0","0","0","0","0","0","0"],
+        awayTotals:{ R:"6", H:"11", E:"0" },
+        homeTotals:{ R:"0", H:"1",  E:"2" },
+      },
+      stats:[
+        { label:"WP",         value:"Michael McGreevy",                 type:"win"     },
+        { label:"LP",         value:"Griffin Canning",                  type:"loss"    },
+        { label:"Padres bats",value:"1 hit total",                      type:"loss"    },
+        { label:"Top 5th",    value:"Inside-the-park grand slam allowed",type:"loss"    },
+        { label:"RISP",       value:"0-4",                              type:"loss"    },
+      ],
+      paragraphs:[
+        "If yesterday was bad, today was like the worst possible game ever. This game was a rock fight for 3 and a half innings, neither team backing down. Then the wheels officially fell off the wagon.",
+        "We had bases loaded in the bottom of the 4th, we don't score a run. That sucks. The Cardinals get the bases loaded in the top of the 5th and hit an inside the park grand slam (the ball DID NOT LEAVE THE BALLPARK, and it was a grand slam). Literally some of the most atrocious baseball I've ever had the opportunity of viewing. Vibes are BAD right now, and our \"superstar\" Tatis is playing not just the worst of his career, but he looks like a player right now that shouldn't be on a major league roster. He's always been a head case, but he always had amazing defense at the very least. He has a single hit at him when the bases are loaded and somehow the ball gets past him and runs back to the wall to blow this game wide open. Trade his ass.",
+        "The bats are also cooking something special right now. We got ONE hit this game. ONE. That is right. We almost had a no hitter thrown against us (extremely rare pitching stat) by a guy named Michael McGreevy. That is so fucking Michael McGreasy.",
+        "Thank god we beat up on the Giants to hide the fact that the vibes of this team are horrendous and we are actively sucking ass. Trade Tatis and let's reset the team culture/energy.",
+      ],
+      xPost: "<blockquote class=\"twitter-tweet\" data-media-max-width=\"560\"><p lang=\"en\" dir=\"ltr\">This is the bottom <br><br>Only one way to go<br><br>UP<br><br>Remember this moment<a href=\"https://twitter.com/hashtag/BelieveInTatis?src=hash&amp;ref_src=twsrc%5Etfw\">#BelieveInTatis</a> <a href=\"https://t.co/MDGObk0ZjA\">pic.twitter.com/MDGObk0ZjA</a></p>&mdash; Devine Sports Gospel (@DevineGospel) <a href=\"https://twitter.com/DevineGospel/status/2052950652763193791?ref_src=twsrc%5Etfw\">May 9, 2026</a></blockquote>",
+    },
+    {
+      type:"recap", gameLabel:"Game #37", gameDate:"THU, MAY 7", venue:"PETCO PARK, SAN DIEGO",
+      result:"L",
+      away:{ abbr:"STL", city:"ST. LOUIS", name:"CARDINALS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:2, homeScore:1, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","1","0","0","1","0","0"],
+        home:   ["1","0","0","0","0","0","0","0","0"],
+        awayTotals:{ R:"2", H:"5", E:"0" },
+        homeTotals:{ R:"1", H:"4", E:"0" },
+      },
+      stats:[
+        { label:"WP",           value:"Matthew Liberatore",                 type:"win"     },
+        { label:"LP",           value:"Bradgley Rodriguez",                  type:"loss"    },
+        { label:"SV",           value:"Riley O'Brien",                       type:"win"     },
+        { label:"Michael King", value:"6 IP, 1 ER, 1 H, 6 K",                type:"neutral" },
+        { label:"Bogaerts",     value:"RBI in 1st inning",                   type:"neutral" },
+        { label:"Padres bats",  value:"No runner reached 2nd after 1st inning", type:"loss" },
+      ],
+      paragraphs:[
+        "This game sucked.",
+        "Michael King threw 6 IP, had 6 Ks, and had given up one run (lucky ass homer) and one hit (lucky ass homer). We lost the game 2-1. That's just gross. Horrendous Padres offense.",
+        "Xander got the game going with a RBI in the 1st inning, driving home Manny. From then on for the rest of the game, we did not have a base runner get to 2nd base. Just HORRIBLE. This Dads team managed 4 hits overall this game, against a mid ass pitcher. Made that mid ass guy look like a Cy Young award winning ace. Just awful awful awful.",
+        "No two ways about it. We are playing bad baseball, and are losing a lot at home. This team somehow started off so hot that we're doing okay, but this team is not long for this world if they continue to play offense like this.",
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #36", gameDate:"WED, MAY 6", venue:"ORACLE PARK, SAN FRANCISCO",
       result:"W", seriesResult:"SERIES W 2-1",

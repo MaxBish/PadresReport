@@ -342,7 +342,8 @@ function renderCard(e) {
     ${e.photoCaption ? `<div class="card-photo-caption">${e.photoCaption}</div>` : ""}
   ` : "";
 
-  const gifBlock = e.gif ? `<div class="card-gif">${e.gif}</div>` : "";
+  const gifBlock = e.gif ? `<div class="card-media card-gif">${e.gif}</div>` : "";
+  const xPostBlock = e.xPost ? `<div class="card-media card-x-post">${e.xPost}</div>` : "";
 
   const entryId = escapeHtml(getEntryId(e));
 
@@ -373,8 +374,29 @@ function renderCard(e) {
       <div class="card-body">${paras}</div>
       ${photoBlock}
       ${gifBlock}
+      ${xPostBlock}
       ${commentsBlock}
     </article>`;
+}
+
+function initializeXEmbeds(scopeEl) {
+  if (!scopeEl || !scopeEl.querySelector(".twitter-tweet")) return;
+
+  const scriptSrc = "https://platform.twitter.com/widgets.js";
+  const existing = document.querySelector(`script[src="${scriptSrc}"]`);
+
+  if (!existing) {
+    const xScript = document.createElement("script");
+    xScript.src = scriptSrc;
+    xScript.async = true;
+    xScript.charset = "utf-8";
+    document.body.appendChild(xScript);
+    return;
+  }
+
+  if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === "function") {
+    window.twttr.widgets.load(scopeEl);
+  }
 }
 
 function getSeriesKey(entry) {
@@ -416,6 +438,7 @@ if (entries && Array.isArray(report.entries)) {
   const split = splitEntriesByRecentSeries(report.entries, 2);
   entries.innerHTML = split.visible.map(renderCard).join("");
   initializeCommentSections(entries);
+  initializeXEmbeds(entries);
 
   // Load Tenor embed.js if any entry has a gif
   if (report.entries.some(e => e.gif)) {
@@ -438,6 +461,7 @@ if (entries && Array.isArray(report.entries)) {
       if (!expanded && !olderRendered) {
         olderEntries.innerHTML = split.older.map(renderCard).join("");
         initializeCommentSections(olderEntries);
+        initializeXEmbeds(olderEntries);
         olderRendered = true;
       }
       olderToggle.setAttribute("aria-expanded", expanded ? "false" : "true");

@@ -562,6 +562,21 @@
       text-align: center;
     }
 
+    .card-media {
+      border-top: 1px solid rgba(255,196,37,0.18);
+      padding: 12px;
+      background: rgba(0,0,0,0.18);
+    }
+    .card-x-post {
+      display: flex;
+      justify-content: center;
+    }
+    .card-x-post .twitter-tweet {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 560px;
+    }
+
     .comments {
       border-top: 1px solid rgba(255,196,37,0.14);
       padding: 12px 16px 14px;
