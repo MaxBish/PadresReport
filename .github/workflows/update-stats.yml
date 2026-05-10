@@ -2,6 +2,16 @@ name: Update Padres Stats
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - index.html
+      - report-data.js
+      - report.js
+      - styles.css
+      - scripts/update-report-data.mjs
+      - .github/workflows/update-stats.yml
   schedule:
     - cron: '25 13 * * *' # Daily around 6:25am PT (UTC-based)
 
