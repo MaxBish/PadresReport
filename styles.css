@@ -233,6 +233,93 @@
       line-height: 1.6;
     }
 
+    .player-tools {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .player-group-toggle {
+      display: inline-flex;
+      gap: 6px;
+      border: 1px solid rgba(255,196,37,0.2);
+      background: rgba(0,0,0,0.2);
+      border-radius: 3px;
+      padding: 4px;
+      width: fit-content;
+    }
+    .group-btn {
+      border: 1px solid transparent;
+      background: transparent;
+      color: rgba(255,255,255,0.72);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+    .group-btn.active {
+      color: #FFC425;
+      border-color: rgba(255,196,37,0.25);
+      background: rgba(255,196,37,0.14);
+    }
+    .player-select-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .player-search,
+    .player-select {
+      width: 100%;
+      border: 1px solid rgba(255,196,37,0.2);
+      border-radius: 3px;
+      background: rgba(13,31,60,0.56);
+      color: rgba(255,255,255,0.95);
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      padding: 9px 10px;
+    }
+    .player-search::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+    .player-action-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .compare-action,
+    .compare-clear {
+      border-radius: 3px;
+      padding: 8px 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .compare-action {
+      border: 1px solid rgba(255,196,37,0.32);
+      background: rgba(255,196,37,0.12);
+      color: #FFC425;
+    }
+    .compare-action:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .compare-clear {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.85);
+    }
+    .compare-panel {
+      margin-top: 12px;
+      border-top: 1px solid rgba(255,196,37,0.18);
+      padding-top: 10px;
+    }
+
     .roster-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -347,67 +434,32 @@
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     }
     .compare-card {
+      position: relative;
       border: 1px solid rgba(255,196,37,0.18);
       background: rgba(13,31,60,0.56);
       border-radius: 3px;
       padding: 10px;
+    }
+    .compare-remove {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.88);
+      border-radius: 2px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 3px 6px;
+      cursor: pointer;
     }
     .compare-player {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 20px;
       color: #FFC425;
       letter-spacing: 0.03em;
-      margin-bottom: 2px;
-    }
-    .compare-pos {
-      font-family: 'Barlow', sans-serif;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.56);
-      margin-bottom: 8px;
-    }
-
-    /* ── CARD ── */
-    .card {
-      margin: 12px 24px 0;
-      border-radius: 3px;
-      overflow: hidden;
-      background: #1A3258;
-      border: 1px solid rgba(255,196,37,0.18);
-      border-left: 3px solid rgba(255,196,37,0.18);
-      content-visibility: auto;
-      contain-intrinsic-size: 900px;
-    }
-    .card.win  { border-left-color: #3DBA6F; }
-    .card.loss { border-left-color: #E05252; }
-    .card.off  { border-left-color: #A0522D; }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 16px;
-      background: rgba(0,0,0,0.28);
-      border-bottom: 1px solid rgba(255,196,37,0.18);
-    }
-    .card-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.20em;
-      text-transform: uppercase;
-      color: #FFC425;
-    }
-    .card-date {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #C8956C;
-      margin-top: 2px;
-    }
     .card-result {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
@@ -742,7 +794,7 @@
       .comments { padding: 10px 12px 12px; }
       .feature-wrap { margin: 10px 10px 0; padding: 10px; }
       .summary-value { font-size: 22px; }
-      .roster-list { grid-template-columns: 1fr; }
+      .player-select-row { grid-template-columns: 1fr; }
       .player-title { font-size: 22px; }
       .stat-chip { min-width: 72px; padding: 5px 6px; }
       .stat-chip-key { font-size: 9px; letter-spacing: 0.1em; }

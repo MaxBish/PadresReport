@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:22, l:16 },
+  record: { w:23, l:16 },
   weekSummary: {
     record: "3-3",
     runsScored: 22,
@@ -217,13 +217,42 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"THU MAY 7",  time:"7:10 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
-    { date:"FRI MAY 8",  time:"6:45 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
-    { date:"SAT MAY 9",  time:"4:15 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
     { date:"SUN MAY 10", time:"1:10 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
     { date:"TUE MAY 12", time:"4:40 PM PT",  matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
+    { date:"WED MAY 13", time:"4:40 PM PT",  matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
+    { date:"THU MAY 14", time:"10:40 AM PT", matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
+    { date:"FRI MAY 15", time:"6:40 PM PT",  matchup:"SD Padres @ Seattle Mariners",     venue:"T-Mobile Park" },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #39", gameDate:"SAT, MAY 9", venue:"PETCO PARK, SAN DIEGO",
+      result:"W",
+      away:{ abbr:"STL", city:"ST. LOUIS", name:"CARDINALS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:2, homeScore:4, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","1","0","0","0","1","0"],
+        home:   ["0","0","0","0","3","0","0","1","X"],
+        awayTotals:{ R:"2", H:"7", E:"1" },
+        homeTotals:{ R:"4", H:"5", E:"0" },
+      },
+      stats:[
+        { label:"WP",          value:"Randy Vásquez (5 IP, 6 H, 1 ER, 6 K)",  type:"win"     },
+        { label:"LP",          value:"Dustin May (6 IP, 3 H, 2 ER, 7 K)",      type:"loss"    },
+        { label:"SV",          value:"Mason Miller (1.1 IP, 0 H, 0 ER, 4 K)",  type:"neutral" },
+        { label:"Morejon",     value:"0.2 IP, 1 H, 1 ER, HBP",                  type:"neutral" },
+        { label:"Tatis Jr.",   value:"1-4, 2 RBI",                               type:"neutral" },
+        { label:"Machado",     value:"1-4, HR, RBI",                             type:"neutral" },
+        { label:"Team bats",   value:"5 H, 2 HR",                                type:"win"     },
+      ],
+      paragraphs:[
+        "WE WON A GAME. I REPEAT, THE PADRES HAVE WON A GAME.",
+        "Randy V is just a win farmer, he pitched good not great but somehow just gets the dubski. Only gave up one ER in 5 IP (6 Ks, very nice) and moves to 4-1 on the season. Adrian felt like making this game fun though so he decided to hit a batter and then give up a double just to make it close, it's not a Pads game unless they make your heart beat a little. Good news though, we have Mason Miller and even when he's bad, he's good. He gets the 4 out save, strikes out 4 batters, and also gave the Cardinals a bases loaded situation in the top of the 9th just to feel something.",
+        "On an even better note, Fernando got 2 RBIs today on a bloop single and that must've felt good. Whoever wanted to trade him should probably re-evaluate their life and look in the mirror. Manny also decided to hit a homer in the bottom of the 8th just to give us a little wiggle room. In all honesty, we have Mason Miller so it was sort of a useless homerun but I'll take anything I can get from Manny nowadays.",
+        "Pads win, we are so back.",
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #38", gameDate:"FRI, MAY 8", venue:"PETCO PARK, SAN DIEGO",
       result:"L",

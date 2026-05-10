@@ -154,8 +154,13 @@ function renderStatChips(player) {
 
 function initWeeklyAndRosterTools() {
   const summaryRoot = document.getElementById("week-summary");
-  const rosterRoot = document.getElementById("roster-list");
   const playerRoot = document.getElementById("player-detail");
+  const playerSelect = document.getElementById("player-select");
+  const playerSearch = document.getElementById("player-search");
+  const groupButtons = Array.from(document.querySelectorAll("[data-player-group]"));
+  const compareToggle = document.getElementById("compare-toggle");
+  const compareClear = document.getElementById("compare-clear");
+  const comparePanel = document.getElementById("compare-panel");
   const compareRoot = document.getElementById("compare-grid");
 
   if (summaryRoot && report.weekSummary) {
@@ -186,18 +191,74 @@ function initWeeklyAndRosterTools() {
   }
 
   const roster = Array.isArray(report.roster) ? report.roster : [];
-  if (!roster.length || !rosterRoot || !playerRoot || !compareRoot) return;
+  if (!roster.length || !playerRoot || !compareRoot || !playerSelect || !playerSearch || !groupButtons.length) return;
 
+  let activeGroup = "batters";
+  let searchTerm = "";
   let activePlayerId = roster[0].id;
-  let compareIds = roster.slice(0, 2).map((p) => p.id);
+  let compareIds = [];
 
   function findPlayer(id) {
     return roster.find((p) => p.id === id);
   }
 
+  function isPitcher(player) {
+    return String(player.position || "").toUpperCase() === "P";
+  }
+
+  function filteredRoster() {
+    return roster.filter((p) => {
+      const groupMatch = activeGroup === "pitchers" ? isPitcher(p) : !isPitcher(p);
+      const searchMatch = !searchTerm || p.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return groupMatch && searchMatch;
+    });
+  }
+
+  function syncActivePlayer() {
+    const filtered = filteredRoster();
+    if (!filtered.length) {
+      activePlayerId = "";
+      return;
+    }
+    if (!filtered.some((p) => p.id === activePlayerId)) {
+      activePlayerId = filtered[0].id;
+    }
+  }
+
+  function renderControls() {
+    groupButtons.forEach((btn) => {
+      const selected = btn.dataset.playerGroup === activeGroup;
+      btn.classList.toggle("active", selected);
+      btn.setAttribute("aria-selected", selected ? "true" : "false");
+    });
+
+    const filtered = filteredRoster();
+    playerSelect.innerHTML = filtered.length
+      ? filtered.map((p) => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.name)} (${escapeHtml(p.position)})</option>`).join("")
+      : '<option value="">No players found</option>';
+
+    if (activePlayerId) {
+      playerSelect.value = activePlayerId;
+    }
+  }
+
   function renderPlayerDetail() {
-    const player = findPlayer(activePlayerId) || roster[0];
-    if (!player) return;
+    const player = findPlayer(activePlayerId);
+    if (!player) {
+      playerRoot.innerHTML = "<div class=\"compare-hint\">No player matches that filter right now.</div>";
+      if (compareToggle) {
+        compareToggle.disabled = true;
+        compareToggle.textContent = "Add To Compare";
+      }
+      return;
+    }
+
+    if (compareToggle) {
+      const inCompare = compareIds.includes(player.id);
+      compareToggle.disabled = false;
+      compareToggle.textContent = inCompare ? "Remove From Compare" : "Add To Compare";
+    }
+
     playerRoot.innerHTML = `
       <div class="player-title">${escapeHtml(player.name)}</div>
       <div class="player-sub">${escapeHtml(player.position)} · ${escapeHtml(player.hand || "")}</div>
@@ -208,11 +269,20 @@ function initWeeklyAndRosterTools() {
   function renderCompare() {
     const players = compareIds.map(findPlayer).filter(Boolean);
     if (!players.length) {
-      compareRoot.innerHTML = "<div class=\"compare-hint\">Select players to compare.</div>";
+      compareRoot.innerHTML = "";
+      if (comparePanel) {
+        comparePanel.querySelector(".compare-hint").textContent = "No players selected for comparison yet.";
+      }
       return;
     }
+
+    if (comparePanel) {
+      comparePanel.querySelector(".compare-hint").textContent = `Comparing ${players.length} player${players.length === 1 ? "" : "s"}.`;
+    }
+
     compareRoot.innerHTML = players.map((p) => `
       <div class="compare-card">
+        <button type="button" class="compare-remove" data-remove-id="${escapeHtml(p.id)}" aria-label="Remove ${escapeHtml(p.name)} from comparison">Remove</button>
         <div class="compare-player">${escapeHtml(p.name)}</div>
         <div class="compare-pos">${escapeHtml(p.position)} · ${escapeHtml(p.hand || "")}</div>
         <div class="stat-chip-grid">${renderStatChips(p)}</div>
@@ -220,56 +290,63 @@ function initWeeklyAndRosterTools() {
     `).join("");
   }
 
-  function renderRoster() {
-    rosterRoot.innerHTML = roster.map((p) => {
-      const checked = compareIds.includes(p.id) ? "checked" : "";
-      const activeClass = p.id === activePlayerId ? "active" : "";
-      return `
-        <div class="roster-item" data-player-id="${escapeHtml(p.id)}">
-          <button class="roster-player-btn ${activeClass}" type="button" data-role="open" data-player-id="${escapeHtml(p.id)}">${escapeHtml(p.name)}</button>
-          <div class="roster-meta">${escapeHtml(p.position)} · ${escapeHtml(p.hand || "")}</div>
-          <label class="compare-row">
-            <input type="checkbox" data-role="compare" data-player-id="${escapeHtml(p.id)}" ${checked} />
-            Compare
-          </label>
-        </div>
-      `;
-    }).join("");
-  }
+  groupButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const nextGroup = btn.dataset.playerGroup;
+      if (!nextGroup || nextGroup === activeGroup) return;
+      activeGroup = nextGroup;
+      syncActivePlayer();
+      renderControls();
+      renderPlayerDetail();
+    });
+  });
 
-  rosterRoot.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement)) return;
-    if (target.dataset.role !== "open") return;
-    const id = target.dataset.playerId;
-    if (!id) return;
-    activePlayerId = id;
-    renderRoster();
+  playerSearch.addEventListener("input", () => {
+    searchTerm = playerSearch.value.trim();
+    syncActivePlayer();
+    renderControls();
     renderPlayerDetail();
   });
 
-  rosterRoot.addEventListener("change", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLInputElement)) return;
-    if (target.dataset.role !== "compare") return;
-    const id = target.dataset.playerId;
-    if (!id) return;
+  playerSelect.addEventListener("change", () => {
+    activePlayerId = playerSelect.value;
+    renderPlayerDetail();
+  });
 
-    if (target.checked) {
-      if (!compareIds.includes(id)) {
-        if (compareIds.length >= 4) {
-          target.checked = false;
-          return;
-        }
-        compareIds = [...compareIds, id];
+  if (compareToggle) {
+    compareToggle.addEventListener("click", () => {
+      if (!activePlayerId) return;
+      if (compareIds.includes(activePlayerId)) {
+        compareIds = compareIds.filter((id) => id !== activePlayerId);
+      } else {
+        if (compareIds.length >= 4) return;
+        compareIds = [...compareIds, activePlayerId];
       }
-    } else {
-      compareIds = compareIds.filter((x) => x !== id);
-    }
+      renderPlayerDetail();
+      renderCompare();
+    });
+  }
+
+  if (compareClear) {
+    compareClear.addEventListener("click", () => {
+      compareIds = [];
+      renderPlayerDetail();
+      renderCompare();
+    });
+  }
+
+  compareRoot.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const removeId = target.dataset.removeId;
+    if (!removeId) return;
+    compareIds = compareIds.filter((id) => id !== removeId);
+    renderPlayerDetail();
     renderCompare();
   });
 
-  renderRoster();
+  syncActivePlayer();
+  renderControls();
   renderPlayerDetail();
   renderCompare();
 }
