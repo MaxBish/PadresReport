@@ -1,14 +1,14 @@
 const REPORT = {
   record: { w:24, l:16 },
   weekSummary: {
-    record: "3-3",
-    runsScored: 22,
-    runsAllowed: 19,
+    record: "4-3",
+    runsScored: 25,
+    runsAllowed: 21,
     notes: [
       "Auto-updated from MLB Stats API for games 2026-05-04 to 2026-05-10.",
-      "Padres outscored opponents 22-19 over 6 finalized game(s)."
+      "Padres outscored opponents 25-21 over 7 finalized game(s)."
     ],
-    teamOps: ".670"
+    teamOps: ".667"
   },
   roster: [
     {
@@ -17,14 +17,14 @@ const REPORT = {
       position: "RF",
       hand: "R/R",
       stats: {
-        G: 38,
-        AVG: ".248",
-        OBP: ".317",
-        SLG: ".298",
-        OPS: ".615",
+        G: 39,
+        AVG: ".243",
+        OBP: ".319",
+        SLG: ".292",
+        OPS: ".611",
         HR: 0,
         RBI: 15,
-        SB: 9
+        SB: 10
       }
     },
     {
@@ -33,14 +33,14 @@ const REPORT = {
       position: "CF",
       hand: "L/R",
       stats: {
-        G: 38,
-        AVG: ".224",
-        OBP: ".288",
-        SLG: ".361",
-        OPS: ".649",
+        G: 39,
+        AVG: ".228",
+        OBP: ".303",
+        SLG: ".362",
+        OPS: ".665",
         HR: 4,
         RBI: 18,
-        SB: 7
+        SB: 8
       }
     },
     {
@@ -49,13 +49,13 @@ const REPORT = {
       position: "3B",
       hand: "R/R",
       stats: {
-        G: 37,
-        AVG: ".197",
-        OBP: ".303",
-        SLG: ".364",
-        OPS: ".667",
+        G: 38,
+        AVG: ".191",
+        OBP: ".294",
+        SLG: ".353",
+        OPS: ".647",
         HR: 6,
-        RBI: 19,
+        RBI: 20,
         SB: 1
       }
     },
@@ -65,11 +65,11 @@ const REPORT = {
       position: "SS",
       hand: "R/R",
       stats: {
-        G: 38,
-        AVG: ".261",
-        OBP: ".338",
-        SLG: ".428",
-        OPS: ".766",
+        G: 39,
+        AVG: ".268",
+        OBP: ".342",
+        SLG: ".437",
+        OPS: ".779",
         HR: 7,
         RBI: 23,
         SB: 5
@@ -113,11 +113,11 @@ const REPORT = {
       position: "1B",
       hand: "R/R",
       stats: {
-        G: 22,
-        AVG: ".279",
-        OBP: ".313",
-        SLG: ".574",
-        OPS: ".887",
+        G: 23,
+        AVG: ".262",
+        OBP: ".294",
+        SLG: ".538",
+        OPS: ".832",
         HR: 4,
         RBI: 11,
         SB: 1
@@ -129,11 +129,11 @@ const REPORT = {
       position: "1B",
       hand: "L/L",
       stats: {
-        G: 35,
-        AVG: ".215",
+        G: 36,
+        AVG: ".209",
         OBP: ".263",
-        SLG: ".439",
-        OPS: ".702",
+        SLG: ".427",
+        OPS: ".690",
         HR: 5,
         RBI: 13,
         SB: 2
@@ -164,13 +164,13 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 7,
-        GS: 7,
+        G: 8,
+        GS: 8,
         W: 2,
-        ERA: "5.64",
-        WHIP: "1.52",
-        IP: "30.1",
-        K: 29,
+        ERA: "5.20",
+        WHIP: "1.35",
+        IP: "36.1",
+        K: 31,
         BB: 12,
         SV: 0,
         HLD: 0,
@@ -183,12 +183,12 @@ const REPORT = {
       position: "P",
       hand: "L/L",
       stats: {
-        G: 17,
+        G: 18,
         GS: 0,
-        W: 2,
-        ERA: "5.66",
-        WHIP: "1.31",
-        IP: "20.2",
+        W: 3,
+        ERA: "5.57",
+        WHIP: "1.29",
+        IP: "21.0",
         K: 26,
         BB: 5,
         SV: 1,
