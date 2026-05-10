@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:23, l:16 },
+  record: { w:24, l:16 },
   weekSummary: {
     record: "3-3",
     runsScored: 22,
@@ -217,13 +217,45 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"SUN MAY 10", time:"1:10 PM PT",  matchup:"SD Padres vs St. Louis Cardinals", venue:"Petco Park"  },
     { date:"TUE MAY 12", time:"4:40 PM PT",  matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
     { date:"WED MAY 13", time:"4:40 PM PT",  matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
     { date:"THU MAY 14", time:"10:40 AM PT", matchup:"SD Padres @ Milwaukee Brewers",    venue:"American Family Field" },
     { date:"FRI MAY 15", time:"6:40 PM PT",  matchup:"SD Padres @ Seattle Mariners",     venue:"T-Mobile Park" },
+    { date:"SAT MAY 16", time:"4:15 PM PT",  matchup:"SD Padres @ Seattle Mariners",     venue:"T-Mobile Park" },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #40", gameDate:"SUN, MAY 10", venue:"PETCO PARK, SAN DIEGO",
+      result:"W", seriesResult:"SERIES T 2-2",
+      away:{ abbr:"STL", city:"ST. LOUIS", name:"CARDINALS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:2, homeScore:3, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9","10"],
+        away:   ["0","0","0","2","0","0","0","0","0","0"],
+        home:   ["0","0","0","0","0","0","0","0","2","1"],
+        awayTotals:{ R:"2", H:"3", E:"0" },
+        homeTotals:{ R:"3", H:"4", E:"0" },
+      },
+      stats:[
+        { label:"WP",           value:"Adrian Morejon",                          type:"win"     },
+        { label:"LP",           value:"Gordon Graceffo",                         type:"loss"    },
+        { label:"Buehler",      value:"6 IP, 3 H, 2 ER, 0 BB",                   type:"neutral" },
+        { label:"Estrada",      value:"0.2 IP, 2 K in 10th",                      type:"neutral" },
+        { label:"Castellanos",  value:"1-2, 9th-inning game-tying HR",           type:"win"     },
+        { label:"Bogaerts",     value:"2-4, 2B, R",                               type:"neutral" },
+        { label:"Machado",      value:"Walk-off sac fly (10th)",                 type:"win"     },
+        { label:"Padres bats",  value:"4 H, 3 R",                                 type:"neutral" },
+      ],
+      paragraphs:[
+        "THE CARDIAC DADS HAVE STRUCK AGAIN. This game was the standard Padres through 9 innings. Utter ass and totally unwatchable but then MAGIC happened. Ya know what, this might've just been a standard Padres game all around from beginning to end.",
+        "The Dads were on pace to have the least amount of hits they've ever had in their franchise history in a 4 game series. Think about that for a second, in the history of the Padres franchise, we were about to set the record for the LEAST amount of hits that the Dads have EVER had in a 4 game series. Against a team that many thought were going to lose 90+ game this year, and the 2nd youngest team in the MLB this year. Like what the actual hell. We have so much money invested in this lineup and underperforming is an understatement.",
+        "With that being said, the Cardinals closer is the 2nd best in baseball (behind our very own of course), but the cardiac dads don't care. Let me paint you a picture. It all started with the summer of Xan just getting rolling. Xander Bogaerts gets a single to lead off the inning. Xander's actually probably been our best bat so far this season. Then Ty France and Miggy Andujar just fall over, striking out and not looking competitive at the plate at all (not their fault, the Cardinals closer is a beast). Then, big dick Nick Castellanos steps up to bat. He has an INSANE AB, fouling ball after ball off. On pitch number NINE, he hits a homer and ties this game up at 2-2 and we go to extras. Thank you Nick for doing something for this team before we eventually cut you. Rest easy now, brother. We have the watch, and we will see you in Valhalla.",
+        "Walker Buehler had an insane game. Went 6 IP, giving up 3 hits and 2 runs. Great day for a guy that I have an insane amount of mixed feelings about. Bullpen is lights out, and as long as we're competitive with the bats, our pitching can beat anyone if the starter is doing decent.",
+        "This game goes to the 10th inning, and the rules are a little different. To speed the game up, the last batter from the last inning starts as a base runner on 2nd base to start the inning. Jeremiah Estrada doesn't care about that, he strikes out two before we give it Morejon to get the last out. We go to the bottom of the 10th. Laureano pitch hit for Fermin, so he goes to 2nd, Jackson gets intentionally walked, Tatis has an awesome AB as well and gets walked so we have bases loaded with no out. Manny swings first pitch of course but gets the sacrifice fly done to score the run and win the game for the dads.",
+        "Absolutely insane way to split the series 2-2 here. Everybody make sure to love your moms today, but also be sure to thank the dads for winning for our moms also. Happy dads and moms today (especially the moms)",
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #39", gameDate:"SAT, MAY 9", venue:"PETCO PARK, SAN DIEGO",
       result:"W",
@@ -244,7 +276,7 @@ const REPORT = {
         { label:"Morejon",     value:"0.2 IP, 1 H, 1 ER, HBP",                  type:"neutral" },
         { label:"Tatis Jr.",   value:"1-4, 2 RBI",                               type:"neutral" },
         { label:"Machado",     value:"1-4, HR, RBI",                             type:"neutral" },
-        { label:"Team bats",   value:"5 H, 2 HR",                                type:"win"     },
+        { label:"Padres bats", value:"5 H, 2 HR",                                type:"win"     },
       ],
       paragraphs:[
         "WE WON A GAME. I REPEAT, THE PADRES HAVE WON A GAME.",
@@ -271,6 +303,7 @@ const REPORT = {
         { label:"LP",         value:"Griffin Canning",                  type:"loss"    },
         { label:"Padres bats",value:"1 hit total",                      type:"loss"    },
         { label:"Top 5th",    value:"Inside-the-park grand slam allowed",type:"loss"    },
+        { label:"Canning",    value:"4.2 IP, 6 ER",                     type:"loss"    },
         { label:"RISP",       value:"0-4",                              type:"loss"    },
       ],
       paragraphs:[
@@ -297,7 +330,7 @@ const REPORT = {
       stats:[
         { label:"WP",           value:"Matthew Liberatore",                 type:"win"     },
         { label:"LP",           value:"Bradgley Rodriguez",                  type:"loss"    },
-        { label:"SV",           value:"Riley O'Brien",                       type:"win"     },
+        { label:"SV",           value:"Riley O'Brien",                       type:"neutral" },
         { label:"Michael King", value:"6 IP, 1 ER, 1 H, 6 K",                type:"neutral" },
         { label:"Bogaerts",     value:"RBI in 1st inning",                   type:"neutral" },
         { label:"Padres bats",  value:"No runner reached 2nd after 1st inning", type:"loss" },
