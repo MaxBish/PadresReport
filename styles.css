@@ -267,11 +267,10 @@
     }
     .player-select-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 8px;
     }
-    .player-search,
-    .player-select {
+    .player-search {
       width: 100%;
       border: 1px solid rgba(255,196,37,0.2);
       border-radius: 3px;
@@ -460,6 +459,57 @@
       font-size: 20px;
       color: #FFC425;
       letter-spacing: 0.03em;
+      margin-bottom: 2px;
+    }
+    .compare-pos {
+      font-family: 'Barlow', sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.56);
+      margin-bottom: 8px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      margin: 12px 24px 0;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #1A3258;
+      border: 1px solid rgba(255,196,37,0.18);
+      border-left: 3px solid rgba(255,196,37,0.18);
+      content-visibility: auto;
+      contain-intrinsic-size: 900px;
+    }
+    .card.win  { border-left-color: #3DBA6F; }
+    .card.loss { border-left-color: #E05252; }
+    .card.off  { border-left-color: #A0522D; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      background: rgba(0,0,0,0.28);
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
+    .card-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: #FFC425;
+    }
+    .card-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C8956C;
+      margin-top: 2px;
+    }
     .card-result {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;

@@ -155,8 +155,8 @@ function renderStatChips(player) {
 function initWeeklyAndRosterTools() {
   const summaryRoot = document.getElementById("week-summary");
   const playerRoot = document.getElementById("player-detail");
-  const playerSelect = document.getElementById("player-select");
   const playerSearch = document.getElementById("player-search");
+  const playerOptions = document.getElementById("player-options");
   const groupButtons = Array.from(document.querySelectorAll("[data-player-group]"));
   const compareToggle = document.getElementById("compare-toggle");
   const compareClear = document.getElementById("compare-clear");
@@ -191,7 +191,7 @@ function initWeeklyAndRosterTools() {
   }
 
   const roster = Array.isArray(report.roster) ? report.roster : [];
-  if (!roster.length || !playerRoot || !compareRoot || !playerSelect || !playerSearch || !groupButtons.length) return;
+  if (!roster.length || !playerRoot || !compareRoot || !playerSearch || !playerOptions || !groupButtons.length) return;
 
   let activeGroup = "batters";
   let searchTerm = "";
@@ -214,6 +214,10 @@ function initWeeklyAndRosterTools() {
     });
   }
 
+  function groupRoster() {
+    return roster.filter((p) => (activeGroup === "pitchers" ? isPitcher(p) : !isPitcher(p)));
+  }
+
   function syncActivePlayer() {
     const filtered = filteredRoster();
     if (!filtered.length) {
@@ -232,13 +236,12 @@ function initWeeklyAndRosterTools() {
       btn.setAttribute("aria-selected", selected ? "true" : "false");
     });
 
-    const filtered = filteredRoster();
-    playerSelect.innerHTML = filtered.length
-      ? filtered.map((p) => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.name)} (${escapeHtml(p.position)})</option>`).join("")
-      : '<option value="">No players found</option>';
+    const inGroup = groupRoster();
+    playerOptions.innerHTML = inGroup.map((p) => `<option value="${escapeHtml(p.name)}"></option>`).join("");
 
-    if (activePlayerId) {
-      playerSelect.value = activePlayerId;
+    const active = findPlayer(activePlayerId);
+    if (active && !searchTerm) {
+      playerSearch.value = active.name;
     }
   }
 
@@ -295,22 +298,25 @@ function initWeeklyAndRosterTools() {
       const nextGroup = btn.dataset.playerGroup;
       if (!nextGroup || nextGroup === activeGroup) return;
       activeGroup = nextGroup;
+      searchTerm = "";
+      playerSearch.value = "";
       syncActivePlayer();
       renderControls();
       renderPlayerDetail();
+      renderCompare();
     });
   });
 
   playerSearch.addEventListener("input", () => {
     searchTerm = playerSearch.value.trim();
+    const exact = groupRoster().find((p) => p.name.toLowerCase() === searchTerm.toLowerCase());
+    if (exact) {
+      activePlayerId = exact.id;
+    }
     syncActivePlayer();
     renderControls();
     renderPlayerDetail();
-  });
-
-  playerSelect.addEventListener("change", () => {
-    activePlayerId = playerSelect.value;
-    renderPlayerDetail();
+    renderCompare();
   });
 
   if (compareToggle) {

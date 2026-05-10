@@ -78,8 +78,8 @@
           <button type="button" class="group-btn" data-player-group="pitchers" aria-selected="false">Pitchers</button>
         </div>
         <div class="player-select-row">
-          <input id="player-search" class="player-search" type="search" placeholder="Search player name..." aria-label="Search players" />
-          <select id="player-select" class="player-select" aria-label="Select player"></select>
+          <input id="player-search" class="player-search" type="search" list="player-options" placeholder="Search and select a player..." aria-label="Search players" />
+          <datalist id="player-options"></datalist>
         </div>
         <div class="player-action-row">
           <button id="compare-toggle" class="compare-action" type="button">Add To Compare</button>
