@@ -1,14 +1,14 @@
 const REPORT = {
-  record: { w:25, l:17 },
+  record: { w:28, l:18 },
   weekSummary: {
-    record: "3-2",
-    runsScored: 14,
-    runsAllowed: 17,
+    record: "4-2",
+    runsScored: 25,
+    runsAllowed: 21,
     notes: [
-      "Auto-updated from MLB Stats API for games 2026-05-08 to 2026-05-14.",
-      "Padres outscored opponents 14-17 over 5 finalized game(s)."
+      "Auto-updated from MLB Stats API for games 2026-05-12 to 2026-05-18.",
+      "Padres outscored opponents 25-21 over 6 finalized game(s)."
     ],
-    teamOps: ".662"
+    teamOps: ".667"
   },
   roster: [
     {
@@ -17,14 +17,14 @@ const REPORT = {
       position: "RF",
       hand: "R/R",
       stats: {
-        G: 41,
-        AVG: ".252",
-        OBP: ".328",
-        SLG: ".298",
-        OPS: ".626",
+        G: 45,
+        AVG: ".232",
+        OBP: ".307",
+        SLG: ".274",
+        OPS: ".581",
         HR: 0,
         RBI: 15,
-        SB: 10
+        SB: 11
       }
     },
     {
@@ -33,13 +33,13 @@ const REPORT = {
       position: "CF",
       hand: "L/R",
       stats: {
-        G: 41,
-        AVG: ".215",
-        OBP: ".287",
-        SLG: ".342",
-        OPS: ".629",
+        G: 44,
+        AVG: ".206",
+        OBP: ".274",
+        SLG: ".329",
+        OPS: ".603",
         HR: 4,
-        RBI: 18,
+        RBI: 19,
         SB: 8
       }
     },
@@ -49,11 +49,11 @@ const REPORT = {
       position: "3B",
       hand: "R/R",
       stats: {
-        G: 40,
-        AVG: ".188",
-        OBP: ".286",
-        SLG: ".340",
-        OPS: ".626",
+        G: 44,
+        AVG: ".182",
+        OBP: ".277",
+        SLG: ".327",
+        OPS: ".604",
         HR: 6,
         RBI: 20,
         SB: 1
@@ -65,14 +65,14 @@ const REPORT = {
       position: "SS",
       hand: "R/R",
       stats: {
-        G: 41,
-        AVG: ".262",
-        OBP: ".337",
-        SLG: ".423",
-        OPS: ".760",
+        G: 45,
+        AVG: ".258",
+        OBP: ".331",
+        SLG: ".405",
+        OPS: ".736",
         HR: 7,
         RBI: 23,
-        SB: 5
+        SB: 7
       }
     },
     {
@@ -113,13 +113,13 @@ const REPORT = {
       position: "1B",
       hand: "R/R",
       stats: {
-        G: 25,
-        AVG: ".257",
-        OBP: ".288",
-        SLG: ".514",
-        OPS: ".802",
+        G: 28,
+        AVG: ".280",
+        OBP: ".308",
+        SLG: ".520",
+        OPS: ".828",
         HR: 4,
-        RBI: 11,
+        RBI: 14,
         SB: 1
       }
     },
@@ -129,14 +129,14 @@ const REPORT = {
       position: "1B",
       hand: "L/L",
       stats: {
-        G: 38,
-        AVG: ".226",
-        OBP: ".282",
-        SLG: ".461",
-        OPS: ".743",
-        HR: 6,
-        RBI: 16,
-        SB: 2
+        G: 42,
+        AVG: ".262",
+        OBP: ".340",
+        SLG: ".556",
+        OPS: ".896",
+        HR: 9,
+        RBI: 21,
+        SB: 3
       }
     },
     {
@@ -164,14 +164,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 8,
-        GS: 8,
-        W: 2,
-        ERA: "5.20",
+        G: 9,
+        GS: 9,
+        W: 3,
+        ERA: "5.01",
         WHIP: "1.35",
-        IP: "36.1",
-        K: 31,
-        BB: 12,
+        IP: "41.1",
+        K: 37,
+        BB: 14,
         SV: 0,
         HLD: 0,
         BS: 0
@@ -183,16 +183,16 @@ const REPORT = {
       position: "P",
       hand: "L/L",
       stats: {
-        G: 18,
+        G: 20,
         GS: 0,
         W: 3,
-        ERA: "5.57",
-        WHIP: "1.29",
-        IP: "21.0",
-        K: 26,
-        BB: 5,
+        ERA: "5.09",
+        WHIP: "1.22",
+        IP: "23.0",
+        K: 28,
+        BB: 6,
         SV: 1,
-        HLD: 7,
+        HLD: 9,
         BS: 4
       }
     },
@@ -202,15 +202,15 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 19,
+        G: 20,
         GS: 0,
         W: 1,
-        ERA: "0.92",
-        WHIP: "0.66",
-        IP: "19.2",
-        K: 40,
-        BB: 5,
-        SV: 13,
+        ERA: "0.86",
+        WHIP: "0.76",
+        IP: "21.0",
+        K: 44,
+        BB: 6,
+        SV: 14,
         HLD: 0,
         BS: 0
       }
