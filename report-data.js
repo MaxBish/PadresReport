@@ -217,12 +217,12 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"THU MAY 14", time:"10:40 AM PT", matchup:"SD Padres @ Milwaukee Brewers",  venue:"American Family Field" },
-    { date:"FRI MAY 15", time:"6:40 PM PT",  matchup:"SD Padres @ Seattle Mariners",   venue:"T-Mobile Park"         },
-    { date:"SAT MAY 16", time:"4:15 PM PT",  matchup:"SD Padres @ Seattle Mariners",   venue:"T-Mobile Park"         },
-    { date:"SUN MAY 17", time:"4:20 PM PT",  matchup:"SD Padres @ Seattle Mariners",   venue:"T-Mobile Park"         },
     { date:"MON MAY 18", time:"6:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park"          },
     { date:"TUE MAY 19", time:"6:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park"          },
+    { date:"WED MAY 20", time:"5:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park"          },
+    { date:"FRI MAY 22", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park"          },
+    { date:"SAT MAY 23", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park"          },
+    { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park"          },
   ],
   entries: [
     {
