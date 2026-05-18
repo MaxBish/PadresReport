@@ -395,13 +395,45 @@ function renderStats(stats) {
   return `<div class="stats-row">${pills}</div>`;
 }
 
+function renderSeriesGames(seriesGames) {
+  if (!Array.isArray(seriesGames) || !seriesGames.length) return "";
+
+  return `
+    <div class="series-widget" aria-label="Series sweep recap with individual box scores">
+      ${seriesGames.map((game) => {
+        const isHomeWin = game.homeScore > game.awayScore;
+        return `
+          <section class="series-game">
+            <div class="series-game-head">
+              <div>
+                <div class="series-game-label">${game.gameLabel || "Game"}</div>
+                <div class="series-game-date">${game.gameDate || ""}${game.venue ? ` · ${game.venue}` : ""}</div>
+              </div>
+              <div class="series-game-result ${game.result === "W" ? "win" : game.result === "L" ? "loss" : ""}">${game.result || ""}</div>
+            </div>
+            <div class="series-scoreline">
+              <span class="series-team">${game.away?.abbr || ""}</span>
+              <span class="series-score ${!isHomeWin ? "winner" : ""}">${game.awayScore ?? ""}</span>
+              <span class="series-at">@</span>
+              <span class="series-score ${isHomeWin ? "winner" : ""}">${game.homeScore ?? ""}</span>
+              <span class="series-team">${game.home?.abbr || ""}</span>
+            </div>
+            ${game.linescore ? renderLinescore(game.linescore, game.away, game.home) : ""}
+          </section>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
 function renderCard(e) {
   const isOff = e.type === "offday";
+  const hasSeriesGames = Array.isArray(e.seriesGames) && e.seriesGames.length > 0;
   const resultClass = e.result === "W" ? "win" : e.result === "L" ? "loss" : "off";
   const badge = isOff ? "OFF" : (e.seriesResult || e.result);
   const dateStr = isOff ? (e.offDaySub || "") : `${e.gameDate || ""}${e.venue ? " · " + e.venue : ""}`;
 
-  const scoreBlock = isOff ? "" : `
+  const scoreBlock = isOff || hasSeriesGames ? "" : `
     <div class="score-row">
       <div class="team-block">
         <div class="team-abbr">${e.away.abbr}</div>
@@ -453,6 +485,7 @@ function renderCard(e) {
       </div>
       ${scoreBlock}
       ${e.linescore ? renderLinescore(e.linescore, e.away, e.home) : ""}
+      ${hasSeriesGames ? renderSeriesGames(e.seriesGames) : ""}
       ${renderStats(e.stats)}
       <div class="card-body">${paras}</div>
       ${photoBlock}

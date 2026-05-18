@@ -226,6 +226,88 @@ const REPORT = {
   ],
   entries: [
     {
+      type:"recap", gameLabel:"Games #44-46", gameDate:"FRI-SUN, MAY 15-17", venue:"T-MOBILE PARK, SEATTLE",
+      result:"W", seriesResult:"SWEEP 3-0",
+      away:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES" },
+      home:{ abbr:"SEA", city:"SEATTLE",   name:"MARINERS" },
+      awayScore:17, homeScore:7, winnerIsHome:false,
+      stats:[
+        { label:"Series", value:"Padres sweep Mariners in Seattle", type:"win" },
+        { label:"Runs", value:"SD 17 - SEA 7", type:"win" },
+        { label:"Hits", value:"Friday: 9, Saturday: 7, Sunday: 10", type:"neutral" },
+        { label:"Sheets", value:"3 HR over the final 2 games", type:"win" },
+      ],
+      seriesGames:[
+        {
+          gameLabel:"Game #44", gameDate:"FRI, MAY 15", venue:"T-MOBILE PARK, SEATTLE", result:"W",
+          away:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES" },
+          home:{ abbr:"SEA", city:"SEATTLE",   name:"MARINERS" },
+          awayScore:2, homeScore:0,
+          linescore:{
+            innings:["1","2","3","4","5","6","7","8","9"],
+            away:   ["0","0","0","1","0","0","1","0","0"],
+            home:   ["0","0","0","0","0","0","0","0","0"],
+            awayTotals:{ R:"2", H:"9", E:"0" },
+            homeTotals:{ R:"0", H:"7", E:"1" },
+          },
+        },
+        {
+          gameLabel:"Game #45", gameDate:"SAT, MAY 16", venue:"T-MOBILE PARK, SEATTLE", result:"W",
+          away:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES" },
+          home:{ abbr:"SEA", city:"SEATTLE",   name:"MARINERS" },
+          awayScore:7, homeScore:4,
+          linescore:{
+            innings:["1","2","3","4","5","6","7","8","9"],
+            away:   ["0","1","0","4","0","0","2","0","0"],
+            home:   ["0","0","0","1","1","0","0","2","0"],
+            awayTotals:{ R:"7", H:"7", E:"0" },
+            homeTotals:{ R:"4", H:"8", E:"0" },
+          },
+        },
+        {
+          gameLabel:"Game #46", gameDate:"SUN, MAY 17", venue:"T-MOBILE PARK, SEATTLE", result:"W",
+          away:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES" },
+          home:{ abbr:"SEA", city:"SEATTLE",   name:"MARINERS" },
+          awayScore:8, homeScore:3,
+          linescore:{
+            innings:["1","2","3","4","5","6","7","8","9"],
+            away:   ["1","0","0","0","1","5","1","0","0"],
+            home:   ["0","0","0","0","0","3","0","0","0"],
+            awayTotals:{ R:"8", H:"10", E:"2" },
+            homeTotals:{ R:"3", H:"1", E:"0" },
+          },
+        },
+      ],
+      paragraphs:[
+        "Welp, sometimes the baseball gods decide to reward us because we had to watch the Padres play ASStastic baseball for a month. We have SWEPT the Seattle Mariners 3-0 in Seattle, and that feels TASTY TASTY.",
+        "Starting pitchers did great, bullpen is lockdown (i'm watching you mr matsui), and mason miller loves this team.",
+        "Big story is the offense seemed to get going. Padres only scored 2 runs Friday, but got 9 hits, and then scored 7 runs and 8 runs on Saturday and Sunday respectively. That's absolutely massive, and Gavin Sheets is the MVP of this series. 3 HR in the last 2 games, and just absolutely BALLING. He's been on an absolutely tear and i love him to death and will defend him to the grave no matter what happens. Jackson hit some balls hard, Manny is still fat as shit but he's the captain no matter what, and Tatis is still homerless. Some insane aura and good vibes heading into our FIRST, and count it, FIRST series vs the Dodgers so far this season. Bring it the fuck on big blue, see you tomorrow at Petco bitches."
+      ],
+    },
+    {
+      type:"recap", gameLabel:"Game #43", gameDate:"THU, MAY 14", venue:"AMERICAN FAMILY FIELD, MILWAUKEE",
+      result:"L", seriesResult:"SERIES L 1-2",
+      away:{ abbr:"SD",  city:"SAN DIEGO",  name:"PADRES"  },
+      home:{ abbr:"MIL", city:"MILWAUKEE",  name:"BREWERS" },
+      awayScore:1, homeScore:7, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","0","0","0","0","0","1"],
+        home:   ["3","3","0","1","0","0","0","0",""],
+        awayTotals:{ R:"1", H:"7", E:"2" },
+        homeTotals:{ R:"7", H:"10", E:"1" },
+      },
+      stats:[
+        { label:"LP", value:"Canning (1.2 IP, 6 ER)", type:"loss" },
+        { label:"Padres bats", value:"1 R, 7 H", type:"neutral" },
+        { label:"Bullpen day", value:"Matsui, Marinaccio, Waldron all used", type:"loss" },
+      ],
+      paragraphs:[
+        "Alright, so nothing ever happens. Canning gave up 6 runs in 1.2 IP, so we were fated to lose this game from the jump. Baseball gods are just cruel sometimes, and know that we deserve to watch Griffin Canning, Yuki Matsui, Ron Marinaccio (who i actually like), and Matt Waldron all pitch in the same game. YUCK.",
+        "The bats tried (not really, we scored 1 run) by getting 7 hits, but we never had a shot to win this game after the 2nd inning. Moving on, series L and we look to bounce back."
+      ],
+    },
+    {
       type:"recap", gameLabel:"Game #42", gameDate:"WED, MAY 13", venue:"AMERICAN FAMILY FIELD, MILWAUKEE",
       result:"W",
       away:{ abbr:"SD",  city:"SAN DIEGO",  name:"PADRES"  },

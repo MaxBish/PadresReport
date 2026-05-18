@@ -608,6 +608,84 @@
     .linescore td.total-col { font-weight: 700; color: #fff; }
     .linescore tr:last-child td { border-bottom: none; }
 
+    .series-widget {
+      padding: 12px 12px 0;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+      display: grid;
+      gap: 10px;
+    }
+    .series-game {
+      border: 1px solid rgba(255,196,37,0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.14);
+    }
+    .series-game-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+      background: rgba(0,0,0,0.22);
+    }
+    .series-game-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FFC425;
+    }
+    .series-game-date {
+      font-family: 'Barlow', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .series-game-result {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+    .series-game-result.win { color: #3DBA6F; }
+    .series-game-result.loss { color: #E05252; }
+    .series-scoreline {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 8px;
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(255,196,37,0.18);
+    }
+    .series-team {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.7);
+    }
+    .series-score {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(255,255,255,0.28);
+    }
+    .series-score.winner { color: #fff; }
+    .series-at {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,196,37,0.7);
+      letter-spacing: 0.1em;
+    }
+
     /* stats */
     .stats-row {
       display: flex;
@@ -838,6 +916,7 @@
       .team-name { font-size: 9px; }
       .linescore td { font-size: 12px; }
       .card-body { font-size: 14px; line-height: 1.8; }
+      .series-score { font-size: 25px; }
 
       .up-next-game { min-width: 150px; padding: 10px 12px 12px; }
       .older-wrap { padding-left: 10px; padding-right: 10px; }
