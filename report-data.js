@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:28, l:18 },
+  record: { w:29, l:18 },
   weekSummary: {
     record: "4-2",
     runsScored: 25,
@@ -217,14 +217,45 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"MON MAY 18", time:"6:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park"          },
-    { date:"TUE MAY 19", time:"6:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park"          },
-    { date:"WED MAY 20", time:"5:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park"          },
-    { date:"FRI MAY 22", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park"          },
-    { date:"SAT MAY 23", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park"          },
-    { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park"          },
+    { date:"TUE MAY 19", time:"6:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park" },
+    { date:"WED MAY 20", time:"5:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park" },
+    { date:"FRI MAY 22", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
+    { date:"SAT MAY 23", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
+    { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
+    { date:"MON MAY 25", time:"3:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #47", gameDate:"MON, MAY 18", venue:"PETCO PARK, SAN DIEGO",
+      result:"W",
+      away:{ abbr:"LAD", city:"LOS ANGELES", name:"DODGERS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO",   name:"PADRES"  },
+      awayScore:0, homeScore:1, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","0","0","0","0","0","0"],
+        home:   ["1","0","0","0","0","0","0","0","X"],
+        awayTotals:{ R:"0", H:"5", E:"0" },
+        homeTotals:{ R:"1", H:"4", E:"1" },
+      },
+      stats:[
+        { label:"WP",       value:"King (7 IP, 4 H, 0 ER, 9 K)",     type:"win"     },
+        { label:"LP",       value:"Yamamoto (7 IP, 3 H, 1 ER, 8 K)", type:"loss"    },
+        { label:"SV",       value:"Miller (1 IP, 0 ER, 1 K)",        type:"win"     },
+        { label:"Andújar",  value:"HR, 1 RBI — only run of the game", type:"win"    },
+        { label:"Adam",     value:"1 IP, 0 ER (8th)",                type:"neutral" },
+        { label:"Durán",    value:"CS: Mookie + Ohtani both gunned",  type:"win"    },
+        { label:"LAD RISP", value:"0-7",                              type:"win"    },
+      ],
+      paragraphs:[
+        "WELL WELL WELL. Looks like the blue banned plan worked. If I catch any of you wearing blue this week, you will be greeted with a warm fake punch to the gut that leaves you withering in fear. Ask Kyler if you think I'm joking.",
+        "DADS WIN in an absolute offensive master class where the final score finishes 1-0. Thank you Miguel Andujar for hitting a solo home run in the 1st, the only score of the entire game. I got a take that's not so hot. Tatis, Merrill, Manny will not be All Stars this year. Mason Miller will for sure be, and I have a pretty strong bet that at least one of Miguel Andujar or Xander Bogaerts will be an all star this year (hopefully Miggy).",
+        "In all seriousness, this was a pitcher's duel through and through and exactly the type of baseball that I LOVE watching. Michael King goes 7 IP, 4 hits, 2 walks, and NINE strikeouts. That's what I'm fucking talking about dude. Drive up that value of the signed baseball Laines has. Jason Adam has a sketch as fuck 8th inning, but he perseveres because he's a god fearing man that hates anything that is associated with the color blue. Mason Miller also decides that he feels like fucking around with the Dodgers and walks the first two batters of the inning just to feel something in his private parts as he shuts the door on them.",
+        "By the way, Rodolfo Duran has been playing a fair amount of catcher for us while Campy is out, and he's been good. He might not be a MLB level hitter (Fermin might not be either so it's a wash) but he has an absolute cannon of an arm and he threw out both Mookie and Ohtani trying to steal today, that's always a good day behind the plate.",
+        "Need our offense to score more runs than 1 (hot take, shocker of a sentence), but always a good start to win the opening game of a home series and even better to beat the Dodgers at home. Vibes:",
+      ],
+      xPost: '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="und" dir="ltr">Bro 💀 <a href="https://t.co/9AVGorefvr">pic.twitter.com/9AVGorefvr</a></p>&mdash; trev (@BayAreaTrev) <a href="https://twitter.com/BayAreaTrev/status/2054072113351516422?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>',
+    },
     {
       type:"recap", gameLabel:"Games #44-46", gameDate:"FRI-SUN, MAY 15-17", venue:"T-MOBILE PARK, SEATTLE",
       result:"W", seriesResult:"SWEEP 3-0",
