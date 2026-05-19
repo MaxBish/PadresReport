@@ -152,7 +152,7 @@
     }
     .highlights-scroll::-webkit-scrollbar { display: none; }
     .highlight-card {
-      flex: 0 0 340px;
+      flex: 0 0 560px;
       border: 1px solid rgba(255,196,37,0.2);
       border-radius: 3px;
       background: rgba(0,0,0,0.2);
@@ -160,12 +160,12 @@
       padding: 10px;
     }
     .highlight-embed {
-      min-height: 220px;
+      min-height: 320px;
     }
     .highlight-embed .twitter-tweet {
       margin: 0;
       width: 100%;
-      max-width: 560px;
+      max-width: 100%;
     }
     .game-date-badge {
       display: inline-block;
@@ -946,7 +946,7 @@
 
       .up-next-game { min-width: 150px; padding: 10px 12px 12px; }
       .highlights-scroll { padding: 10px 10px 0; }
-      .highlight-card { flex-basis: 85vw; }
+      .highlight-card { flex-basis: 92vw; }
       .older-wrap { padding-left: 10px; padding-right: 10px; }
       .comments { padding: 10px 12px 12px; }
       .feature-wrap { margin: 10px 10px 0; padding: 10px; }

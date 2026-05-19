@@ -225,8 +225,8 @@ const REPORT = {
     { date:"MON MAY 25", time:"3:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
   ],
   seasonHighlights: [
-    '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="und" dir="ltr">Bro 💀 <a href="https://t.co/9AVGorefvr">pic.twitter.com/9AVGorefvr</a></p>&mdash; trev (@BayAreaTrev) <a href="https://twitter.com/BayAreaTrev/status/2054072113351516422?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>',
-    '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">True definition of YOLO <a href="https://t.co/hasji3v18W">pic.twitter.com/hasji3v18W</a></p>&mdash; Giannis Auntiegotapoodle (@TooMuchMortons_) <a href="https://twitter.com/TooMuchMortons_/status/2046781391631966448?ref_src=twsrc%5Etfw">April 22, 2026</a></blockquote>',
+    '<blockquote class="twitter-tweet" data-media-max-width="720"><p lang="und" dir="ltr">Bro 💀 <a href="https://t.co/9AVGorefvr">pic.twitter.com/9AVGorefvr</a></p>&mdash; trev (@BayAreaTrev) <a href="https://twitter.com/BayAreaTrev/status/2054072113351516422?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>',
+    '<blockquote class="twitter-tweet" data-media-max-width="720"><p lang="en" dir="ltr">Bro was fully ready to lose his life to catch this foul ball <a href="https://t.co/mTXkDlfeGW">pic.twitter.com/mTXkDlfeGW</a></p>&mdash; Dudes Posting Their W’s (@DudespostingWs) <a href="https://twitter.com/DudespostingWs/status/2047029574731551096?ref_src=twsrc%5Etfw">April 22, 2026</a></blockquote>',
   ],
   entries: [
     {
