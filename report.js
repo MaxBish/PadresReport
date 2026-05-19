@@ -139,6 +139,16 @@ if (upNext) {
     </div>`).join("");
 }
 
+const seasonHighlights = document.getElementById("season-highlights");
+if (seasonHighlights && Array.isArray(report.seasonHighlights)) {
+  seasonHighlights.innerHTML = report.seasonHighlights.map((embed) => `
+    <div class="highlight-card">
+      <div class="highlight-embed">${embed}</div>
+    </div>
+  `).join("");
+  initializeXEmbeds(seasonHighlights);
+}
+
 function statEntriesForPlayer(player) {
   return Object.entries(player.stats || {}).map(([k, v]) => ({ key: k, value: v }));
 }

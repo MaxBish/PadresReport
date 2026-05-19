@@ -224,6 +224,10 @@ const REPORT = {
     { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
     { date:"MON MAY 25", time:"3:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
   ],
+  seasonHighlights: [
+    '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="und" dir="ltr">Bro 💀 <a href="https://t.co/9AVGorefvr">pic.twitter.com/9AVGorefvr</a></p>&mdash; trev (@BayAreaTrev) <a href="https://twitter.com/BayAreaTrev/status/2054072113351516422?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>',
+    '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">True definition of YOLO <a href="https://t.co/hasji3v18W">pic.twitter.com/hasji3v18W</a></p>&mdash; Giannis Auntiegotapoodle (@TooMuchMortons_) <a href="https://twitter.com/TooMuchMortons_/status/2046781391631966448?ref_src=twsrc%5Etfw">April 22, 2026</a></blockquote>',
+  ],
   entries: [
     {
       type:"recap", gameLabel:"Game #47", gameDate:"MON, MAY 18", venue:"PETCO PARK, SAN DIEGO",

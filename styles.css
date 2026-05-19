@@ -141,6 +141,32 @@
       padding: 11px 18px 13px;
       border-right: 1px solid rgba(255,196,37,0.18);
     }
+
+    .highlights-scroll {
+      overflow-x: auto;
+      display: flex;
+      gap: 10px;
+      padding: 12px 24px 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .highlights-scroll::-webkit-scrollbar { display: none; }
+    .highlight-card {
+      flex: 0 0 340px;
+      border: 1px solid rgba(255,196,37,0.2);
+      border-radius: 3px;
+      background: rgba(0,0,0,0.2);
+      overflow: hidden;
+      padding: 10px;
+    }
+    .highlight-embed {
+      min-height: 220px;
+    }
+    .highlight-embed .twitter-tweet {
+      margin: 0;
+      width: 100%;
+      max-width: 560px;
+    }
     .game-date-badge {
       display: inline-block;
       background: rgba(255,107,43,0.12);
@@ -919,6 +945,8 @@
       .series-score { font-size: 25px; }
 
       .up-next-game { min-width: 150px; padding: 10px 12px 12px; }
+      .highlights-scroll { padding: 10px 10px 0; }
+      .highlight-card { flex-basis: 85vw; }
       .older-wrap { padding-left: 10px; padding-right: 10px; }
       .comments { padding: 10px 12px 12px; }
       .feature-wrap { margin: 10px 10px 0; padding: 10px; }
