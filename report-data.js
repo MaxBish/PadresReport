@@ -19,9 +19,9 @@ const REPORT = {
       stats: {
         G: 49,
         AVG: ".239",
-        OBP: ".312",
+        OBP: ".316",
         SLG: ".278",
-        OPS: ".590",
+        OPS: ".594",
         HR: 0,
         RBI: 15,
         SB: 12
