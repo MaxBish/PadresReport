@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:29, l:18 },
+  record: { w:29, l:20 },
   weekSummary: {
     record: "5-1",
     runsScored: 22,
@@ -217,18 +217,77 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"TUE MAY 19", time:"6:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park" },
-    { date:"WED MAY 20", time:"5:40 PM PT",  matchup:"SD Padres vs Los Angeles Dodgers", venue:"Petco Park" },
     { date:"FRI MAY 22", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
     { date:"SAT MAY 23", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
     { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
     { date:"MON MAY 25", time:"3:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
+    { date:"TUE MAY 26", time:"6:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
+    { date:"WED MAY 27", time:"1:10 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
+    { date:"FRI MAY 29", time:"3:45 PM PT",  matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
+    { date:"SAT MAY 30", time:"1:05 PM PT",  matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
+    { date:"SUN MAY 31", time:"10:35 AM PT", matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
+    { date:"TUE JUN 02", time:"3:40 PM PT",  matchup:"Philadelphia Phillies vs SD Padres", venue:"Citizens Bank Park" },
   ],
   seasonHighlights: [
     '<blockquote class="twitter-tweet" data-media-max-width="720"><p lang="und" dir="ltr">Bro 💀 <a href="https://t.co/9AVGorefvr">pic.twitter.com/9AVGorefvr</a></p>&mdash; trev (@BayAreaTrev) <a href="https://twitter.com/BayAreaTrev/status/2054072113351516422?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>',
     '<blockquote class="twitter-tweet" data-media-max-width="720"><p lang="en" dir="ltr">Bro was fully ready to lose his life to catch this foul ball <a href="https://t.co/mTXkDlfeGW">pic.twitter.com/mTXkDlfeGW</a></p>&mdash; Dudes Posting Their W’s (@DudespostingWs) <a href="https://twitter.com/DudespostingWs/status/2047029574731551096?ref_src=twsrc%5Etfw">April 22, 2026</a></blockquote>',
+    '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr"><a href="https://t.co/d5ydxYnVBn">pic.twitter.com/d5ydxYnVBn</a><br>This fan at the Cubs/Rays game.. didn&#39;t have his best moment trying to get this foul ball.</p>&mdash; The Goal Line Grind (@theGLgrind) <a href="https://twitter.com/theGLgrind/status/2041704519340306733?ref_src=twsrc%5Etfw">April 8, 2026</a></blockquote>',
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #49", gameDate:"WED, MAY 20", venue:"PETCO PARK, SAN DIEGO",
+      result:"L", seriesResult:"SERIES L 1-2",
+      away:{ abbr:"LAD", city:"LOS ANGELES", name:"DODGERS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO",   name:"PADRES"  },
+      awayScore:4, homeScore:0, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["1","0","0","0","0","0","1","2","0"],
+        home:   ["0","0","0","0","0","0","0","0","0"],
+        awayTotals:{ R:"4", H:"8", E:"0" },
+        homeTotals:{ R:"0", H:"5", E:"0" },
+      },
+      stats:[
+        { label:"LP", value:"Padres shut out, drop series 1-2", type:"loss" },
+        { label:"Ohtani", value:"Lead-off HR in 1st; dominant on mound", type:"loss" },
+        { label:"Tatis Jr.", value:"Bases-loaded, 1-out DP in 5th", type:"loss" },
+        { label:"Merrill", value:"Exited after fence collision trying to rob HR", type:"loss" },
+      ],
+      paragraphs:[
+        "Well if yesterday was fun and intense, today was the opposite. In fact, everything that could've gone wrong did go wrong and the vibes were horrendous.",
+        "We were going up against Shohei Ohtani pitching today, and he's just a beast pitching the baseball so it was always going to be hard. He's also a beast at hitting the baseball, as he hit a lead off homer in the 1st inning. Jesus Christ, can we please nerf japanese super baseball man. Blizzard please, nerf ASAP.",
+        "With that being said, our offense was horrible and it's officially back to Trade Tatis szn. We had our chances in this game, like bases loaded one out in the 5th inning and Tatis coming up to bat. What does this man do? Swing at the first pitch and hit into a double play to end the inning. I'm so over it. This team man.",
+        "Oh yeah, Merrill tried to rob Ohtani's lead off homer in the 1st and probably broke a rib jumping up against the fence, so he left this game hurt. What's the point anymore man. Pads lose this game 4-0, and the series 2-1 at home vs the Dodgers. At least we can go back to wearing blue and I don't have to see anymore Dodgers fans invading downtown SD for a bit. Do me a favor and at least check out all THREE of our new season highlights, they're very great and my favorite highlights of the season so far."
+      ],
+    },
+    {
+      type:"recap", gameLabel:"Game #48", gameDate:"TUE, MAY 19", venue:"PETCO PARK, SAN DIEGO",
+      result:"L",
+      away:{ abbr:"LAD", city:"LOS ANGELES", name:"DODGERS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO",   name:"PADRES"  },
+      awayScore:5, homeScore:4, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["2","0","0","0","1","0","1","0","1"],
+        home:   ["2","0","0","0","1","1","0","0","0"],
+        awayTotals:{ R:"5", H:"9", E:"0" },
+        homeTotals:{ R:"4", H:"8", E:"1" },
+      },
+      stats:[
+        { label:"LP", value:"Miller (blown chance after 9th-inning error sequence)", type:"loss" },
+        { label:"Canning", value:"5 IP, 3 ER, 5 K", type:"neutral" },
+        { label:"Machado", value:"2-run HR in 1st", type:"win" },
+        { label:"Andujar", value:"Continues to rake", type:"win" },
+        { label:"Morejon + Rodriguez", value:"Big outs out of bullpen", type:"neutral" },
+      ],
+      paragraphs:[
+        "Well this was a very fun, exciting game. And it SUCKS ASS to lose in this fashion.",
+        "Griffin Canning starts will always make my butt clench. But he did his job today, going 5 IP, 3 ER given up, and 5 K's. Decent enough vs the Dodgers. Why oh why do we put in Jeremiah Estrada then? he's superman against everyone else but Dodgers are his kryptonite. He didn't do awful, but you can't miss with pitch location against the Dodgers and he gave Freddie Freeman the easiest golf swing into homer ever. Freddie hits a homer off that pitch in his sleep. Just garbage. Adrian Morejon and Bradgley Rodriguez, you are bad ass mother fuckers.  Mason, I'll get to you.",
+        "Offense sort of showed up today. We were 4-4 going into the 7th, so I liked our chances. Miggy Andujar continues to be the GOAT, and Manny actually hit a 2 run homer in the 1st after the Dodgers scored 2 in the 1st to tie it up 2-2 (i thought we were in trouble, but the captain comes through here). Unfortunately, we had several opps to score more and we didn't, which is the name of the game and happens sometimes, but it's been happening far too much for my liking. I live with scoring 4 though, that's good enough given the pitching we got today.",
+        "Mason Mason Mason. I will not curse you, I really love you actually. But this was a tough way to lose. He gets one out, walks the next batter, and then we ACTUALLY CATCH the base runner trying to steal. Mason goes to through the ball to 1st to kick off the pickle and get a surefire out, except Masons throws a 90 MPH FASTBALL TO THE OUTFIELD. WHAT THE FUCK. Runner goes to 3rd, and all of a sudden, we're in the top of the 9th staring at a base runner on 3rd with 1 out when it could've been no one on and 2 outs. Game LOSING play. Ouch.",
+        "I forgive you Mason, but no more of those. He gets his first L of the season, and Tatis was actually up in the bottom of the 9th and had a chance to cement his 1st homer of the season legacy with a what would have been a game tying homer. Instead, he hit a weak ass groundball to 3rd base and we lose. Typical. On to the next one, go win a series vs the Dodgers."
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #47", gameDate:"MON, MAY 18", venue:"PETCO PARK, SAN DIEGO",
       result:"W",
