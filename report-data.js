@@ -8,7 +8,7 @@ const REPORT = {
       "Auto-updated from MLB Stats API for games 2026-05-17 to 2026-05-23.",
       "Padres outscored opponents 13-12 over 4 finalized game(s)."
     ],
-    teamOps: ".658"
+    teamOps: ".659"
   },
   roster: [
     {
