@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:32, l:20 },
+  record: { w:31, l:20 },
   weekSummary: {
     record: "3-2",
     runsScored: 14,
