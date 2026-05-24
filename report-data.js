@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:31, l:20 },
+  record: { w:32, l:20 },
   weekSummary: {
     record: "3-2",
     runsScored: 14,
@@ -217,8 +217,6 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"FRI MAY 22", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
-    { date:"SAT MAY 23", time:"6:40 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
     { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
     { date:"MON MAY 25", time:"3:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
     { date:"TUE MAY 26", time:"6:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
@@ -234,6 +232,33 @@ const REPORT = {
     '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr"><a href="https://t.co/d5ydxYnVBn">pic.twitter.com/d5ydxYnVBn</a><br>This fan at the Cubs/Rays game.. didn&#39;t have his best moment trying to get this foul ball.</p>&mdash; The Goal Line Grind (@theGLgrind) <a href="https://twitter.com/theGLgrind/status/2041704519340306733?ref_src=twsrc%5Etfw">April 8, 2026</a></blockquote>',
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #51", gameDate:"SAT, MAY 23", venue:"PETCO PARK, SAN DIEGO",
+      result:"W",
+      away:{ abbr:"ATH", city:"ATHLETICS", name:"ATHLETICS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:0, homeScore:2, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["0","0","0","0","0","0","0","0","0"],
+        home:   ["0","1","1","0","0","0","0","0",""],
+        awayTotals:{ R:"0", H:"5", E:"0" },
+        homeTotals:{ R:"2", H:"2", E:"0" },
+      },
+      stats:[
+        { label:"WP", value:"Giolito (5.0 IP, 0 ER)", type:"win" },
+        { label:"SV", value:"Miller (1.0 IP, 2 K)", type:"win" },
+        { label:"J.T. Ginn", value:"2.1 IP, 6 BB, 0 H, 2 ER", type:"neutral" },
+        { label:"Padres offense", value:"2 H, 8 BB, 2 R", type:"neutral" },
+        { label:"Merrill", value:"2B", type:"win" },
+      ],
+      paragraphs:[
+        "Well this game sucked, but at least we won!",
+        "Everybody sucked, except for no one. The starting pitcher for the A's (J.T. Ginn, who's been good) went 2.1 IP, walking 6 batters, giving up no hits, and only gave up 2 ER. Kind of impressive if you think about walking 6 guys in 2.1 IP",
+        "The Padres only managed 2 hits (Merrill got a double, booyah), but got 2 runners home courtesy of walks. Impressive stuff from this offense.",
+        "The only exciting part of this game was that Mason Miller got to throw against his former team. Thank you A's, I hope you enjoy De Vries because I definitely would've. 2 strikeouts for Mason, and we're back on a winning streak baby (count it that's TWO dubskis in a row)"
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #50", gameDate:"FRI, MAY 22", venue:"PETCO PARK, SAN DIEGO",
       result:"W",
