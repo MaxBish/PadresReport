@@ -213,7 +213,12 @@ function initWeeklyAndRosterTools() {
   }
 
   function isPitcher(player) {
-    return String(player.position || "").toUpperCase() === "P";
+    const pos = String(player.position || "").toUpperCase();
+    if (pos === "P" || pos.endsWith("P")) return true;
+
+    // Fallback for data updates where position can be non-standard but pitching keys exist.
+    const stats = player && player.stats ? player.stats : {};
+    return ["ERA", "WHIP", "IP", "GS", "SV", "HLD", "BS"].some((k) => k in stats);
   }
 
   function filteredRoster() {
