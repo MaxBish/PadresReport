@@ -1,14 +1,14 @@
 const REPORT = {
-  record: { w:29, l:20 },
+  record: { w:30, l:20 },
   weekSummary: {
-    record: "2-2",
-    runsScored: 13,
-    runsAllowed: 12,
+    record: "5-1",
+    runsScored: 22,
+    runsAllowed: 15,
     notes: [
-      "Auto-updated from MLB Stats API for games 2026-05-17 to 2026-05-23.",
-      "Padres outscored opponents 13-12 over 4 finalized game(s)."
+      "Auto-updated from MLB Stats API for games 2026-05-13 to 2026-05-19.",
+      "Padres outscored opponents 22-15 over 6 finalized game(s)."
     ],
-    teamOps: ".659"
+    teamOps: ".663"
   },
   roster: [
     {
@@ -17,14 +17,14 @@ const REPORT = {
       position: "RF",
       hand: "R/R",
       stats: {
-        G: 49,
-        AVG: ".239",
-        OBP: ".316",
-        SLG: ".278",
-        OPS: ".594",
+        G: 46,
+        AVG: ".233",
+        OBP: ".306",
+        SLG: ".273",
+        OPS: ".579",
         HR: 0,
         RBI: 15,
-        SB: 12
+        SB: 11
       }
     },
     {
@@ -33,11 +33,11 @@ const REPORT = {
       position: "CF",
       hand: "L/R",
       stats: {
-        G: 47,
-        AVG: ".203",
-        OBP: ".273",
-        SLG: ".322",
-        OPS: ".595",
+        G: 45,
+        AVG: ".202",
+        OBP: ".270",
+        SLG: ".324",
+        OPS: ".594",
         HR: 4,
         RBI: 19,
         SB: 9
@@ -49,13 +49,13 @@ const REPORT = {
       position: "3B",
       hand: "R/R",
       stats: {
-        G: 48,
-        AVG: ".178",
-        OBP: ".272",
-        SLG: ".331",
-        OPS: ".603",
-        HR: 7,
-        RBI: 22,
+        G: 45,
+        AVG: ".180",
+        OBP: ".278",
+        SLG: ".323",
+        OPS: ".601",
+        HR: 6,
+        RBI: 20,
         SB: 1
       }
     },
@@ -65,11 +65,11 @@ const REPORT = {
       position: "SS",
       hand: "R/R",
       stats: {
-        G: 49,
-        AVG: ".247",
-        OBP: ".318",
-        SLG: ".385",
-        OPS: ".703",
+        G: 46,
+        AVG: ".259",
+        OBP: ".332",
+        SLG: ".404",
+        OPS: ".736",
         HR: 7,
         RBI: 23,
         SB: 7
@@ -113,11 +113,11 @@ const REPORT = {
       position: "1B",
       hand: "R/R",
       stats: {
-        G: 30,
-        AVG: ".278",
-        OBP: ".305",
-        SLG: ".519",
-        OPS: ".824",
+        G: 29,
+        AVG: ".280",
+        OBP: ".308",
+        SLG: ".520",
+        OPS: ".828",
         HR: 4,
         RBI: 14,
         SB: 1
@@ -129,11 +129,11 @@ const REPORT = {
       position: "1B",
       hand: "L/L",
       stats: {
-        G: 46,
-        AVG: ".254",
-        OBP: ".338",
-        SLG: ".530",
-        OPS: ".868",
+        G: 43,
+        AVG: ".256",
+        OBP: ".333",
+        SLG: ".543",
+        OPS: ".876",
         HR: 9,
         RBI: 21,
         SB: 3
@@ -164,14 +164,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 10,
-        GS: 10,
+        G: 9,
+        GS: 9,
         W: 3,
-        ERA: "5.31",
-        WHIP: "1.39",
-        IP: "42.1",
+        ERA: "5.01",
+        WHIP: "1.35",
+        IP: "41.1",
         K: 37,
-        BB: 15,
+        BB: 14,
         SV: 0,
         HLD: 0,
         BS: 0
@@ -183,13 +183,13 @@ const REPORT = {
       position: "P",
       hand: "L/L",
       stats: {
-        G: 21,
+        G: 20,
         GS: 0,
         W: 3,
-        ERA: "4.88",
-        WHIP: "1.21",
-        IP: "24.0",
-        K: 29,
+        ERA: "5.09",
+        WHIP: "1.22",
+        IP: "23.0",
+        K: 28,
         BB: 6,
         SV: 1,
         HLD: 9,
@@ -202,14 +202,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 22,
+        G: 21,
         GS: 0,
         W: 1,
-        ERA: "0.79",
-        WHIP: "0.84",
-        IP: "22.2",
+        ERA: "0.82",
+        WHIP: "0.82",
+        IP: "22.0",
         K: 45,
-        BB: 9,
+        BB: 8,
         SV: 15,
         HLD: 0,
         BS: 0
@@ -234,6 +234,38 @@ const REPORT = {
     '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr"><a href="https://t.co/d5ydxYnVBn">pic.twitter.com/d5ydxYnVBn</a><br>This fan at the Cubs/Rays game.. didn&#39;t have his best moment trying to get this foul ball.</p>&mdash; The Goal Line Grind (@theGLgrind) <a href="https://twitter.com/theGLgrind/status/2041704519340306733?ref_src=twsrc%5Etfw">April 8, 2026</a></blockquote>',
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #50", gameDate:"FRI, MAY 22", venue:"PETCO PARK, SAN DIEGO",
+      result:"W",
+      away:{ abbr:"ATH", city:"ATHLETICS", name:"ATHLETICS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:3, homeScore:7, winnerIsHome:true,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["2","0","0","1","0","0","0","0","0"],
+        home:   ["2","0","0","0","1","0","1","3","X"],
+        awayTotals:{ R:"3", H:"8", E:"0" },
+        homeTotals:{ R:"7", H:"7", E:"0" },
+      },
+      stats:[
+        { label:"WP",        value:"Morejon (1.1 IP, 0 ER, 3 K)", type:"win"     },
+        { label:"LP",        value:"J. Springs (6.1 IP, 4 ER)",   type:"loss"    },
+        { label:"Machado",   value:"HR, 2 RBI",                   type:"neutral" },
+        { label:"Castellanos",value:"HR, 1 RBI",                  type:"neutral" },
+        { label:"Laureano",  value:"HR, 1 RBI",                   type:"neutral" },
+        { label:"Sheets",    value:"1-4, 2 RBI",                  type:"neutral" },
+        { label:"Bogaerts",  value:"0-4, RBI",                    type:"neutral" },
+        { label:"Buehler",   value:"5 IP, 5 H, 3 ER, 4 K",       type:"neutral" },
+        { label:"Adam",      value:"1 IP, 0 ER",                  type:"neutral" },
+      ],
+      paragraphs:[
+        "Finally, some good fucking food again. The offense was starting to heat up in Seattle and then ran into the mental fucking lock that is the Dodgers, but we might be getting back into business.",
+        "Walker Buehler went 5 IP, giving up 3 ER, 4 Ks, not great numbers but I'll take it from mr buehler. His fastball is hitting 95 mph right now, so he might be starting to get his swagger back. That'd be YUGE for this team. Adrian Morejon also has a big peepee because he's just nails when it matters most, and god fearing Jason Adam continues to fear god and be perfect for the Dads in his role. Awesome bullpen. Do we know what we really need according to Mr Preller though? Bullpen help lmfao. How about some starting pitching or some bats instead sir?",
+        "The Dads offense continues to shine in the 7th, 8th, 9th innings of games. Just how we drew it up. This game was 3-3 going into the 7th, courtesy of Manny using that humongous, enormous, gigantic ass of his to force a ball out of the park in the 1st inning to score 2 and a big dick nick homer in the 5th to tie the game up. At least we're hitting homers again. Manny's ego is just too fucking large for him to suck ass the whole year so excited to see him get rolling. The nerds also hate Nick Castellanos, don't be a nerd. He'll still get waived eventually but we'll enjoy whatever he provides for the time being and hate exponentially on whenever he sucks. As is the way of fandom.",
+        "Once we hit the 7th, it's time for the offense to really come alive. Laureano hits his first homer in forever to make the game 4-3, and then we explode and everyone contributes to score 3 in the bottom of the 8th to make this game 7-3. Just good baseball all around.",
+        "A little bit of a bummer, we scored TOO much in the 8th to make this a save situation for Mason, so we do not get to see Mason Miller pitch against his former team quite yet. We'll save that for later apparently. Whatever though, I'll never complain about a dub. Good shit Dads. I also noticed that I spoke a lot about big penises and butts in this report, so stay tuned as to if that's a recurring theme or if this is just a one off.",
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #49", gameDate:"WED, MAY 20", venue:"PETCO PARK, SAN DIEGO",
       result:"L", seriesResult:"SERIES L 1-2",
