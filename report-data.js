@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:31, l:20 },
+  record: { w:31, l:22 },
   weekSummary: {
     record: "3-2",
     runsScored: 14,
@@ -217,8 +217,6 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"SUN MAY 24", time:"1:10 PM PT",  matchup:"SD Padres vs Athletics",           venue:"Petco Park" },
-    { date:"MON MAY 25", time:"3:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
     { date:"TUE MAY 26", time:"6:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
     { date:"WED MAY 27", time:"1:10 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
     { date:"FRI MAY 29", time:"3:45 PM PT",  matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
@@ -232,6 +230,61 @@ const REPORT = {
     '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr"><a href="https://t.co/d5ydxYnVBn">pic.twitter.com/d5ydxYnVBn</a><br>This fan at the Cubs/Rays game.. didn&#39;t have his best moment trying to get this foul ball.</p>&mdash; The Goal Line Grind (@theGLgrind) <a href="https://twitter.com/theGLgrind/status/2041704519340306733?ref_src=twsrc%5Etfw">April 8, 2026</a></blockquote>',
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Game #53", gameDate:"MON, MAY 25", venue:"PETCO PARK, SAN DIEGO",
+      result:"L",
+      away:{ abbr:"PHI", city:"PHILADELPHIA", name:"PHILLIES" },
+      home:{ abbr:"SD",  city:"SAN DIEGO",    name:"PADRES"   },
+      awayScore:3, homeScore:0, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["1","0","0","0","0","0","2","0","0"],
+        home:   ["0","0","0","0","0","0","0","0","0"],
+        awayTotals:{ R:"3", H:"3", E:"1" },
+        homeTotals:{ R:"0", H:"5", E:"0" },
+      },
+      stats:[
+        { label:"LP", value:"Canning (6.2 IP, 3 ER, 5 K)", type:"loss" },
+        { label:"Padres", value:"0 R on 5 H, 3 BB", type:"loss" },
+        { label:"RISP", value:"0-10", type:"loss" },
+        { label:"Key miss", value:"Bases loaded, no outs, 0 runs", type:"loss" },
+        { label:"Bullpen", value:"Estrada + Matsui 2.1 IP, 0 ER", type:"neutral" },
+      ],
+      paragraphs:[
+        "Alright so this game felt worse than yesterday, because it just was awful.",
+        "Canning goes 6.2 IP, almost a full 7 IP. Proud of him, this was a 1-0 game all day. He missed on one pitch and it lead to a 2 run HR to make it 3-0 in the 7th. His bad technically, but he pitched his ass off and it looked good so I'm not mad at him. Good on him for having such a strong outing.",
+        "The offense is disgraceful. They deserve to be sent to Guantanamo. How do we have bases loaded no outs and we score 0 runs on the day. Miguel Andujar is hitting 2nd in the lineup because our big dogs have been such absolute ass. I'll say that again, Miguel Andujar, who is a fine player and a competent big league hitter, is hitting 2nd in a lineup that features Fernando Tatis Jr, Manny Machado, and Jackson Merrill. Now in all fairness, none of those guys would hit 2nd in the lineup anyways, but you understand what i'm putting down. and i'm not putting down Miggy.",
+        "0-10 with RISP in scoring position in this game, and I have even worse news. Manny has mini heaters, but I encourage you to look at his stats on this beautiful dads report website. Then look at Tatis, and then look at Merrill. Yikes man. I love you always Jackson but seriously what the fuck. Tatis is still homerless. This game marks the official 1/3 completion of the season. WOW. We are actually the 30th ranked offense in the league and it feels worse. This pitching staff has been going hard in the paint with journeyman as starters, and a dominant bullpen. That is the reason we are 9 games over .500. Fun fact, Manny Machado has the lowest batting average among qualified hitters in the national league. .173. YIKES MAN. Not much more to say, this offense absolutely has to catch fire to even be considered average, and that feels like something I would say after taking a shot and a prayer, neither of which I'm going to do.",
+        "See you all tomorrow!"
+      ],
+    },
+    {
+      type:"recap", gameLabel:"Game #52", gameDate:"SUN, MAY 24", venue:"PETCO PARK, SAN DIEGO",
+      result:"L", seriesResult:"SERIES W 2-1",
+      away:{ abbr:"ATH", city:"ATHLETICS", name:"ATHLETICS" },
+      home:{ abbr:"SD",  city:"SAN DIEGO", name:"PADRES"    },
+      awayScore:5, homeScore:2, winnerIsHome:false,
+      linescore:{
+        innings:["1","2","3","4","5","6","7","8","9"],
+        away:   ["1","2","0","1","0","0","0","0","1"],
+        home:   ["0","0","0","0","0","1","1","0","0"],
+        awayTotals:{ R:"5", H:"10", E:"1" },
+        homeTotals:{ R:"2", H:"9", E:"0" },
+      },
+      stats:[
+        { label:"LP", value:"King (3.2 IP, 4 ER)", type:"loss" },
+        { label:"Ty France", value:"HR, 2 H, 1 RBI", type:"win" },
+        { label:"Marinaccio", value:"3.0 IP, 0 ER", type:"win" },
+        { label:"Padres bats", value:"9 H, 4 BB, 2 R", type:"neutral" },
+        { label:"Series", value:"Padres still take it 2-1", type:"win" },
+      ],
+      paragraphs:[
+        "welp, this was a fun one even though we took the L.",
+        "family was in town so we went hard in the paint for game, Bub's and the whole deal. However, Michael King decided that since Laines was in attendance to watch him, he was going to have his worst outing of the season. He got rocked, but that's okay. He's allowed that one after he's been our best starter all year.",
+        "offense had plenty of opportunities, and Jackson can't hit a fastball to save his life right now. It's actually really really really bad. like really bad. Tatis had a few hard hit balls but he also tried to turn a single into a double and the 2nd baseman had the ball before he started his slide into 2nd, it was just embarrassing man.",
+        "Ty france homered, and Ron Mariachi man had an awesome day, but we just can't get the dub today. That's okay, we still win the series and we take those. Trade somebody!"
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #51", gameDate:"SAT, MAY 23", venue:"PETCO PARK, SAN DIEGO",
       result:"W",
