@@ -108,24 +108,25 @@ const REPORT = {
   entries: [
     {
       type: "recap",
-      gameLabel: "Home Series vs Phillies",
-      gameDate: "MAY 25-27",
-      venue: "PETCO PARK, SAN DIEGO",
+      gameLabel: "Road Series vs Phillies",
+      gameDate: "JUN 2-4",
+      venue: "CITIZENS BANK PARK, PHILADELPHIA",
       result: "L",
       seriesResult: "LOST 0-3",
-      away: { abbr: "PHI", city: "PHILADELPHIA", name: "PHILLIES" },
-      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: 10,
-      homeScore: 3,
-      winnerIsHome: false,
+      away: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      home: { abbr: "PHI", city: "PHILADELPHIA", name: "PHILLIES" },
+      awayScore: 8,
+      homeScore: 12,
+      winnerIsHome: true,
       linescore: null,
       stats: [
-        { label: "Game 1", value: "PHI 3 - SD 0", type: "loss" },
-        { label: "Game 2", value: "PHI 4 - SD 3", type: "loss" },
-        { label: "Game 3", value: "PHI 3 - SD 0", type: "loss" }
+        { label: "Game 1", value: "SD 2 - PHI 3", type: "loss" },
+        { label: "Game 2", value: "SD 2 - PHI 3", type: "loss" },
+        { label: "Game 3", value: "SD 4 - PHI 6", type: "loss" }
       ],
       paragraphs: [
-        "Welp, swept, we suck"
+        "Well, I haven't had an opportunity to watch a lot of Padres recently but looks like that's a good thing. This team sucks ass, and it's the same problems. Our pitching has been good, our bullpen has been good but also have really struggled at moments and that fucking sucks. And this offense is the worst offense in the league. At least Tatis finally hit one homer.",
+        "To quote one of our very valued and lovely readers who offered to write a ghost script for me, Nahhh we were too trash i had to get really high and not think aboot it. I agree completely. Don't look at standings. Also, fuck Christopher Sanchez and fuck the city of Philadelphia"
       ]
     },
     {
@@ -152,25 +153,24 @@ const REPORT = {
     },
     {
       type: "recap",
-      gameLabel: "Road Series vs Phillies",
-      gameDate: "JUN 2-4",
-      venue: "CITIZENS BANK PARK, PHILADELPHIA",
+      gameLabel: "Home Series vs Phillies",
+      gameDate: "MAY 25-27",
+      venue: "PETCO PARK, SAN DIEGO",
       result: "L",
       seriesResult: "LOST 0-3",
-      away: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      home: { abbr: "PHI", city: "PHILADELPHIA", name: "PHILLIES" },
-      awayScore: 8,
-      homeScore: 12,
-      winnerIsHome: true,
+      away: { abbr: "PHI", city: "PHILADELPHIA", name: "PHILLIES" },
+      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      awayScore: 10,
+      homeScore: 3,
+      winnerIsHome: false,
       linescore: null,
       stats: [
-        { label: "Game 1", value: "SD 2 - PHI 3", type: "loss" },
-        { label: "Game 2", value: "SD 2 - PHI 3", type: "loss" },
-        { label: "Game 3", value: "SD 4 - PHI 6", type: "loss" }
+        { label: "Game 1", value: "PHI 3 - SD 0", type: "loss" },
+        { label: "Game 2", value: "PHI 4 - SD 3", type: "loss" },
+        { label: "Game 3", value: "PHI 3 - SD 0", type: "loss" }
       ],
       paragraphs: [
-        "Well, I haven't had an opportunity to watch a lot of Padres recently but looks like that's a good thing. This team sucks ass, and it's the same problems. Our pitching has been good, our bullpen has been good but also have really struggled at moments and that fucking sucks. And this offense is the worst offense in the league. At least Tatis finally hit one homer.",
-        "To quote one of our very valued and lovely readers who offered to write a ghost script for me, Nahhh we were too trash i had to get really high and not think aboot it. I agree completely. Don't look at standings. Also, fuck Christopher Sanchez and fuck the city of Philadelphia"
+        "Welp, swept, we suck"
       ]
     }
   ]
