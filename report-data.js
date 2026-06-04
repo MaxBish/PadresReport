@@ -1,5 +1,5 @@
 const REPORT = {
-  record: { w:31, l:22 },
+  record: { w:32, l:29 },
   weekSummary: {
     record: "2-3",
     runsScored: 11,
@@ -217,12 +217,12 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date:"TUE MAY 26", time:"6:40 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
-    { date:"WED MAY 27", time:"1:10 PM PT",  matchup:"SD Padres vs Philadelphia Phillies", venue:"Petco Park" },
-    { date:"FRI MAY 29", time:"3:45 PM PT",  matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
-    { date:"SAT MAY 30", time:"1:05 PM PT",  matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
-    { date:"SUN MAY 31", time:"10:35 AM PT", matchup:"Washington Nationals vs SD Padres",  venue:"Nationals Park" },
-    { date:"TUE JUN 02", time:"3:40 PM PT",  matchup:"Philadelphia Phillies vs SD Padres", venue:"Citizens Bank Park" },
+    { date:"SAT JUN 6",  time:"7:10 PM PT",  matchup:"SD Padres vs New York Mets",   venue:"Petco Park" },
+    { date:"SUN JUN 7",  time:"1:10 PM PT",  matchup:"SD Padres vs New York Mets",   venue:"Petco Park" },
+    { date:"MON JUN 8",  time:"6:40 PM PT",  matchup:"SD Padres vs Cincinnati Reds", venue:"Petco Park" },
+    { date:"TUE JUN 9",  time:"6:40 PM PT",  matchup:"SD Padres vs Cincinnati Reds", venue:"Petco Park" },
+    { date:"WED JUN 10", time:"1:10 PM PT",  matchup:"SD Padres vs Cincinnati Reds", venue:"Petco Park" },
+    { date:"FRI JUN 12", time:"6:40 PM PT",  matchup:"SD Padres @ Arizona Diamondbacks", venue:"Chase Field" },
   ],
   seasonHighlights: [
     '<blockquote class="twitter-tweet" data-media-max-width="720"><p lang="und" dir="ltr">Bro 💀 <a href="https://t.co/9AVGorefvr">pic.twitter.com/9AVGorefvr</a></p>&mdash; trev (@BayAreaTrev) <a href="https://twitter.com/BayAreaTrev/status/2054072113351516422?ref_src=twsrc%5Etfw">May 12, 2026</a></blockquote>',
@@ -230,6 +230,28 @@ const REPORT = {
     '<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr"><a href="https://t.co/d5ydxYnVBn">pic.twitter.com/d5ydxYnVBn</a><br>This fan at the Cubs/Rays game.. didn&#39;t have his best moment trying to get this foul ball.</p>&mdash; The Goal Line Grind (@theGLgrind) <a href="https://twitter.com/theGLgrind/status/2041704519340306733?ref_src=twsrc%5Etfw">April 8, 2026</a></blockquote>',
   ],
   entries: [
+    {
+      type:"recap", gameLabel:"Games #54-62 · Suffer Streak", gameDate:"MAY 26 - JUN 4", venue:"PETCO PARK / DC / PHILADELPHIA",
+      result:"L", seriesResult:"1-8 OVER 9 GAMES",
+      away:{ abbr:"PHI/WSH", city:"VARIOUS", name:"OPPONENTS" },
+      home:{ abbr:"SD", city:"SAN DIEGO", name:"PADRES" },
+      awayScore:null, homeScore:null, winnerIsHome:false,
+      linescore:null,
+      stats:[
+        { label:"Home PHI series (5/25-27)", value:"Lost 3-0 (0-3, 3-4, 0-3)", type:"loss"    },
+        { label:"@ WSH series (5/29-31)",    value:"Lost 2-1 (7-5 W, 4-9, 2-4)", type:"loss"  },
+        { label:"@ PHI series (6/2-4)",      value:"Lost 3-0 (2-3, 2-3, 4-6)",  type:"loss"   },
+        { label:"C. Sanchez (PHI)",          value:"7 IP, 0 ER, 9 K vs SD",     type:"neutral" },
+        { label:"Tatis Jr.",                 value:"First HR of 2026 — finally", type:"win"    },
+        { label:"Laureano",                  value:"IL — right hip inflammation", type:"loss"  },
+        { label:"Castellanos",               value:"DFA'd by Padres",             type:"neutral"},
+        { label:"SD offense",                value:"30th in MLB — historically bad", type:"loss"},
+      ],
+      paragraphs:[
+        "Well, I haven't had an opportunity to watch a lot of Padres recently but looks like that's a good thing. This team sucks ass, and it's the same problems. Our pitching has been good, our bullpen has been good but also have really struggled at moments and that fucking sucks. And this offense is the worst offense in the league. At least Tatis finally hit one homer.",
+        "To quote one of our very valued and lovely readers who offered to write a ghost script for me, Nahhh we were too trash i had to get really high and not think aboot it. I agree completely. Don't look at standings. Also, fuck Christopher Sanchez and fuck the city of Philadelphia.",
+      ],
+    },
     {
       type:"recap", gameLabel:"Game #53", gameDate:"MON, MAY 25", venue:"PETCO PARK, SAN DIEGO",
       result:"L",
