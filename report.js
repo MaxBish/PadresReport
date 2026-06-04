@@ -566,7 +566,7 @@ function splitEntriesByRecentSeries(entriesList, maxSeries) {
 
 const entries = document.getElementById("entries");
 if (entries && Array.isArray(report.entries)) {
-  const split = splitEntriesByRecentSeries(report.entries, 2);
+  const split = splitEntriesByRecentSeries(report.entries, 3);
   entries.innerHTML = split.visible.map(renderCard).join("");
   initializeCommentSections(entries);
   initializeXEmbeds(entries);
