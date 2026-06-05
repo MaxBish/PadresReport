@@ -97,6 +97,7 @@ const REPORT = {
     }
   ],
   nextGames: [
+    { date: "FRI JUN 5", time: "7:10 PM PT", matchup: "SD Padres vs New York Mets", venue: "Petco Park" },
     { date: "SAT JUN 6", time: "7:10 PM PT", matchup: "SD Padres vs New York Mets", venue: "Petco Park" },
     { date: "SUN JUN 7", time: "1:10 PM PT", matchup: "SD Padres vs New York Mets", venue: "Petco Park" },
     { date: "MON JUN 8", time: "6:40 PM PT", matchup: "SD Padres vs Cincinnati Reds", venue: "Petco Park" },
