@@ -1,14 +1,14 @@
 const REPORT = {
-  record: { w: 33, l: 30 },
+  record: { w:73, l:65 },
   weekSummary: {
-    record: "1-5",
-    runsScored: 21,
-    runsAllowed: 30,
+    record: "2-3",
+    runsScored: 22,
+    runsAllowed: 21,
     notes: [
-      "Auto-updated from MLB Stats API for games 2026-05-29 to 2026-06-04.",
-      "Padres outscored opponents 21-30 over 6 finalized game(s)."
+      "Auto-updated from MLB Stats API for games 2026-08-26 to 2026-09-01.",
+      "Padres outscored opponents 22-21 over 5 finalized game(s)."
     ],
-    teamOps: ".651"
+    teamOps: ".701"
   },
   roster: [
     {
@@ -16,84 +16,204 @@ const REPORT = {
       name: "Fernando Tatis Jr.",
       position: "RF",
       hand: "R/R",
-      stats: { G: 60, AVG: ".270", OBP: ".340", SLG: ".323", OPS: ".663", HR: 1, RBI: 18, SB: 14 }
+      stats: {
+        G: 136,
+        AVG: ".281",
+        OBP: ".349",
+        SLG: ".438",
+        OPS: ".787",
+        HR: 17,
+        RBI: 67,
+        SB: 31
+      }
     },
     {
       id: "merrill",
       name: "Jackson Merrill",
       position: "CF",
       hand: "L/R",
-      stats: { G: 58, AVG: ".207", OBP: ".280", SLG: ".341", OPS: ".621", HR: 6, RBI: 24, SB: 10 }
+      stats: {
+        G: 135,
+        AVG: ".241",
+        OBP: ".294",
+        SLG: ".419",
+        OPS: ".713",
+        HR: 22,
+        RBI: 70,
+        SB: 24
+      }
     },
     {
       id: "machado",
       name: "Manny Machado",
       position: "3B",
       hand: "R/R",
-      stats: { G: 59, AVG: ".174", OBP: ".262", SLG: ".357", OPS: ".619", HR: 11, RBI: 32, SB: 1 }
+      stats: {
+        G: 135,
+        AVG: ".220",
+        OBP: ".307",
+        SLG: ".405",
+        OPS: ".712",
+        HR: 24,
+        RBI: 74,
+        SB: 4
+      }
     },
     {
       id: "bogaerts",
       name: "Xander Bogaerts",
       position: "SS",
       hand: "R/R",
-      stats: { G: 59, AVG: ".231", OBP: ".304", SLG: ".358", OPS: ".662", HR: 8, RBI: 27, SB: 9 }
+      stats: {
+        G: 131,
+        AVG: ".217",
+        OBP: ".316",
+        SLG: ".322",
+        OPS: ".638",
+        HR: 11,
+        RBI: 51,
+        SB: 18
+      }
     },
     {
       id: "arraez",
       name: "Luis Arraez",
       position: "2B",
       hand: "L/R",
-      stats: { G: 35, AVG: ".309", OBP: ".356", SLG: ".377", OPS: ".733", HR: 2, RBI: 13, SB: 1 }
+      stats: {
+        G: 35,
+        AVG: ".309",
+        OBP: ".356",
+        SLG: ".377",
+        OPS: ".733",
+        HR: 2,
+        RBI: 13,
+        SB: 1
+      }
     },
     {
       id: "campusano",
       name: "Luis Campusano",
       position: "C",
       hand: "R/R",
-      stats: { G: 28, AVG: ".276", OBP: ".332", SLG: ".471", OPS: ".803", HR: 6, RBI: 23, SB: 0 }
+      stats: {
+        G: 53,
+        AVG: ".287",
+        OBP: ".392",
+        SLG: ".460",
+        OPS: ".852",
+        HR: 5,
+        RBI: 23,
+        SB: 0
+      }
     },
     {
       id: "france",
       name: "Ty France",
       position: "1B",
       hand: "R/R",
-      stats: { G: 41, AVG: ".286", OBP: ".328", SLG: ".527", OPS: ".855", HR: 6, RBI: 18, SB: 1 }
+      stats: {
+        G: 112,
+        AVG: ".292",
+        OBP: ".359",
+        SLG: ".508",
+        OPS: ".867",
+        HR: 19,
+        RBI: 60,
+        SB: 1
+      }
     },
     {
       id: "sheets",
       name: "Gavin Sheets",
       position: "1B",
       hand: "L/L",
-      stats: { G: 56, AVG: ".238", OBP: ".335", SLG: ".471", OPS: ".806", HR: 10, RBI: 25, SB: 3 }
+      stats: {
+        G: 56,
+        AVG: ".238",
+        OBP: ".335",
+        SLG: ".471",
+        OPS: ".806",
+        HR: 10,
+        RBI: 25,
+        SB: 3
+      }
     },
     {
       id: "king",
       name: "Michael King",
       position: "P",
       hand: "R/R",
-      stats: { G: 12, GS: 12, W: 4, ERA: "3.18", WHIP: "1.13", IP: "68.0", K: 65, BB: 29, SV: 0, HLD: 0, BS: 0 }
+      stats: {
+        G: 28,
+        GS: 28,
+        W: 9,
+        ERA: "3.11",
+        WHIP: "1.17",
+        IP: "162.0",
+        K: 141,
+        BB: 63,
+        SV: 0,
+        HLD: 0,
+        BS: 0
+      }
     },
     {
       id: "buehler",
       name: "Walker Buehler",
       position: "P",
       hand: "R/R",
-      stats: { G: 12, GS: 12, W: 3, ERA: "4.53", WHIP: "1.28", IP: "57.2", K: 49, BB: 20, SV: 0, HLD: 0, BS: 0 }
+      stats: {
+        G: 27,
+        GS: 27,
+        W: 8,
+        ERA: "4.66",
+        WHIP: "1.36",
+        IP: "131.1",
+        K: 111,
+        BB: 49,
+        SV: 0,
+        HLD: 0,
+        BS: 0
+      }
     },
     {
       id: "morejon",
       name: "Adrian Morejon",
       position: "P",
       hand: "L/L",
-      stats: { G: 28, GS: 0, W: 4, ERA: "4.75", WHIP: "1.19", IP: "30.1", K: 35, BB: 7, SV: 1, HLD: 11, BS: 4 }
+      stats: {
+        G: 63,
+        GS: 0,
+        W: 9,
+        ERA: "2.55",
+        WHIP: "1.04",
+        IP: "74.0",
+        K: 90,
+        BB: 21,
+        SV: 2,
+        HLD: 22,
+        BS: 5
+      }
     },
     {
       id: "miller",
       name: "Mason Miller",
       position: "P",
       hand: "R/R",
-      stats: { G: 24, GS: 0, W: 1, ERA: "0.72", WHIP: "0.84", IP: "25.0", K: 49, BB: 11, SV: 17, HLD: 0, BS: 0 }
+      stats: {
+        G: 55,
+        GS: 0,
+        W: 4,
+        ERA: "1.26",
+        WHIP: "0.84",
+        IP: "57.1",
+        K: 104,
+        BB: 20,
+        SV: 32,
+        HLD: 0,
+        BS: 2
+      }
     }
   ],
   nextGames: [
