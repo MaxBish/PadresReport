@@ -229,21 +229,22 @@ const REPORT = {
     {
       type: "recap",
       gameLabel: "Game vs Reds",
-      gameDate: "TUE, SEP 1",
+      gameDate: "MON, AUG 31",
       venue: "GREAT AMERICAN BALL PARK, CINCINNATI",
-      result: "",
+      result: "W",
       away: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
       home: { abbr: "CIN", city: "CINCINNATI", name: "REDS" },
-      awayScore: 0, homeScore: 0, winnerIsHome: false,
+      awayScore: 5, homeScore: 0, winnerIsHome: false,
       linescore: null,
       stats: [
-        { label: "Status", value: "Game not yet final", type: "neutral" },
+        { label: "Final", value: "SD 5 - CIN 0", type: "win" },
+        { label: "Takeaway", value: "We are so back", type: "win" },
       ],
       xPost: `
         <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">Samad Taylor had the last out in his glove, ran into the wall, and it came out of his glove and over it for a 2 run home run. Rays tie it in the 9th<br><br>Unbelievable<a href="https://x.com/hashtag/padres?src=hash&amp;ref_src=twsrc%5Etfw">#padres</a> <a href="https://t.co/9d1ZbK5wfD">pic.twitter.com/9d1ZbK5wfD</a></p>&mdash; Padres Central (@PadresCentral_) <a href="https://x.com/PadresCentral_/status/2094158642400604230?ref_src=twsrc%5Etfw">August 30, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
       `,
       paragraphs: [
-        "Hello friends and family. I apologize....for absolutely fucking nothing. I am so back, and here to give you unedited, uncompromising, uncensored takes on this wild, wacky, absolutely bullshit Padres season ranging from it's so joever to we are so back. I know you all were reliant on my thoughts and ball knowledge to make sense of this season, and for that, I have returned. Similar to when Gandolf died and decided to level up before coming back from the dead for no reason other than he was remarkably racist and wanted to go from being on-the-fence, mr grey man to running around killing minority orcs in his KKK outfit. It's kinda like that, except I'm not racist and not wearing KKK robes. I'm just here to shit on the Dads and give them props for when they ball shot call as they should because this roster is fucking expensive.",
+        "Hello there friends and family. I could come and tell you there's a million excuses as to why I haven't updated the Dads Report, from the World Cup started to blah blah blah. The real reason is that I've gotten really busy at work for reasons I can't really share online but things are good. For this, I apologize....for absolutely fucking nothing. WE ARE SO BACK. WELCOME TO THE LATEST DADS REPORT. I am so back, and here to give you unedited, uncompromising, uncensored takes on this wild, wacky, absolutely bullshit Padres season ranging from it's so joever to we are so back. I know you all were reliant on my thoughts and ball knowledge to make sense of this season, and for that, I have returned. Similar to when Gandolf died and decided to level up before coming back from the dead for no reason other than he was remarkably racist and wanted to go from being .......",
         "So as I mentioned, this season has ranged from it's never been more over to we are so back. Some of the we're so back moments is the team was sold to the same group (but different people) that operate the Chelsea Football Club in the Premier League. That is generally viewed as a positive because it means that they'll spend money on the team. This is also viewed as a negative if you've followed Chelsea at all since that ownership group took over (they spend a lot of money to suck, but this year will be different!)",
         "We traded for some starting pitchers. Of course, the starters are not very good or are hurt because we have absolutely nothing worth trading in the minors currently except for Salas and I will throw a brick at the stadium from my apartment if they trade Salas. So we're basically back at where we were when these updates stopped for a bit when it comes to starting pitching. Oh, and Joe Musgrove still hasn't pitched because he's fucking cooked as we all know. At least he takes cool pictures with Laines and I at bars because he definitely hasn't lost a step when it comes to drinking.",
         "There are two main differences that have occurred since these updates stopped. We started hitting the baseball. A LOT. WITH POWER. Fernando is officially so so so so so back and fucing raking the ball. Send his dad back to the dominican because if his dad fucks his swing up one more time where it takes him half a season to hit a baseball again, I'll actually hang a trade Tatis' dad sign from the apartment. Besides the point, we all started hitting the ball again. Merrill has been awesome, Tatis has been awesome, Manny is still the fattest 3rd baseman in the league and is the most frustrating player in the world, but he's the captain so we make do. Oh, and Manny is definitely hurt and just doesn't give a fuck because he wants his check. Respect.",
