@@ -108,6 +108,34 @@ const REPORT = {
   entries: [
     {
       type: "recap",
+      gameLabel: "Game vs Rays",
+      gameDate: "SAT, AUG 30",
+      venue: "TROPICANA FIELD, ST. PETERSBURG",
+      result: "L",
+      away: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      home: { abbr: "TB", city: "TAMPA BAY", name: "RAYS" },
+      awayScore: 5, homeScore: 6, winnerIsHome: true,
+      linescore: null,
+      stats: [
+        { label: "Miller", value: "9th-inning meltdown", type: "loss" },
+        { label: "Final Thought", value: "This is the kind of loss that makes me want to start a cult", type: "loss" },
+      ],
+      xPost: `
+        <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">Samad Taylor had the last out in his glove, ran into the wall, and it came out of his glove and over it for a 2 run home run. Rays tie it in the 9th<br><br>Unbelievable<a href="https://x.com/hashtag/padres?src=hash&amp;ref_src=twsrc%5Etfw">#padres</a> <a href="https://t.co/9d1ZbK5wfD">pic.twitter.com/9d1ZbK5wfD</a></p>&mdash; Padres Central (@PadresCentral_) <a href="https://x.com/PadresCentral_/status/2094158642400604230?ref_src=twsrc%5Etfw">August 30, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+      `,
+      paragraphs: [
+        "Hello friends and family. I apologize....for absolutely fucking nothing. I am so back, and here to give you unedited, uncompromising, uncensored takes on this wild, wacky, absolutely bullshit Padres season ranging from it's so joever to we are so back. I know you all were reliant on my thoughts and ball knowledge to make sense of this season, and for that, I have returned. Similar to when Gandolf died and decided to level up before coming back from the dead for no reason other than he was remarkably racist and wanted to go from being on-the-fence, mr grey man to running around killing minority orcs in his KKK outfit. It's kinda like that, except I'm not racist and not wearing KKK robes. I'm just here to shit on the Dads and give them props for when they ball shot call as they should because this roster is fucking expensive.",
+        "So as I mentioned, this season has ranged from it's never been more over to we are so back. Some of the we're so back moments is the team was sold to the same group (but different people) that operate the Chelsea Football Club in the Premier League. That is generally viewed as a positive because it means that they'll spend money on the team. This is also viewed as a negative if you've followed Chelsea at all since that ownership group took over (they spend a lot of money to suck, but this year will be different!)",
+        "We traded for some starting pitchers. Of course, the starters are not very good or are hurt because we have absolutely nothing worth trading in the minors currently except for Salas and I will throw a brick at the stadium from my apartment if they trade Salas. So we're basically back at where we were when these updates stopped for a bit when it comes to starting pitching. Oh, and Joe Musgrove still hasn't pitched because he's fucking cooked as we all know. At least he takes cool pictures with Laines and I at bars because he definitely hasn't lost a step when it comes to drinking.",
+        "There are two main differences that have occurred since these updates stopped. We started hitting the baseball. A LOT. WITH POWER. Fernando is officially so so so so so back and fucing raking the ball. Send his dad back to the dominican because if his dad fucks his swing up one more time where it takes him half a season to hit a baseball again, I'll actually hang a trade Tatis' dad sign from the apartment. Besides the point, we all started hitting the ball again. Merrill has been awesome, Tatis has been awesome, Manny is still the fattest 3rd baseman in the league and is the most frustrating player in the world, but he's the captain so we make do. Oh, and Manny is definitely hurt and just doesn't give a fuck because he wants his check. Respect.",
+        "With all that being said, we've been a good baseball team recently. We got about a month of baseball left, and we're definitely competing for a Wild Card spot. Honestly, if this team makes the playoffs, anything can happen. I'll never stop being cautiously optimistic. This team has been winning and I'm really happy about it honestly.",
+        "BUT WE KEEP FINDING WAYS TO LOSE GAMES IN WAYS LITERALLY NEVER BEFORE SEEN IN A SPORT THAT'S BEEN AROUND SINCE THIS COUNTRY WAS FUCKING FOUNDED. LIKE WHAT THE HELL IS THIS:",
+        "Granted, they didn't lose the game there, but HOW IN THE WORLD DO WE HAVE TWO OUTS IN THE BOTTOM OF THE NINTH WITH MASON MILLER PITCHING AND THAT SHIT HAPPENS. KILLLLLL MEEEEE.",
+        "Okay, that's enough for now. If I think of something I didn't include in this one, I'll push out another update tomorrow. Thanks for waiting everybody, we are so back. Go Phillies, beat the Diamondbacks, and DADS YOU BETTER KEEP WINNING."
+      ],
+    },
+    {
+      type: "recap",
       gameLabel: "Game #64",
       gameDate: "SAT, JUN 6",
       venue: "PETCO PARK, SAN DIEGO",
