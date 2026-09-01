@@ -228,17 +228,16 @@ const REPORT = {
   entries: [
     {
       type: "recap",
-      gameLabel: "Game vs Rays",
-      gameDate: "SAT, AUG 30",
-      venue: "TROPICANA FIELD, ST. PETERSBURG",
-      result: "L",
+      gameLabel: "Game vs Reds",
+      gameDate: "TUE, SEP 1",
+      venue: "GREAT AMERICAN BALL PARK, CINCINNATI",
+      result: "",
       away: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      home: { abbr: "TB", city: "TAMPA BAY", name: "RAYS" },
-      awayScore: 5, homeScore: 6, winnerIsHome: true,
+      home: { abbr: "CIN", city: "CINCINNATI", name: "REDS" },
+      awayScore: 0, homeScore: 0, winnerIsHome: false,
       linescore: null,
       stats: [
-        { label: "Miller", value: "9th-inning meltdown", type: "loss" },
-        { label: "Final Thought", value: "This is the kind of loss that makes me want to start a cult", type: "loss" },
+        { label: "Status", value: "Game not yet final", type: "neutral" },
       ],
       xPost: `
         <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">Samad Taylor had the last out in his glove, ran into the wall, and it came out of his glove and over it for a 2 run home run. Rays tie it in the 9th<br><br>Unbelievable<a href="https://x.com/hashtag/padres?src=hash&amp;ref_src=twsrc%5Etfw">#padres</a> <a href="https://t.co/9d1ZbK5wfD">pic.twitter.com/9d1ZbK5wfD</a></p>&mdash; Padres Central (@PadresCentral_) <a href="https://x.com/PadresCentral_/status/2094158642400604230?ref_src=twsrc%5Etfw">August 30, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
