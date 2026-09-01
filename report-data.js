@@ -217,18 +217,18 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date: "SUN JUN 7",  time: "1:10 PM PT",  matchup: "SD Padres vs New York Mets",   venue: "Petco Park" },
-    { date: "MON JUN 8",  time: "6:40 PM PT",  matchup: "SD Padres vs Cincinnati Reds", venue: "Petco Park" },
-    { date: "TUE JUN 9",  time: "6:40 PM PT",  matchup: "SD Padres vs Cincinnati Reds", venue: "Petco Park" },
-    { date: "WED JUN 10", time: "1:10 PM PT",  matchup: "SD Padres vs Cincinnati Reds", venue: "Petco Park" },
-    { date: "FRI JUN 12", time: "6:40 PM PT",  matchup: "SD Padres @ Arizona Diamondbacks", venue: "Chase Field" },
-    { date: "SAT JUN 13", time: "5:10 PM PT",  matchup: "SD Padres @ Arizona Diamondbacks", venue: "Chase Field" },
+    { date: "TUE SEP 2",  time: "6:40 PM PT",  matchup: "SD Padres @ Cincinnati Reds", venue: "Great American Ball Park" },
+    { date: "WED SEP 3",  time: "6:40 PM PT",  matchup: "SD Padres @ Cincinnati Reds", venue: "Great American Ball Park" },
+    { date: "THU SEP 4",  time: "12:40 PM PT",  matchup: "SD Padres @ Cincinnati Reds", venue: "Great American Ball Park" },
+    { date: "FRI SEP 5",  time: "6:40 PM PT",  matchup: "SD Padres vs Miami Marlins", venue: "Petco Park" },
+    { date: "SAT SEP 6",  time: "6:40 PM PT",  matchup: "SD Padres vs Miami Marlins", venue: "Petco Park" },
+    { date: "SUN SEP 7", time: "1:10 PM PT",  matchup: "SD Padres vs Miami Marlins", venue: "Petco Park" },
   ],
   seasonHighlights: [],
   entries: [
     {
       type: "recap",
-      gameLabel: "Game vs Reds",
+      gameLabel: "Game #138",
       gameDate: "MON, AUG 31",
       venue: "GREAT AMERICAN BALL PARK, CINCINNATI",
       result: "W",
