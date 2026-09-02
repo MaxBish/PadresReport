@@ -1,14 +1,14 @@
 const REPORT = {
-  record: { w:73, l:65 },
+  record: { w:73, l:66 },
   weekSummary: {
-    record: "2-3",
-    runsScored: 22,
-    runsAllowed: 21,
+    record: "2-4",
+    runsScored: 25,
+    runsAllowed: 25,
     notes: [
       "Auto-updated from MLB Stats API for games 2026-08-26 to 2026-09-01.",
-      "Padres outscored opponents 22-21 over 5 finalized game(s)."
+      "Padres outscored opponents 25-25 over 6 finalized game(s)."
     ],
-    teamOps: ".701"
+    teamOps: ".702"
   },
   roster: [
     {
@@ -17,13 +17,13 @@ const REPORT = {
       position: "RF",
       hand: "R/R",
       stats: {
-        G: 136,
-        AVG: ".281",
+        G: 137,
+        AVG: ".282",
         OBP: ".349",
-        SLG: ".438",
-        OPS: ".787",
-        HR: 17,
-        RBI: 67,
+        SLG: ".449",
+        OPS: ".798",
+        HR: 19,
+        RBI: 69,
         SB: 31
       }
     },
@@ -33,11 +33,11 @@ const REPORT = {
       position: "CF",
       hand: "L/R",
       stats: {
-        G: 135,
-        AVG: ".241",
-        OBP: ".294",
-        SLG: ".419",
-        OPS: ".713",
+        G: 136,
+        AVG: ".243",
+        OBP: ".295",
+        SLG: ".421",
+        OPS: ".716",
         HR: 22,
         RBI: 70,
         SB: 24
@@ -49,13 +49,13 @@ const REPORT = {
       position: "3B",
       hand: "R/R",
       stats: {
-        G: 135,
-        AVG: ".220",
-        OBP: ".307",
-        SLG: ".405",
-        OPS: ".712",
+        G: 136,
+        AVG: ".219",
+        OBP: ".306",
+        SLG: ".403",
+        OPS: ".709",
         HR: 24,
-        RBI: 74,
+        RBI: 75,
         SB: 4
       }
     },
@@ -65,14 +65,14 @@ const REPORT = {
       position: "SS",
       hand: "R/R",
       stats: {
-        G: 131,
-        AVG: ".217",
-        OBP: ".316",
-        SLG: ".322",
+        G: 132,
+        AVG: ".216",
+        OBP: ".317",
+        SLG: ".321",
         OPS: ".638",
         HR: 11,
         RBI: 51,
-        SB: 18
+        SB: 19
       }
     },
     {
@@ -97,11 +97,11 @@ const REPORT = {
       position: "C",
       hand: "R/R",
       stats: {
-        G: 53,
-        AVG: ".287",
-        OBP: ".392",
-        SLG: ".460",
-        OPS: ".852",
+        G: 54,
+        AVG: ".285",
+        OBP: ".390",
+        SLG: ".457",
+        OPS: ".847",
         HR: 5,
         RBI: 23,
         SB: 0
@@ -113,11 +113,11 @@ const REPORT = {
       position: "1B",
       hand: "R/R",
       stats: {
-        G: 112,
-        AVG: ".292",
-        OBP: ".359",
-        SLG: ".508",
-        OPS: ".867",
+        G: 113,
+        AVG: ".288",
+        OBP: ".356",
+        SLG: ".503",
+        OPS: ".859",
         HR: 19,
         RBI: 60,
         SB: 1
@@ -183,14 +183,14 @@ const REPORT = {
       position: "P",
       hand: "L/L",
       stats: {
-        G: 63,
+        G: 64,
         GS: 0,
         W: 9,
-        ERA: "2.55",
-        WHIP: "1.04",
-        IP: "74.0",
+        ERA: "2.77",
+        WHIP: "1.08",
+        IP: "74.2",
         K: 90,
-        BB: 21,
+        BB: 23,
         SV: 2,
         HLD: 22,
         BS: 5
@@ -217,15 +217,76 @@ const REPORT = {
     }
   ],
   nextGames: [
-    { date: "TUE SEP 2",  time: "6:40 PM PT",  matchup: "SD Padres @ Cincinnati Reds", venue: "Great American Ball Park" },
-    { date: "WED SEP 3",  time: "6:40 PM PT",  matchup: "SD Padres @ Cincinnati Reds", venue: "Great American Ball Park" },
-    { date: "THU SEP 4",  time: "12:40 PM PT",  matchup: "SD Padres @ Cincinnati Reds", venue: "Great American Ball Park" },
-    { date: "FRI SEP 5",  time: "6:40 PM PT",  matchup: "SD Padres vs Miami Marlins", venue: "Petco Park" },
-    { date: "SAT SEP 6",  time: "6:40 PM PT",  matchup: "SD Padres vs Miami Marlins", venue: "Petco Park" },
-    { date: "SUN SEP 7", time: "1:10 PM PT",  matchup: "SD Padres vs Miami Marlins", venue: "Petco Park" },
+    {
+      date: "WED SEP 2",
+      time: "9:40 AM PT",
+      matchup: "SD Padres @ Cincinnati Reds",
+      venue: "Great American Ball Park"
+    },
+    {
+      date: "FRI SEP 4",
+      time: "6:40 PM PT",
+      matchup: "SD Padres vs New York Yankees",
+      venue: "Petco Park"
+    },
+    {
+      date: "SAT SEP 5",
+      time: "4:15 PM PT",
+      matchup: "SD Padres vs New York Yankees",
+      venue: "Petco Park"
+    },
+    {
+      date: "SUN SEP 6",
+      time: "1:10 PM PT",
+      matchup: "SD Padres vs New York Yankees",
+      venue: "Petco Park"
+    },
+    {
+      date: "MON SEP 7",
+      time: "2:10 PM PT",
+      matchup: "SD Padres vs Washington Nationals",
+      venue: "Petco Park"
+    },
+    {
+      date: "TUE SEP 8",
+      time: "6:40 PM PT",
+      matchup: "SD Padres vs Washington Nationals",
+      venue: "Petco Park"
+    }
   ],
   seasonHighlights: [],
   entries: [
+    {
+      type: "recap",
+      gameLabel: "Game #139",
+      gameDate: "TUE, SEP 1",
+      venue: "GREAT AMERICAN BALL PARK, CINCINNATI",
+      result: "L",
+      away: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      home: { abbr: "CIN", city: "CINCINNATI", name: "REDS" },
+      awayScore: 3, homeScore: 4, winnerIsHome: true,
+      linescore: {
+        innings: ["1","2","3","4","5","6","7","8","9"],
+        away: ["1","0","0","0","1","0","0","0","1"],
+        home: ["1","0","0","0","1","0","0","2","X"],
+        awayTotals: { R:"3", H:"7", E:"0" },
+        homeTotals: { R:"4", H:"8", E:"1" },
+      },
+      stats: [
+        { label: "WP", value: "B. Burke", type: "win" },
+        { label: "LP", value: "A. Morejon", type: "loss" },
+        { label: "SV", value: "E. Pagan", type: "win" },
+        { label: "Tatis Jr.", value: "2 HR", type: "neutral" },
+      ],
+      paragraphs: [
+        "Well, I should've seen this coming. I write a new Dads report and then we turn around and immediately lose the next game because my favorite reliever finally decides he's not perfect. This is tough.",
+        "Not much to say, this was the classic Borat game. \"I score a run, they score a run. I score another run, they score another run. I lose the game, they don't lose the game. Great success.\"",
+        "On the bright side, there's three things I want to highlight. Ethan Salas has been called up. I almost released an emergency Dads report in response to this news at 11:30 PM at night last night, but alas. Here we are. BUT ETHAN SALAS IS THE TRUTH AND WE'VE NEEDED A CATCHER THAT CAN HIT THE BALL AND IS AWESOME DEFENSIVELY AND IS BOTH OF THOSE THINGS FOR LIKE YEARS. It's about time he got called up, he's super young, might not pop right away, but he's a damn good player and he is better than any catcher we have at being both a catcher and a hitter. Exciting times.",
+        "Thing #2, Fernando hit two nukes today. Need that. Keep it up. He fluctuates between being the greatest player playing the game today to being frustratingly piss poor, but such is life.",
+        "Thing #3, Craig Stammen is one of the favorites for NL Manager of the Year. That is ridiculously laughable. He hasn't been necessarily bad, but this roster isn't exactly overperforming. If anything, it's underperforming. The fact that he's like #4 in the favorites list is just downright hilarious. Miss me with that shit.",
+        "Alrighty Dads, go get a W tomorrow and all is forgiven. Cincinnati has a cool ballpark by the way and that ballpark is on my bucket list to go watch a game. One small little problem there is that I also don't ever want to go to Cincinatti because why would I. Something will have to give eventually. Peace out girl scouts, see you tomorrow hopefully after a dubski"
+      ],
+    },
     {
       type: "recap",
       gameLabel: "Game #138",

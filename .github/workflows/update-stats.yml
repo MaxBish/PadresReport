@@ -1,19 +1,7 @@
-name: Update Padres Stats
+name: Manually Refresh Padres Stats
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - index.html
-      - report-data.js
-      - report.js
-      - styles.css
-      - scripts/update-report-data.mjs
-      - .github/workflows/update-stats.yml
-  schedule:
-    - cron: '25 13 * * *' # Daily around 6:25am PT (UTC-based)
 
 permissions:
   contents: write
@@ -23,23 +11,25 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repository
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git clone "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" repo
-          cd repo
-          git checkout main
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Refresh report data from MLB Stats API
-        run: |
-          cd repo
-          node scripts/update-report-data.mjs
+        run: node scripts/update-report-data.mjs
+
+      - name: Validate refreshed report data
+        run: node scripts/validate-report-data.mjs
 
       - name: Commit and push update branch
         id: commit
         run: |
-          cd repo
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -C bot/update-padres-stats
@@ -58,7 +48,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd repo
           BRANCH="bot/update-padres-stats"
           HEAD_REF="${{ github.repository_owner }}:${BRANCH}"
 
@@ -93,4 +82,4 @@ jobs:
             --base main \
             --head "$HEAD_REF" \
             --title "chore: auto-update Padres stats" \
-            --body "Automated daily refresh of Padres stats from MLB Stats API."
+            --body "Manual fallback refresh of Padres stats from MLB Stats API."

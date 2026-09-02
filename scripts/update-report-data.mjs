@@ -5,6 +5,8 @@ import vm from 'node:vm';
 const TEAM_ID = 135; // Padres
 const SEASON = Number(process.argv[2]) || new Date().getFullYear();
 const REPORT_PATH = new URL('../report-data.js', import.meta.url);
+const PACIFIC_TIME_ZONE = 'America/Los_Angeles';
+const MAX_FETCH_ATTEMPTS = 3;
 
 function normalizeName(name) {
   return String(name || '')
@@ -54,16 +56,44 @@ function renderJsObject(value, level = 0) {
   return JSON.stringify(value);
 }
 
+function pacificApiDate(date) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: PACIFIC_TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function wait(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
 async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: {
-      'User-Agent': 'PadresReport/1.0 (+https://github.com/maxbish/PadresReport)'
+  let lastError;
+
+  for (let attempt = 1; attempt <= MAX_FETCH_ATTEMPTS; attempt += 1) {
+    try {
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent': 'PadresReport/1.0 (+https://github.com/maxbish/PadresReport)'
+        }
+      });
+      if (!res.ok) {
+        throw new Error(`Request failed (${res.status}) for ${url}`);
+      }
+      return res.json();
+    } catch (error) {
+      lastError = error;
+      if (attempt < MAX_FETCH_ATTEMPTS) {
+        await wait(250 * attempt);
+      }
     }
-  });
-  if (!res.ok) {
-    throw new Error(`Request failed (${res.status}) for ${url}`);
   }
-  return res.json();
+
+  throw lastError;
 }
 
 function getNested(object, path, fallback = undefined) {
@@ -94,9 +124,10 @@ async function getWeekSummary() {
   const end = new Date();
   const start = new Date(end);
   start.setDate(end.getDate() - 6);
-  const toDate = (d) => d.toISOString().slice(0, 10);
+  const startDate = pacificApiDate(start);
+  const endDate = pacificApiDate(end);
 
-  const scheduleUrl = `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=${TEAM_ID}&startDate=${toDate(start)}&endDate=${toDate(end)}`;
+  const scheduleUrl = `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=${TEAM_ID}&startDate=${startDate}&endDate=${endDate}`;
   const data = await fetchJson(scheduleUrl);
   const games = (data.dates || []).flatMap((d) => d.games || []);
   const finals = games.filter((g) => {
@@ -124,7 +155,7 @@ async function getWeekSummary() {
   }
 
   const notes = [
-    `Auto-updated from MLB Stats API for games ${toDate(start)} to ${toDate(end)}.`,
+    `Auto-updated from MLB Stats API for games ${startDate} to ${endDate}.`,
     finals.length
       ? `Padres outscored opponents ${runsScored}-${runsAllowed} over ${finals.length} finalized game(s).`
       : 'No finalized games in the selected 7-day window.'
@@ -136,6 +167,51 @@ async function getWeekSummary() {
     runsAllowed,
     notes
   };
+}
+
+function formatPacificGameDate(gameDate) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: PACIFIC_TIME_ZONE,
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  }).formatToParts(new Date(gameDate));
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.weekday.toUpperCase()} ${values.month.toUpperCase()} ${values.day}`;
+}
+
+function formatPacificGameTime(gameDate) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: PACIFIC_TIME_ZONE,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  }).formatToParts(new Date(gameDate));
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.hour}:${values.minute} ${values.dayPeriod} PT`;
+}
+
+async function getNextGames() {
+  const start = new Date();
+  const end = new Date(start);
+  end.setDate(end.getDate() + 21);
+  const scheduleUrl = `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=${TEAM_ID}&startDate=${pacificApiDate(start)}&endDate=${pacificApiDate(end)}`;
+  const data = await fetchJson(scheduleUrl);
+
+  return (data.dates || [])
+    .flatMap((date) => date.games || [])
+    .filter((game) => game.status?.abstractGameState === 'Preview')
+    .slice(0, 6)
+    .map((game) => {
+      const isAway = getNested(game, ['teams', 'away', 'team', 'id']) === TEAM_ID;
+      const opponent = getNested(game, ["teams", isAway ? "home" : "away", "team", "name"], "Opponent");
+      return {
+        date: formatPacificGameDate(game.gameDate),
+        time: formatPacificGameTime(game.gameDate),
+        matchup: isAway ? `SD Padres @ ${opponent}` : `SD Padres vs ${opponent}`,
+        venue: getNested(game, ['venue', 'name'], 'TBD')
+      };
+    });
 }
 
 async function getRosterLookup() {
@@ -211,11 +287,12 @@ async function updateReportData() {
     throw new Error('Could not parse REPORT from report-data.js');
   }
 
-  const [record, teamAgg, weekSummary, rosterLookup] = await Promise.all([
+  const [record, teamAgg, weekSummary, rosterLookup, nextGames] = await Promise.all([
     getTeamRecord(),
     getTeamOpsAndRuns(),
     getWeekSummary(),
-    getRosterLookup()
+    getRosterLookup(),
+    getNextGames()
   ]);
 
   const originalRoster = Array.isArray(report.roster) ? report.roster : [];
@@ -249,6 +326,7 @@ async function updateReportData() {
   const recordText = `record: { w:${record.w}, l:${record.l} },`;
   const weekText = `weekSummary: ${renderJsObject(updatedWeekSummary, 1)},`;
   const rosterText = `roster: ${renderJsObject(updatedRoster, 1)},`;
+  const nextGamesText = `nextGames: ${renderJsObject(nextGames, 1)},`;
 
   const recordStart = source.indexOf('record:');
   const weekStart = source.indexOf('weekSummary:');
@@ -262,9 +340,13 @@ async function updateReportData() {
   const beforeRecord = source.slice(0, recordStart);
   const betweenRecordWeek = '\n  ';
   const betweenWeekRoster = '\n  ';
-  const beforeNextGames = source.slice(nextGamesStart);
+  const nextGamesEnd = source.indexOf('seasonHighlights:', nextGamesStart);
+  if (nextGamesEnd === -1) {
+    throw new Error('Expected seasonHighlights after nextGames in report-data.js.');
+  }
+  const afterNextGames = source.slice(nextGamesEnd);
 
-  const output = `${beforeRecord}${recordText}${betweenRecordWeek}${weekText}${betweenWeekRoster}${rosterText}\n  ${beforeNextGames}`;
+  const output = `${beforeRecord}${recordText}${betweenRecordWeek}${weekText}${betweenWeekRoster}${rosterText}\n  ${nextGamesText}\n  ${afterNextGames}`;
 
   await writeFile(REPORT_PATH, output, 'utf8');
 
@@ -273,6 +355,7 @@ async function updateReportData() {
   console.log(`Record: ${record.w}-${record.l}`);
   console.log(`Week: ${updatedWeekSummary.record}, Runs ${updatedWeekSummary.runsScored}-${updatedWeekSummary.runsAllowed}, OPS ${updatedWeekSummary.teamOps}`);
   console.log(`Roster players updated: ${updatedRoster.length}`);
+  console.log(`Upcoming games updated: ${nextGames.length}`);
   console.log(`Updated at: ${updatedAt}`);
 }
 
