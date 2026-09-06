@@ -1,14 +1,14 @@
 const REPORT = {
-  record: { w:73, l:66 },
+  record: { w:75, l:68 },
   weekSummary: {
-    record: "2-4",
-    runsScored: 25,
-    runsAllowed: 25,
+    record: "3-3",
+    runsScored: 19,
+    runsAllowed: 21,
     notes: [
-      "Auto-updated from MLB Stats API for games 2026-08-26 to 2026-09-01.",
-      "Padres outscored opponents 25-25 over 6 finalized game(s)."
+      "Auto-updated from MLB Stats API for games 2026-08-31 to 2026-09-06.",
+      "Padres outscored opponents 19-21 over 6 finalized game(s)."
     ],
-    teamOps: ".702"
+    teamOps: ".700"
   },
   roster: [
     {
@@ -17,13 +17,13 @@ const REPORT = {
       position: "RF",
       hand: "R/R",
       stats: {
-        G: 137,
-        AVG: ".282",
-        OBP: ".349",
-        SLG: ".449",
-        OPS: ".798",
-        HR: 19,
-        RBI: 69,
+        G: 141,
+        AVG: ".280",
+        OBP: ".347",
+        SLG: ".448",
+        OPS: ".795",
+        HR: 20,
+        RBI: 71,
         SB: 31
       }
     },
@@ -33,11 +33,11 @@ const REPORT = {
       position: "CF",
       hand: "L/R",
       stats: {
-        G: 136,
-        AVG: ".243",
-        OBP: ".295",
-        SLG: ".421",
-        OPS: ".716",
+        G: 140,
+        AVG: ".237",
+        OBP: ".290",
+        SLG: ".411",
+        OPS: ".701",
         HR: 22,
         RBI: 70,
         SB: 24
@@ -49,14 +49,14 @@ const REPORT = {
       position: "3B",
       hand: "R/R",
       stats: {
-        G: 136,
-        AVG: ".219",
-        OBP: ".306",
-        SLG: ".403",
-        OPS: ".709",
-        HR: 24,
-        RBI: 75,
-        SB: 4
+        G: 139,
+        AVG: ".221",
+        OBP: ".310",
+        SLG: ".414",
+        OPS: ".724",
+        HR: 26,
+        RBI: 77,
+        SB: 5
       }
     },
     {
@@ -65,14 +65,14 @@ const REPORT = {
       position: "SS",
       hand: "R/R",
       stats: {
-        G: 132,
-        AVG: ".216",
-        OBP: ".317",
-        SLG: ".321",
+        G: 136,
+        AVG: ".218",
+        OBP: ".318",
+        SLG: ".320",
         OPS: ".638",
         HR: 11,
-        RBI: 51,
-        SB: 19
+        RBI: 52,
+        SB: 20
       }
     },
     {
@@ -97,13 +97,13 @@ const REPORT = {
       position: "C",
       hand: "R/R",
       stats: {
-        G: 54,
+        G: 58,
         AVG: ".285",
-        OBP: ".390",
-        SLG: ".457",
-        OPS: ".847",
-        HR: 5,
-        RBI: 23,
+        OBP: ".385",
+        SLG: ".479",
+        OPS: ".864",
+        HR: 7,
+        RBI: 26,
         SB: 0
       }
     },
@@ -113,13 +113,13 @@ const REPORT = {
       position: "1B",
       hand: "R/R",
       stats: {
-        G: 113,
-        AVG: ".288",
-        OBP: ".356",
-        SLG: ".503",
-        OPS: ".859",
-        HR: 19,
-        RBI: 60,
+        G: 117,
+        AVG: ".290",
+        OBP: ".360",
+        SLG: ".511",
+        OPS: ".871",
+        HR: 20,
+        RBI: 62,
         SB: 1
       }
     },
@@ -145,14 +145,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 28,
-        GS: 28,
-        W: 9,
-        ERA: "3.11",
+        G: 29,
+        GS: 29,
+        W: 10,
+        ERA: "3.00",
         WHIP: "1.17",
-        IP: "162.0",
-        K: 141,
-        BB: 63,
+        IP: "168.0",
+        K: 144,
+        BB: 66,
         SV: 0,
         HLD: 0,
         BS: 0
@@ -164,14 +164,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 27,
-        GS: 27,
+        G: 28,
+        GS: 28,
         W: 8,
-        ERA: "4.66",
-        WHIP: "1.36",
-        IP: "131.1",
-        K: 111,
-        BB: 49,
+        ERA: "4.56",
+        WHIP: "1.34",
+        IP: "136.1",
+        K: 117,
+        BB: 51,
         SV: 0,
         HLD: 0,
         BS: 0
@@ -183,14 +183,14 @@ const REPORT = {
       position: "P",
       hand: "L/L",
       stats: {
-        G: 64,
+        G: 66,
         GS: 0,
         W: 9,
-        ERA: "2.77",
-        WHIP: "1.08",
-        IP: "74.2",
-        K: 90,
-        BB: 23,
+        ERA: "2.93",
+        WHIP: "1.11",
+        IP: "76.2",
+        K: 94,
+        BB: 24,
         SV: 2,
         HLD: 22,
         BS: 5
@@ -202,45 +202,21 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 55,
+        G: 57,
         GS: 0,
-        W: 4,
-        ERA: "1.26",
-        WHIP: "0.84",
-        IP: "57.1",
-        K: 104,
-        BB: 20,
-        SV: 32,
+        W: 5,
+        ERA: "1.19",
+        WHIP: "0.83",
+        IP: "60.1",
+        K: 111,
+        BB: 21,
+        SV: 33,
         HLD: 0,
         BS: 2
       }
     }
   ],
   nextGames: [
-    {
-      date: "WED SEP 2",
-      time: "9:40 AM PT",
-      matchup: "SD Padres @ Cincinnati Reds",
-      venue: "Great American Ball Park"
-    },
-    {
-      date: "FRI SEP 4",
-      time: "6:40 PM PT",
-      matchup: "SD Padres vs New York Yankees",
-      venue: "Petco Park"
-    },
-    {
-      date: "SAT SEP 5",
-      time: "4:15 PM PT",
-      matchup: "SD Padres vs New York Yankees",
-      venue: "Petco Park"
-    },
-    {
-      date: "SUN SEP 6",
-      time: "1:10 PM PT",
-      matchup: "SD Padres vs New York Yankees",
-      venue: "Petco Park"
-    },
     {
       date: "MON SEP 7",
       time: "2:10 PM PT",
@@ -252,10 +228,60 @@ const REPORT = {
       time: "6:40 PM PT",
       matchup: "SD Padres vs Washington Nationals",
       venue: "Petco Park"
+    },
+    {
+      date: "WED SEP 9",
+      time: "1:10 PM PT",
+      matchup: "SD Padres vs Washington Nationals",
+      venue: "Petco Park"
+    },
+    {
+      date: "FRI SEP 11",
+      time: "7:15 PM PT",
+      matchup: "SD Padres @ San Francisco Giants",
+      venue: "Oracle Park"
+    },
+    {
+      date: "SAT SEP 12",
+      time: "1:05 PM PT",
+      matchup: "SD Padres @ San Francisco Giants",
+      venue: "Oracle Park"
+    },
+    {
+      date: "SUN SEP 13",
+      time: "4:20 PM PT",
+      matchup: "SD Padres @ San Francisco Giants",
+      venue: "Oracle Park"
     }
   ],
   seasonHighlights: [],
   entries: [
+    {
+      type: "recap",
+      gameLabel: "Home Series vs Yankees",
+      gameDate: "FRI-SUN, SEP 4-6",
+      venue: "PETCO PARK, SAN DIEGO",
+      result: "W",
+      seriesResult: "WON 2-1",
+      away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
+      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      awayScore: 7,
+      homeScore: 12,
+      winnerIsHome: true,
+      linescore: null,
+      stats: [
+        { label: "Series", value: "SD 2 - NYY 1", type: "win" },
+        { label: "Game 1", value: "Walk-off 2-run HR", type: "win" },
+        { label: "Game 3", value: "Out at 2nd in 8th", type: "win" },
+        { label: "Standings", value: "Half game back of Arizona", type: "neutral" },
+      ],
+      paragraphs: [
+        "I'm going to be honest, I'm getting a little emotional writing this entry today because I'm sending this one to Matt Kal and Julian as well.",
+        "We won 2 out of 3 games against the Yanks at home, and they're injured, they're not having one of their best years, blah blah blah, GET FUCKED YANKS. Vibes are high. get owned by Luis Campy. Walk off 2 run shot to end game 1 and throwing out a runner on the basepaths in game 3 in the 8th when you're threatening.",
+        "We needed a series like that, and nothing is a better sight than watching Tati, Croney, Manny go back to back to back HRs in the top of the 1st. Only thing that would've been better was doing it on sequential pitches.",
+        "We're a half game back of the EVIL ARIZONA DBAGS. As if we needed any other reason to hate Arizona. LET'S FINISH THE SEASON STRONG HERE DADS. WE NEED THE YOFFS CAUSE THIS TEAM IS GOOD IF OUR STARTING PITCHING CAN ACTUALLY NOT BE ASS."
+      ],
+    },
     {
       type: "recap",
       gameLabel: "Game #139",
