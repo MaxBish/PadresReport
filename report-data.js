@@ -258,46 +258,6 @@ const REPORT = {
   entries: [
     {
       type: "recap",
-      gameLabel: "Game #145",
-      gameDate: "SAT, SEP 5",
-      venue: "PETCO PARK, SAN DIEGO",
-      result: "L",
-      away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
-      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: "",
-      homeScore: "",
-      winnerIsHome: false,
-      linescore: null,
-      stats: [
-        { label: "Quick take", value: "We dropped the middle game of the set.", type: "loss" },
-        { label: "Vibe", value: "Still strong overall.", type: "neutral" },
-      ],
-      paragraphs: [
-        "Quick note: the Padres lost the middle game of the Yankees series, but the weekend still had the energy of a team that was right in the hunt and ready to bounce back."
-      ],
-    },
-    {
-      type: "recap",
-      gameLabel: "Game #144",
-      gameDate: "FRI, SEP 4",
-      venue: "PETCO PARK, SAN DIEGO",
-      result: "W",
-      away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
-      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: "",
-      homeScore: "",
-      winnerIsHome: true,
-      linescore: null,
-      stats: [
-        { label: "Quick take", value: "Walk-off 2-run shot to win it.", type: "win" },
-        { label: "Big moment", value: "The crowd got the series started right.", type: "neutral" },
-      ],
-      paragraphs: [
-        "Quick note: the Yankees series opened with the walk-off homer and set the tone for the rest of the weekend."
-      ],
-    },
-    {
-      type: "recap",
       gameLabel: "Game #146",
       gameDate: "SUN, SEP 6",
       venue: "PETCO PARK, SAN DIEGO",
@@ -318,6 +278,46 @@ const REPORT = {
         "We won 2 out of 3 games against the Yanks at home, and they're injured, they're not having one of their best years, blah blah blah, GET FUCKED YANKS. Vibes are high. get owned by Luis Campy. Walk off 2 run shot to end game 1 and throwing out a runner on the basepaths in game 3 in the 8th when you're threatening.",
         "We needed a series like that, and nothing is a better sight than watching Tati, Croney, Manny go back to back to back HRs in the top of the 1st. Only thing that would've been better was doing it on sequential pitches.",
         "We're a half game back of the EVIL ARIZONA DBAGS. As if we needed any other reason to hate Arizona. LET'S FINISH THE SEASON STRONG HERE DADS. WE NEED THE YOFFS CAUSE THIS TEAM IS GOOD IF OUR STARTING PITCHING CAN ACTUALLY NOT BE ASS."
+      ],
+    },
+    {
+      type: "recap",
+      gameLabel: "Game #145",
+      gameDate: "SAT, SEP 5",
+      venue: "PETCO PARK, SAN DIEGO",
+      result: "L",
+      away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
+      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      awayScore: 8,
+      homeScore: 5,
+      winnerIsHome: false,
+      linescore: null,
+      stats: [
+        { label: "Quick take", value: "We dropped the middle game of the set.", type: "loss" },
+        { label: "Vibe", value: "Still strong overall.", type: "neutral" },
+      ],
+      paragraphs: [
+        "Quick note: the Padres lost the middle game of the Yankees series, but the weekend still had the energy of a team that was right in the hunt and ready to bounce back."
+      ],
+    },
+    {
+      type: "recap",
+      gameLabel: "Game #144",
+      gameDate: "FRI, SEP 4",
+      venue: "PETCO PARK, SAN DIEGO",
+      result: "W",
+      away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
+      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      awayScore: 4,
+      homeScore: 6,
+      winnerIsHome: true,
+      linescore: null,
+      stats: [
+        { label: "Quick take", value: "Walk-off 2-run shot to win it.", type: "win" },
+        { label: "Big moment", value: "The crowd got the series started right.", type: "neutral" },
+      ],
+      paragraphs: [
+        "Quick note: the Yankees series opened with the walk-off homer and set the tone for the rest of the weekend."
       ],
     },
     {
