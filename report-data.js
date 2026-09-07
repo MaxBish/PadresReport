@@ -264,8 +264,8 @@ const REPORT = {
       result: "W",
       away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
       home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: 4,
-      homeScore: 5,
+      awayScore: 3,
+      homeScore: 4,
       winnerIsHome: true,
       linescore: null,
       stats: [
@@ -288,8 +288,8 @@ const REPORT = {
       result: "L",
       away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
       home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: 8,
-      homeScore: 5,
+      awayScore: 5,
+      homeScore: 1,
       winnerIsHome: false,
       linescore: null,
       stats: [
@@ -308,8 +308,8 @@ const REPORT = {
       result: "W",
       away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
       home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: 4,
-      homeScore: 6,
+      awayScore: 2,
+      homeScore: 3,
       winnerIsHome: true,
       linescore: null,
       stats: [
