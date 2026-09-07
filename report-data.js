@@ -264,7 +264,7 @@ const REPORT = {
       result: "W",
       away: { abbr: "NYY", city: "NEW YORK", name: "YANKEES" },
       home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
-      awayScore: 4,
+      awayScore: 5,
       homeScore: 7,
       winnerIsHome: true,
       linescore: null,
