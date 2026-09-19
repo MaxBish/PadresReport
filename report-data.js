@@ -1,14 +1,14 @@
 const REPORT = {
-  record: { w:75, l:68 },
+  record: { w:85, l:69 },
   weekSummary: {
-    record: "3-3",
-    runsScored: 19,
-    runsAllowed: 21,
+    record: "6-1",
+    runsScored: 50,
+    runsAllowed: 33,
     notes: [
-      "Auto-updated from MLB Stats API for games 2026-08-31 to 2026-09-06.",
-      "Padres outscored opponents 19-21 over 6 finalized game(s)."
+      "Auto-updated from MLB Stats API for games 2026-09-12 to 2026-09-18.",
+      "Padres outscored opponents 50-33 over 7 finalized game(s)."
     ],
-    teamOps: ".700"
+    teamOps: ".716"
   },
   roster: [
     {
@@ -17,14 +17,14 @@ const REPORT = {
       position: "RF",
       hand: "R/R",
       stats: {
-        G: 141,
-        AVG: ".280",
-        OBP: ".347",
-        SLG: ".448",
-        OPS: ".795",
-        HR: 20,
-        RBI: 71,
-        SB: 31
+        G: 152,
+        AVG: ".285",
+        OBP: ".355",
+        SLG: ".461",
+        OPS: ".816",
+        HR: 23,
+        RBI: 79,
+        SB: 35
       }
     },
     {
@@ -33,14 +33,14 @@ const REPORT = {
       position: "CF",
       hand: "L/R",
       stats: {
-        G: 140,
-        AVG: ".237",
-        OBP: ".290",
-        SLG: ".411",
-        OPS: ".701",
-        HR: 22,
-        RBI: 70,
-        SB: 24
+        G: 151,
+        AVG: ".256",
+        OBP: ".304",
+        SLG: ".448",
+        OPS: ".752",
+        HR: 26,
+        RBI: 86,
+        SB: 26
       }
     },
     {
@@ -49,13 +49,13 @@ const REPORT = {
       position: "3B",
       hand: "R/R",
       stats: {
-        G: 139,
-        AVG: ".221",
-        OBP: ".310",
-        SLG: ".414",
-        OPS: ".724",
-        HR: 26,
-        RBI: 77,
+        G: 150,
+        AVG: ".219",
+        OBP: ".308",
+        SLG: ".409",
+        OPS: ".717",
+        HR: 28,
+        RBI: 84,
         SB: 5
       }
     },
@@ -65,14 +65,14 @@ const REPORT = {
       position: "SS",
       hand: "R/R",
       stats: {
-        G: 136,
-        AVG: ".218",
-        OBP: ".318",
-        SLG: ".320",
-        OPS: ".638",
-        HR: 11,
-        RBI: 52,
-        SB: 20
+        G: 147,
+        AVG: ".228",
+        OBP: ".326",
+        SLG: ".339",
+        OPS: ".665",
+        HR: 12,
+        RBI: 56,
+        SB: 21
       }
     },
     {
@@ -97,13 +97,13 @@ const REPORT = {
       position: "C",
       hand: "R/R",
       stats: {
-        G: 58,
-        AVG: ".285",
-        OBP: ".385",
-        SLG: ".479",
-        OPS: ".864",
-        HR: 7,
-        RBI: 26,
+        G: 67,
+        AVG: ".267",
+        OBP: ".362",
+        SLG: ".446",
+        OPS: ".808",
+        HR: 8,
+        RBI: 29,
         SB: 0
       }
     },
@@ -113,13 +113,13 @@ const REPORT = {
       position: "1B",
       hand: "R/R",
       stats: {
-        G: 117,
-        AVG: ".290",
-        OBP: ".360",
-        SLG: ".511",
-        OPS: ".871",
-        HR: 20,
-        RBI: 62,
+        G: 125,
+        AVG: ".301",
+        OBP: ".366",
+        SLG: ".521",
+        OPS: ".887",
+        HR: 21,
+        RBI: 69,
         SB: 1
       }
     },
@@ -145,14 +145,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 29,
-        GS: 29,
-        W: 10,
-        ERA: "3.00",
-        WHIP: "1.17",
-        IP: "168.0",
-        K: 144,
-        BB: 66,
+        G: 31,
+        GS: 31,
+        W: 12,
+        ERA: "3.03",
+        WHIP: "1.16",
+        IP: "181.0",
+        K: 154,
+        BB: 68,
         SV: 0,
         HLD: 0,
         BS: 0
@@ -164,14 +164,14 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 28,
-        GS: 28,
+        G: 30,
+        GS: 30,
         W: 8,
-        ERA: "4.56",
-        WHIP: "1.34",
-        IP: "136.1",
-        K: 117,
-        BB: 51,
+        ERA: "4.58",
+        WHIP: "1.37",
+        IP: "143.1",
+        K: 122,
+        BB: 54,
         SV: 0,
         HLD: 0,
         BS: 0
@@ -183,16 +183,16 @@ const REPORT = {
       position: "P",
       hand: "L/L",
       stats: {
-        G: 66,
+        G: 72,
         GS: 0,
         W: 9,
-        ERA: "2.93",
-        WHIP: "1.11",
-        IP: "76.2",
-        K: 94,
+        ERA: "2.85",
+        WHIP: "1.06",
+        IP: "82.0",
+        K: 101,
         BB: 24,
-        SV: 2,
-        HLD: 22,
+        SV: 3,
+        HLD: 26,
         BS: 5
       }
     },
@@ -202,15 +202,15 @@ const REPORT = {
       position: "P",
       hand: "R/R",
       stats: {
-        G: 57,
+        G: 61,
         GS: 0,
         W: 5,
-        ERA: "1.19",
-        WHIP: "0.83",
-        IP: "60.1",
-        K: 111,
-        BB: 21,
-        SV: 33,
+        ERA: "1.12",
+        WHIP: "0.85",
+        IP: "64.1",
+        K: 119,
+        BB: 23,
+        SV: 37,
         HLD: 0,
         BS: 2
       }
@@ -218,44 +218,70 @@ const REPORT = {
   ],
   nextGames: [
     {
-      date: "MON SEP 7",
-      time: "2:10 PM PT",
-      matchup: "SD Padres vs Washington Nationals",
+      date: "SAT SEP 19",
+      time: "5:40 PM PT",
+      matchup: "SD Padres vs Miami Marlins",
       venue: "Petco Park"
     },
     {
-      date: "TUE SEP 8",
-      time: "6:40 PM PT",
-      matchup: "SD Padres vs Washington Nationals",
-      venue: "Petco Park"
-    },
-    {
-      date: "WED SEP 9",
+      date: "SUN SEP 20",
       time: "1:10 PM PT",
-      matchup: "SD Padres vs Washington Nationals",
+      matchup: "SD Padres vs Miami Marlins",
       venue: "Petco Park"
     },
     {
-      date: "FRI SEP 11",
-      time: "7:15 PM PT",
-      matchup: "SD Padres @ San Francisco Giants",
-      venue: "Oracle Park"
+      date: "TUE SEP 22",
+      time: "7:10 PM PT",
+      matchup: "SD Padres @ Los Angeles Dodgers",
+      venue: "UNIQLO Field at Dodger Stadium"
     },
     {
-      date: "SAT SEP 12",
-      time: "1:05 PM PT",
-      matchup: "SD Padres @ San Francisco Giants",
-      venue: "Oracle Park"
+      date: "WED SEP 23",
+      time: "7:10 PM PT",
+      matchup: "SD Padres @ Los Angeles Dodgers",
+      venue: "UNIQLO Field at Dodger Stadium"
     },
     {
-      date: "SUN SEP 13",
-      time: "4:20 PM PT",
-      matchup: "SD Padres @ San Francisco Giants",
-      venue: "Oracle Park"
+      date: "THU SEP 24",
+      time: "7:10 PM PT",
+      matchup: "SD Padres @ Los Angeles Dodgers",
+      venue: "UNIQLO Field at Dodger Stadium"
+    },
+    {
+      date: "FRI SEP 25",
+      time: "6:40 PM PT",
+      matchup: "SD Padres vs Arizona Diamondbacks",
+      venue: "Petco Park"
     }
   ],
   seasonHighlights: [],
   entries: [
+    {
+      type: "recap",
+      gameLabel: "Game #154",
+      gameDate: "FRI, SEP 18",
+      venue: "PETCO PARK, SAN DIEGO",
+      result: "W",
+      away: { abbr: "MIA", city: "MIAMI", name: "MARLINS" },
+      home: { abbr: "SD", city: "SAN DIEGO", name: "PADRES" },
+      awayScore: 2,
+      homeScore: 8,
+      winnerIsHome: true,
+      linescore: null,
+      stats: [
+        { label: "Ty France", value: "2-4, HR, 3 RBI, 1 R", type: "win" },
+        { label: "Nick Pivetta", value: "5 IP, 4 H, 1 ER, 1 BB, 4 K", type: "win" },
+        { label: "Inning", value: "6-run inning capped by France HR", type: "win" },
+        { label: "Standings", value: "#1 NL Wild Card spot", type: "win" },
+      ],
+      paragraphs: [
+        "Ladies and gentlemen, the Padres have the #1 wild card spot in the NL after today's game. We are officially tied with the Cubbies and the Phillies (fuck you Philly).",
+        "The Padres have been on absolute fire in the month of August and September. In August, we went 17-11 and it felt better than that. In September so far, we're 12-5.",
+        "Ty France has been the MVP of the team, he hit a monster HR today to cap off a 6 run inning. Nick Pivetta pitched a sweet 5 innings in his return to the mound after basically missing the entire season. The team is on fire and also starting to get healthy (kind of) right before the playoff push. This is actually huge.",
+        "I will always remember the Giants years of winning the World Series, because CB would always talk about how the Giants were never the best team that particular year, but they were always the hottest when the postseason came around. That's how baseball works, and even the Dodgers look beatable this year. It's starting to feel a lil magical and I want the best of a playoff run that feels fated to happen right now.",
+        "This has been a real up and down season where the best has been such a high and the worst felt like we needed to start a rebuild. Love this team, let's keep the bats hot and the arms warm, and see what kind of noise we can make here. This team can beat anybody in baseball right now and they know it. LETS GOOOOO"
+      ],
+    },
     {
       type: "recap",
       gameLabel: "Game #146",
